@@ -5,30 +5,26 @@ import { cn } from "../../utils/cn";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] bg-gradient-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-[60px] px-[140px] max-lg:px-[60px] max-lg:py-[40px] max-lg:min-h-[85vh] max-md:py-[40px] max-md:px-[20px] max-md:min-h-auto max-md:pb-[80px] max-sm:px-[15px] max-sm:py-[30px]">
+    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden pb-15 px-35 max-lg:px-15 max-lg:py-10 max-lg:min-h-[85vh] max-md:py-10 max-md:px-5 max-md:min-h-auto max-md:pb-20 max-sm:px-3.75 max-sm:py-7.5">
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}
       ></div>
-      <div className="relative grid grid-cols-2 gap-[80px] items-center max-w-[1400px] w-full z-10 max-lg:gap-[60px] max-md:grid-cols-1 max-md:text-center">
+      <div className="relative grid grid-cols-2 gap-20 items-center max-w-350 w-full z-10 max-lg:gap-15 max-md:grid-cols-1 max-md:text-center">
         <div className="animate-fade-in-up max-md:flex max-md:flex-col max-md:items-center">
-          <span className="inline-block py-[8px] px-[20px] bg-gradient-to-br from-[rgba(255,165,0,0.2)] to-[rgba(255,140,0,0.2)] border border-[rgba(255,165,0,0.4)] rounded-full text-orange-500 text-[14px] font-semibold tracking-[1px] uppercase mb-[24px] max-sm:text-[12px] max-sm:py-[6px] max-sm:px-[16px]">
-            New Collection 2025
-          </span>
-          <h1 className="text-[64px] font-extrabold text-white leading-tight mb-[24px] max-lg:text-[52px] max-md:text-[40px] max-sm:text-[32px] m-0">
-            Step Into Your
-            <span className="bg-gradient-to-br from-orange-500 to-[#ff6b00] bg-clip-text text-transparent"> Best Performance</span>
+          
+          <h1 className="text-[64px] font-extrabold text-white leading-15 mb-6 max-lg:text-[52px] max-md:text-[40px] max-sm:text-[32px] m-0">
+            Find Your Perfect Pair to 
+            <span className="bg-linear-to-br from-orange-500 to-[#ff6b00] bg-clip-text text-transparent"> Move</span> 
           </h1>
-          <p className="text-[18px] text-[rgba(240,248,255,0.8)] leading-[1.8] mb-[40px] max-w-[540px] max-lg:text-[16px] max-md:max-w-full max-sm:text-[14px] m-0">
-            Discover premium athletic footwear designed for champions.
-            Experience unmatched comfort, style, and performance with our
-            exclusive collection.
+          <p className="text-[18px] text-[rgba(240,248,255,0.8)] leading-[1.8] mb-10 max-w-135 max-lg:text-[17px] max-md:max-w-full max-sm:text-[14px] m-0">
+         Shop premium sneakers with exclusive deals, fast delivery, secure payments, and guaranteed quality. 
           </p>
-          <div className="flex gap-[20px] mb-[60px] max-md:flex-col max-md:w-full max-md:max-w-[400px]">
-            <Link to="/shop" className="group inline-flex items-center justify-center gap-[10px] py-[16px] px-[36px] rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-gradient-to-br from-orange-500 to-[#ff6b00] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-[3px] hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]">
+          <div className="flex gap-5 mb-15 max-md:flex-col max-md:w-full max-md:max-w-100">
+            <Link to="/shop" className="group inline-flex items-center justify-center gap-2.5 py-4 px-9 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-linear-to-br from-orange-500 to-[#ff6b00] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]">
               Shop Now
               <svg
-                className="w-[20px] h-[20px] transition-transform duration-300 group-hover:translate-x-[5px]"
+                className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.25"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24">
