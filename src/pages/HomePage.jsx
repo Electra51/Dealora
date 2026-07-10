@@ -1,20 +1,27 @@
 import React from "react";
 import Hero from "../components/Hero/Hero";
 import FeaturedCategories from "../components/FeaturedCategories/FeaturedCategories";
-import BestSellers from "../components/BestSellers/BestSellers";
+
 import SaleBanner from "../components/SaleBanner/SaleBanner";
 import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import CustomerReviews from "../components/CustomerReviews/CustomerReviews";
 import Newsletter from "../components/Newsletter/Newsletter";
 import ShopByBrand from "../components/ShopByBrand";
+import NewArrivals from "../components/NewArrivals";
+import FeaturedBanner from "../components/FeaturedBanner";
+import WhyShopWithUs from "../components/WhyShopWithUs";
+import Trending from "../components/Trending";
 
 const HomePage = () => {
   return (
     <div>
       <Hero />
       <FeaturedCategories />
+      <Trending/>
       <ShopByBrand/>
-      <BestSellers />
+      <NewArrivals />
+      <FeaturedBanner/>
+      <WhyShopWithUs/>
       <SaleBanner />
       <WhyChooseUs />
       <CustomerReviews />
