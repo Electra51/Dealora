@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SectionHeader from "./Common/SectionHeader";
 
 const BestSellers = ({ handleAddToCart }) => {
   const [bestSellers, setBestSellers] = useState([]);
@@ -9,7 +10,7 @@ const BestSellers = ({ handleAddToCart }) => {
       .then((data) => {
         const sorted = data
           .sort((a, b) => b.ratings - a.ratings || b.ratingsCount - a.ratingsCount)
-          .slice(0, 8);
+          .slice(0, 4);
         setBestSellers(sorted);
       });
   }, []);
@@ -32,44 +33,15 @@ const BestSellers = ({ handleAddToCart }) => {
   };
 
   return (
-    <section className="relative max-w-[1400px] mx-auto px-4 py-24 w-full lg:py-32">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
-        <div className="text-start relative z-10">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-              Best
-            </span>{" "}
-            Sellers
-          </h2>
-          <p className="mt-2 max-w-xl text-lg text-gray-600 leading-relaxed">
-            Most sold products loved by thousands of customers
-          </p>
-        </div>
-
-        <div className="relative z-10">
-          <a
-            href="/best-sellers"
-            className="inline-flex items-center gap-3 px-6 py-3 text-orange-600 font-semibold hover:gap-4 transition-all duration-300"
-          >
-            View All
-            <svg
-              className="w-5 h-5 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-
+    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-24 w-full lg:py-20">
+     
+      <SectionHeader
+  title="  Best Sellers"
+  description="Most sold products loved by thousands of customers"
+  showAction
+  actionText="View All Products"
+  actionLink="/shop"
+/>
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-8">
         {bestSellers.map((product) => (
@@ -85,13 +57,13 @@ const BestSellers = ({ handleAddToCart }) => {
             </div>
 
             {/* Image */}
-            <div className="relative w-full h-[280px] overflow-hidden bg-gray-100">
+            <div className="relative w-full h-70 overflow-hidden bg-gray-100">
               <img
                 src={product.img}
                 alt={product.name}
                 className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <button
                   onClick={() => handleAddToCart(product)}
                   className="flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full text-sm font-bold translate-y-5 group-hover:translate-y-0 transition-all duration-300 hover:bg-orange-500 hover:text-white"
@@ -146,7 +118,7 @@ const BestSellers = ({ handleAddToCart }) => {
                 </div>
                 <button
                   onClick={() => handleAddToCart(product)}
-                  className="w-11 h-11 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shrink-0 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40 transition-all duration-300"
+                  className="w-11 h-11 rounded-full bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center shrink-0 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/40 transition-all duration-300"
                 >
                   <svg
                     className="w-5 h-5 text-white"

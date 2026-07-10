@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SectionHeader from "./Common/SectionHeader";
 
 const NewArrivals = ({ handleAddToCart }) => {
   const [newArrivals, setNewArrivals] = useState([]);
@@ -10,49 +11,22 @@ const NewArrivals = ({ handleAddToCart }) => {
         // Get latest 8 products (assuming higher ID = newer)
         const latest = data
           .sort((a, b) => b.id - a.id)
-          .slice(0, 8);
+          .slice(0, 4);
         setNewArrivals(latest);
       });
   }, []);
 
   return (
-    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-24 w-full lg:py-32">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
-        <div className="text-start relative z-10">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 leading-tight">
-            <span className="bg-linear-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
-              New
-            </span>{" "}
-            Arrivals
-          </h2>
-          <p className="mt-2 max-w-xl text-lg text-gray-600 leading-relaxed">
-            Check out the latest additions to our collection
-          </p>
-        </div>
+    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-24 w-full lg:py-20">
+   
 
-        <div className="relative z-10">
-          <a
-            href="/new-arrivals"
-            className="inline-flex items-center gap-3 px-6 py-3 text-blue-600 font-semibold hover:gap-4 transition-all duration-300"
-          >
-            View All
-            <svg
-              className="w-5 h-5 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
+        <SectionHeader
+        title="New Arrivals"
+        description="Check out the latest additions to our collection"
+        showAction
+        actionText="View All Products"
+        actionLink="/shop"
+      />
 
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-8">

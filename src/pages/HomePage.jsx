@@ -3,7 +3,6 @@ import Hero from "../components/Hero/Hero";
 import FeaturedCategories from "../components/FeaturedCategories/FeaturedCategories";
 
 import SaleBanner from "../components/SaleBanner/SaleBanner";
-import WhyChooseUs from "../components/WhyChooseUs/WhyChooseUs";
 import CustomerReviews from "../components/CustomerReviews/CustomerReviews";
 import Newsletter from "../components/Newsletter/Newsletter";
 import ShopByBrand from "../components/ShopByBrand";
@@ -18,14 +17,15 @@ const HomePage = () => {
     <div>
       <Hero />
       <FeaturedCategories />
-      <Trending/>
-      <ShopByBrand/>
+      <Trending />
+      <FeaturedBanner />
       <NewArrivals />
-      <FeaturedBanner/>
-      <WhyShopWithUs/>
-      <SaleBanner />
-      <BestSellers/>
-      <WhyChooseUs />
+      <ShopByBrand />
+  <SaleBanner />
+  <BestSellers />
+      <WhyShopWithUs />
+    
+      
       <CustomerReviews />
       <Newsletter />
     </div>

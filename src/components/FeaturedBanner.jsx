@@ -2,8 +2,8 @@
 
 const FeaturedBanner = () => {
   return (
-    <section className="relative max-w-[1400px] mx-auto px-4 py-24 w-full lg:py-32">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 shadow-2xl">
+    <section className="relative w-full lg:py-20  overflow-hidden  bg-linear-to-br  from-orange-400 via-orange-500 to-red-500 shadow-2xl">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
@@ -11,19 +11,16 @@ const FeaturedBanner = () => {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 p-8 md:p-16 lg:p-20">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Side - Text */}
           <div className="flex flex-col justify-center text-white">
-            <span className="inline-block px-5 py-2 mb-6 bg-white/20 backdrop-blur-sm rounded-full text-sm font-bold tracking-widest uppercase w-fit">
-              Limited Time Offer
-            </span>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              Summer
-              <br />
+            
+            <h2 className="text-5xl md:text-5xl lg:text-5xl font-black leading-tight mb-6">
+              Summer 
               Sale
             </h2>
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-7xl md:text-8xl font-black bg-white/20 backdrop-blur-sm px-6 py-3 rounded-2xl">
+              <span className="text-6xl md:text-6xl font-black bg-white/20 backdrop-blur-sm px-6 py-3 rounded-2xl">
                 40%
               </span>
               <span className="text-4xl md:text-5xl font-bold">OFF</span>
@@ -69,7 +66,7 @@ const FeaturedBanner = () => {
               
               {/* Main visual */}
               <div className="relative bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-                <div className="aspect-square bg-gradient-to-br from-white/20 to-white/5 rounded-2xl flex items-center justify-center">
+                <div className="aspect-square bg-linear-to-br from-white/20 to-white/5 rounded-2xl flex items-center justify-center">
                   <div className="text-center text-white">
                     <div className="text-8xl font-black mb-4">🔥</div>
                     <p className="text-2xl font-bold">Hot Deals</p>
@@ -89,8 +86,7 @@ const FeaturedBanner = () => {
           </div>
         </div>
 
-        {/* Bottom decorative wave */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/10 to-transparent"></div>
+   
       </div>
     </section>
   );

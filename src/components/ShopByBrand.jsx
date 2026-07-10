@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "./Common/SectionHeader";
 
 const ShopByBrand = () => {
   const brands = [
@@ -44,7 +45,7 @@ const ShopByBrand = () => {
   const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <section className="relative py-20 lg:py-32 bg-linear-to-b from-gray-50 to-white overflow-hidden">
+    <section className="relative py-20 lg:py-20 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl"></div>
@@ -54,44 +55,14 @@ const ShopByBrand = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
 
-        <div className="flex justify-between items-center ">
-          <div className="text-start mb-16 relative z-10">
-            <h2 className="mt-4 text-4xl font-black text-gray-900 leading-tight">
-              Shop by{" "}
-              <span className="bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-                Brand
-              </span>
-            </h2>
-            <p className="mt-2 max-w-xl mr-auto text-lg text-gray-600 leading-relaxed">
-              Explore collections from the world's most iconic footwear and
-              apparel brands
-            </p>
-          </div>
-
-          {/* View All Button */}
-          <div className="text-center relative z-10">
-            <a
-              href="/brands"
-              className="inline-flex items-center gap-3 px-10 py-4 text-orange-600"
-            >
-              View All Brands
-              <svg
-                className="w-5 h-5 transition-transform duration-300 hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-
+        <SectionHeader
+          title="Shop by Brand"
+          description="Explore collections from the world's most iconic footwear and
+              apparel brands."
+          showAction
+          actionText="View All Products"
+          actionLink="/shop"
+        />
         {/* Carousel Container with gradient fade edges */}
         <div className="relative">
           {/* Left fade */}

@@ -1,4 +1,5 @@
 import React from "react";
+import SectionHeader from "./Common/SectionHeader";
 
 const WhyShopWithUs = () => {
   const features = [
@@ -103,23 +104,15 @@ const WhyShopWithUs = () => {
   ];
 
   return (
-    <section className="relative max-w-[1400px] mx-auto px-4 py-24 w-full lg:py-32">
-      {/* Header */}
-      <div className="text-center mb-16 relative z-10">
-        <span className="inline-block px-6 py-2 mb-4 bg-gradient-to-br from-orange-100 to-orange-50 border border-orange-200 rounded-full text-orange-600 text-sm font-bold tracking-widest uppercase">
-          Why Choose Us
-        </span>
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-          Why Shop{" "}
-          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-            With Us
-          </span>
-        </h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          We provide the best shopping experience with premium quality products and exceptional service
-        </p>
-      </div>
-
+    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  py-24 w-full lg:py-20">
+   
+     <SectionHeader
+  title=" Why Shop With Us"
+  description="We provide the best shopping experience with premium quality products and exceptional service"
+  showAction
+  actionText="Start Shopping"
+  actionLink="/shop"
+/>
       {/* Features Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
         {features.map((feature) => (
@@ -129,7 +122,7 @@ const WhyShopWithUs = () => {
           >
             {/* Background gradient on hover */}
             <div
-              className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+              className={`absolute inset-0 bg-linear-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
             ></div>
 
             {/* Icon */}
@@ -150,33 +143,12 @@ const WhyShopWithUs = () => {
             </p>
 
             {/* Decorative element */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         ))}
       </div>
 
-      {/* Bottom CTA */}
-      <div className="text-center mt-16">
-        <a
-          href="/shop"
-          className="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-br from-orange-500 to-orange-600 text-white font-bold rounded-full text-base shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-        >
-          Start Shopping
-          <svg
-            className="w-5 h-5 transition-transform duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </a>
-      </div>
+     
     </section>
   );
 };

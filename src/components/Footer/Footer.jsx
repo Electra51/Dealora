@@ -34,33 +34,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#1a1a24] text-[#f0f8ff] relative z-50">
-      {/* Newsletter Section */}
-      <div className="bg-linear-to-r from-orange-500 to-orange-600 py-12 px-4">
-        <div className="max-w-7xl mx-auto text-center">
-          <span className="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
-            NEWSLETTER
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">
-            Get 10% off your first order
-          </h2>
-          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter and receive exclusive offers, latest news, and updates directly in your inbox.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-6 py-4 rounded-full text-gray-900 focus:outline-none focus:ring-4 focus:ring-white/30 transition-all"
-            />
-            <button
-              type="submit"
-              className="px-8 py-4 bg-[#1a1a24] text-white font-semibold rounded-full hover:bg-gray-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </div>
+     
 
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
