@@ -11,6 +11,7 @@ import NewArrivals from "../components/NewArrivals";
 import FeaturedBanner from "../components/FeaturedBanner";
 import WhyShopWithUs from "../components/WhyShopWithUs";
 import Trending from "../components/Trending";
+import BestSellers from "../components/BestSellers";
 
 const HomePage = () => {
   return (
@@ -23,6 +24,7 @@ const HomePage = () => {
       <FeaturedBanner/>
       <WhyShopWithUs/>
       <SaleBanner />
+      <BestSellers/>
       <WhyChooseUs />
       <CustomerReviews />
       <Newsletter />
