@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SectionHeader from "./Common/SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 
 const Trending = ({ handleAddToCart }) => {
   const [bestSellers, setBestSellers] = useState([]);

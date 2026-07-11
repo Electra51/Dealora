@@ -1,16 +1,15 @@
 import React from "react";
-import Hero from "../components/Hero/Hero";
-import FeaturedCategories from "../components/FeaturedCategories/FeaturedCategories";
-
-import SaleBanner from "../components/SaleBanner/SaleBanner";
-import CustomerReviews from "../components/CustomerReviews/CustomerReviews";
-import Newsletter from "../components/Newsletter/Newsletter";
-import ShopByBrand from "../components/ShopByBrand";
-import NewArrivals from "../components/NewArrivals";
-import FeaturedBanner from "../components/FeaturedBanner";
-import WhyShopWithUs from "../components/WhyShopWithUs";
-import Trending from "../components/Trending";
-import BestSellers from "../components/BestSellers";
+import Hero from "../components/Features/Home/Hero";
+import FeaturedCategories from "../components/Features/Home/FeaturedCategories";
+import Trending from "../components/Features/Home/Trending";
+import FeaturedBanner from "../components/Features/Home/FeaturedBanner";
+import NewArrivals from "../components/Features/Home/NewArrivals";
+import ShopByBrand from "../components/Features/Home/ShopByBrand";
+import SaleBanner from "../components/Features/Home/SaleBanner";
+import BestSellers from "../components/Features/Home/BestSellers";
+import WhyShopWithUs from "../components/Features/Home/WhyShopWithUs";
+import CustomerReviews from "../components/Features/Home/CustomerReviews";
+import Newsletter from "../components/Features/Home/Newsletter";
 
 const HomePage = () => {
   return (
@@ -21,11 +20,9 @@ const HomePage = () => {
       <FeaturedBanner />
       <NewArrivals />
       <ShopByBrand />
-  <SaleBanner />
-  <BestSellers />
+      <SaleBanner />
+      <BestSellers />
       <WhyShopWithUs />
-    
-      
       <CustomerReviews />
       <Newsletter />
     </div>

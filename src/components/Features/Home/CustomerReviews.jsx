@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback, useMemo, memo } from "react";
-import SectionHeader from "../Common/SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 
 // Memoized Review Card Component for better performance
 const ReviewCard = memo(({ review, renderStars }) => (

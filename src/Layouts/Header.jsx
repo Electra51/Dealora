@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../../assets/images/Logo.png";
-import heroShoe1 from "../../assets/shoe.png";
-import heroShoe2 from "../../assets/shoe.png";
-import { cn } from "../../utils/cn";
+import logo from "../assets/images/Logo.png";
+import heroShoe1 from "../assets/shoe.png";
+import heroShoe2 from "../assets/shoe.png";
+import { cn } from "../utils/cn";
 import { FiShoppingBag, FiMenu, FiX, FiSearch, FiChevronDown, FiArrowRight } from "react-icons/fi";
 
 // Static Data (Outside component for performance)

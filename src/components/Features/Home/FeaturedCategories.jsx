@@ -1,5 +1,5 @@
 import React from "react";
-import SectionHeader from "../Common/SectionHeader";
+import SectionHeader from "../../Common/SectionHeader";
 
 const FeaturedCategories = () => {
   const categories = [
@@ -73,14 +73,13 @@ const FeaturedCategories = () => {
       {/* Radial glow top */}
       <div className="absolute top-0 left-0 right-0 h-75 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,165,0,0.05)_0%,transparent_70%)]"></div>
 
-
       <SectionHeader
-  title="Featured Collections"
-  description="Discover our curated collection of premium products across multiple categories."
-  showAction
-  actionText="View All Products"
-  actionLink="/shop"
-/>
+        title="Featured Collections"
+        description="Discover our curated collection of premium products across multiple categories."
+        showAction
+        actionText="View All Products"
+        actionLink="/shop"
+      />
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-8 relative z-10">
