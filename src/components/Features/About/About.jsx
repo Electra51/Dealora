@@ -202,14 +202,12 @@ const About = () => {
       {/* Values Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-bold mb-4">
-              WHY CHOOSE US
-            </span>
+          <div className="text-left mb-16">
+           
             <h2 className="text-4xl font-black text-gray-900 mb-4">
               What Makes Us <span className="text-orange-500">Different</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mr-auto">
               We're committed to providing an exceptional experience from browsing to delivery.
             </p>
           </div>
@@ -231,14 +229,12 @@ const About = () => {
       {/* Team Section */}
       <section className="py-24 bg-linear-to-br from-gray-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-bold mb-4">
-              OUR TEAM
-            </span>
+          <div className="text-left mb-16">
+          
             <h2 className="text-4xl font-black text-gray-900 mb-4">
               Meet The <span className="text-orange-500">Experts</span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mr-auto">
               Dedicated professionals passionate about bringing you the best sneaker experience.
             </p>
           </div>
@@ -279,7 +275,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-linear-to-br from-violet-900 via-purple-900 to-indigo-900 text-white relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br  from-orange-400 via-orange-500 to-red-500 shadow-2xl text-white relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-orange-500/10 rounded-full blur-3xl"></div>
         </div>
@@ -292,7 +288,7 @@ const About = () => {
             Join thousands of satisfied customers and discover why SneakerHub is the trusted choice for premium footwear.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30">
+            <button className="px-8 py-4 bg-orange-800 hover:bg-orange-600 text-white font-bold rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-orange-500/30">
               Shop Now
             </button>
             <button className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold rounded-full transition-all duration-300 border border-white/20">

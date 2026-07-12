@@ -155,14 +155,12 @@ const DealsCoupon = () => {
     <section className="bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block px-4 py-1.5 bg-orange-100 text-orange-600 text-xs font-bold tracking-wider rounded-full mb-4">
-            EXCLUSIVE COUPONS
-          </span>
+        <div className="text-left mb-12">
+          
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
             Save More with <span className="text-orange-500">Coupon Codes</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mr-auto">
             Use these exclusive coupon codes at checkout to unlock additional savings on your favorite products.
           </p>
         </div>
