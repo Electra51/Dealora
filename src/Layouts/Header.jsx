@@ -13,6 +13,7 @@ import {
   FiShoppingBag, FiMenu, FiX, FiSearch, FiChevronDown, 
   FiArrowRight, FiTrendingUp, FiStar, FiZap, FiGift 
 } from "react-icons/fi";
+import { useCartStore } from "../stores/cart.store";
 
 // Enhanced Static Data with more details
 const MEGA_MENU_CATEGORIES = [
@@ -432,6 +433,10 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
 
+  // Header component er vitore add korun
+const cartItems = useCartStore(s => s.items);
+const totalCartItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   const location = useLocation();
 
   useEffect(() => {
@@ -554,21 +559,26 @@ const Header = () => {
                 <FiSearch className="w-5 h-5" />
               </motion.button>
 
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative p-2 text-[#f0f8ff] hover:text-orange-500 transition-colors"
-              >
-                <FiShoppingBag className="w-6 h-6" />
-                <motion.span
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 500, delay: 0.5 }}
-                  className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs font-bold rounded-full flex items-center justify-center"
-                >
-                  3
-                </motion.span>
-              </motion.button>
+          <Link to={"/cart"}>
+          <motion.button
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  onClick={() => navigate('/cart')} // Cart page-e navigate
+  className="relative p-2 text-[#f0f8ff] hover:text-orange-500 transition-colors"
+>
+  <FiShoppingBag className="w-6 h-6" />
+  {totalCartItems > 0 && (
+    <motion.span
+      key={totalCartItems} // Animation trigger
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: "spring", stiffness: 500 }}
+      className="absolute -top-1 -right-1 w-5 h-5 bg-orange-500 text-white text-xs font-bold rounded-full flex items-center justify-center"
+    >
+      {totalCartItems > 99 ? '99+' : totalCartItems}
+    </motion.span>
+  )}
+</motion.button></Link>
             </div>
 
             <motion.button
@@ -634,13 +644,19 @@ const Header = () => {
                     ))}
                   </div>
                   <div className="border-t border-white/10 pt-6 mt-6">
-                    <button className="w-full flex items-center justify-between p-4 bg-orange-500 rounded-xl text-white font-semibold">
-                      <span className="flex items-center gap-2">
-                        <FiShoppingBag className="w-5 h-5" />
-                        View Cart
-                      </span>
-                      <span className="bg-white/20 px-3 py-1 rounded-full text-sm">3 items</span>
-                    </button>
+                   <Link 
+  to="/cart"
+  onClick={() => setIsMenuOpen(false)}
+  className="w-full flex items-center justify-between p-4 bg-orange-500 rounded-xl text-white font-semibold"
+>
+  <span className="flex items-center gap-2">
+    <FiShoppingBag className="w-5 h-5" />
+    View Cart
+  </span>
+  <span className="bg-white/20 px-3 py-1 rounded-full text-sm">
+    {totalCartItems} {totalCartItems === 1 ? 'item' : 'items'}
+  </span>
+</Link>
                   </div>
                 </div>
               </motion.div>

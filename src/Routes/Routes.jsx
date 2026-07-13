@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
 import DealsPage from "../pages/DealsPage";
+import CartPage from "../pages/CartPage";
 
 // Lazy loading the page components
 const HomePage = lazy(() => import("../pages/HomePage"));
@@ -34,6 +35,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <ShopPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/cart",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <CartPage />
           </Suspense>
         ),
       },
