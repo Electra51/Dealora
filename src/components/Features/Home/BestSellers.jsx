@@ -25,7 +25,7 @@ const BestSellers = ({ handleAddToCart }) => {
         setLoading(false);
       });
   }, []);
-console.log("bestSellers",bestSellers)
+
   const renderStars = (rating) => {
     return (
       <div className="flex gap-0.5">

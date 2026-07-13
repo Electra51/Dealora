@@ -2,27 +2,34 @@ import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 
 const Trending = ({ handleAddToCart }) => {
-  const [bestSellers, setBestSellers] = useState([]);
+  const [trendingProducts, setTrendingProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
- useEffect(() => {
-  const getTrendingProducts = async () => {
-    try {
-      const res = await fetch("/products.json");
-      const data = await res.json();
+  useEffect(() => {
+    const getTrendingProducts = async () => {
+      try {
+        const res = await fetch("/products.json");
+        if (!res.ok) throw new Error("Failed to fetch products");
+        const data = await res.json();
 
-      const trendingProducts = data
-        .filter((product) => product.trend)
-        .slice(0, 8);
+        const trending = data
+          .filter((product) => product.trending)
+          .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
+          .slice(0, 4);
 
-      setBestSellers(trendingProducts);
-    } catch (error) {
-      console.error("Failed to load trending products:", error);
-    }
-  };
+        setTrendingProducts(trending);
+        setLoading(false);
+      } catch (error) {
+        console.error("Failed to load trending products:", error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
 
-  getTrendingProducts();
-}, []);
+    getTrendingProducts();
+  }, []);
 
   const openQuickView = (product) => {
     setSelectedProduct(product);
@@ -33,6 +40,17 @@ const Trending = ({ handleAddToCart }) => {
     setSelectedProduct(null);
     document.body.style.overflow = "auto";
   };
+
+  // Close modal on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && selectedProduct) {
+        closeQuickView();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedProduct]);
 
   const renderStars = (rating) => {
     return (
@@ -52,19 +70,19 @@ const Trending = ({ handleAddToCart }) => {
   };
 
   const getBadge = (product) => {
-    if (product.ratingsCount > 3000) {
+    if (product.reviewCount > 3000) {
       return {
         text: "Most Reviewed",
         className: "bg-[linear-gradient(135deg,#4facfe,#00f2fe)] text-white",
       };
     }
-    if (product.ratings === 5) {
+    if (product.rating === 5) {
       return {
         text: "Top Rated",
         className: "bg-[linear-gradient(135deg,#ffd700,#ffa500)] text-white",
       };
     }
-    if (product.shipping < 15) {
+    if (product.discount >= 20) {
       return {
         text: "Hot Deal",
         className: "bg-[linear-gradient(135deg,#ff6b6b,#ee5a6f)] text-white",
@@ -76,14 +94,34 @@ const Trending = ({ handleAddToCart }) => {
     };
   };
 
+  if (loading) {
+    return (
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-8">
+          {[...Array(4)].map((_, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl h-96 animate-pulse shadow-md"
+            />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="text-center text-red-500">Error: {error}</div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 w-full lg:pb-20">
-      {/* Header */}
-
       <SectionHeader
         title="Trending Products"
-        description="Discover our most loved products chosen by thousands of satisfied
-            customers"
+        description="Discover our most loved products chosen by thousands of satisfied customers"
         showAction
         actionText="View All Products"
         actionLink="/shop"
@@ -91,12 +129,12 @@ const Trending = ({ handleAddToCart }) => {
 
       {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-8">
-        {bestSellers.map((product) => {
+        {trendingProducts.map((product) => {
           const badge = getBadge(product);
           return (
             <div
               key={product.id}
-              className="group bg-white rounded-2xl overflow-hidden transition-all duration-400 shadow-md hover:-translate-y-2 hover:shadow-xl relative"
+              className="group bg-white rounded-2xl overflow-hidden transition-all duration-500 shadow-md hover:-translate-y-2 hover:shadow-xl relative"
             >
               {/* Badge */}
               <div className="absolute top-4 left-4 z-10">
@@ -107,12 +145,22 @@ const Trending = ({ handleAddToCart }) => {
                 </span>
               </div>
 
+              {/* Discount Badge */}
+              {product.discount > 0 && (
+                <div className="absolute top-4 right-4 z-10">
+                  <span className="px-2.5 py-1 bg-red-500 text-white text-xs font-bold rounded-lg shadow-lg">
+                    -{product.discount}%
+                  </span>
+                </div>
+              )}
+
               {/* Image */}
-              <div className="relative w-full h-70 overflow-hidden bg-gray-100">
+              <div className="relative w-full h-72 overflow-hidden bg-gray-100">
                 <img
-                  src={product.img}
+                  src={product.thumbnail}
                   alt={product.name}
-                  className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
@@ -121,7 +169,7 @@ const Trending = ({ handleAddToCart }) => {
                     className="flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full text-sm font-bold translate-y-5 group-hover:translate-y-0 transition-all duration-300 hover:bg-orange-500 hover:text-white"
                   >
                     <svg
-                      className="w-4.5 h-4.5"
+                      className="w-5 h-5"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -153,31 +201,33 @@ const Trending = ({ handleAddToCart }) => {
                   {product.name}
                 </h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  by {product.seller}
+                  by {product.brand}
                 </p>
 
                 {/* Rating */}
                 <div className="flex items-center gap-2 mb-4">
-                  {renderStars(product.ratings)}
+                  {renderStars(product.rating)}
                   <span className="text-xs text-gray-500">
-                    ({product.ratingsCount.toLocaleString()})
+                    ({product.reviewCount.toLocaleString()})
                   </span>
                 </div>
 
                 {/* Footer */}
                 <div className="flex items-end justify-between gap-3 pt-4 border-t border-gray-100">
                   <div className="flex flex-col gap-1">
-                    <span className="text-2xl font-black text-gray-900">
-                      ${product.price}
-                    </span>
-                    {product.shipping > 1 && (
-                      <span className="text-[11px] text-gray-500">
-                        +${product.shipping} shipping
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-black text-gray-900">
+                        ${product.price}
                       </span>
-                    )}
-                    {product.shipping === 1 && (
-                      <span className="text-[11px] text-green-600 font-semibold">
-                        Free Shipping
+                      {product.comparePrice > product.price && (
+                        <span className="text-xs text-gray-500 line-through">
+                          ${product.comparePrice}
+                        </span>
+                      )}
+                    </div>
+                    {product.stock < 15 && (
+                      <span className="text-[11px] text-orange-600 font-semibold">
+                        Only {product.stock} left
                       </span>
                     )}
                   </div>
@@ -209,11 +259,11 @@ const Trending = ({ handleAddToCart }) => {
       {/* Quick View Modal */}
       {selectedProduct && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-9999 p-5 animate-fadeIn"
+          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 p-5 animate-fadeIn"
           onClick={closeQuickView}
         >
           <div
-            className="bg-white rounded-3xl max-w-225 w-full max-h-[90vh] overflow-y-auto relative animate-slideUp"
+            className="bg-white rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative animate-slideUp"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -241,7 +291,7 @@ const Trending = ({ handleAddToCart }) => {
               {/* Image */}
               <div className="rounded-2xl overflow-hidden bg-gray-100">
                 <img
-                  src={selectedProduct.img}
+                  src={selectedProduct.thumbnail}
                   alt={selectedProduct.name}
                   className="w-full h-full object-cover"
                 />
@@ -256,15 +306,15 @@ const Trending = ({ handleAddToCart }) => {
                   {selectedProduct.name}
                 </h2>
                 <p className="text-base text-gray-600">
-                  by {selectedProduct.seller}
+                  by {selectedProduct.brand}
                 </p>
 
                 {/* Rating */}
                 <div className="flex flex-col gap-2">
-                  {renderStars(selectedProduct.ratings)}
+                  {renderStars(selectedProduct.rating)}
                   <span className="text-sm text-gray-600">
-                    {selectedProduct.ratings} out of 5 (
-                    {selectedProduct.ratingsCount.toLocaleString()} reviews)
+                    {selectedProduct.rating} out of 5 (
+                    {selectedProduct.reviewCount.toLocaleString()} reviews)
                   </span>
                 </div>
 
@@ -273,13 +323,14 @@ const Trending = ({ handleAddToCart }) => {
                   <span className="text-4xl font-black text-gray-900">
                     ${selectedProduct.price}
                   </span>
-                  {selectedProduct.shipping === 1 ? (
-                    <span className="px-3 py-1.5 bg-green-50 text-green-600 rounded-full text-xs font-semibold">
-                      Free Shipping
+                  {selectedProduct.comparePrice > selectedProduct.price && (
+                    <span className="text-xl text-gray-500 line-through">
+                      ${selectedProduct.comparePrice}
                     </span>
-                  ) : (
-                    <span className="text-sm text-gray-500">
-                      +${selectedProduct.shipping} shipping
+                  )}
+                  {selectedProduct.discount > 0 && (
+                    <span className="px-3 py-1.5 bg-red-50 text-red-600 rounded-full text-xs font-bold">
+                      -{selectedProduct.discount}%
                     </span>
                   )}
                 </div>
@@ -311,7 +362,7 @@ const Trending = ({ handleAddToCart }) => {
                   className="w-full py-4 bg-linear-to-br from-orange-500 to-orange-600 text-white rounded-full text-base font-bold flex items-center justify-center gap-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-orange-500/40 disabled:bg-gray-300 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-none mt-2"
                 >
                   <svg
-                    className="w-5.5 h-5.5"
+                    className="w-6 h-6"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -344,7 +395,7 @@ const Trending = ({ handleAddToCart }) => {
                   ].map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2.5">
                       <svg
-                        className="w-4.5 h-4.5 text-green-600"
+                        className="w-5 h-5 text-green-600"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -368,7 +419,7 @@ const Trending = ({ handleAddToCart }) => {
         </div>
       )}
 
-      {/* Custom Animations (Tailwind v4 compatible) */}
+      {/* Custom Animations */}
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; }

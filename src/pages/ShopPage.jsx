@@ -8,11 +8,12 @@ import ShopFilters from '../components/Features/Shop/ShopFilters';
 import SkeletonCard from '../components/Common/SkeletonCard';
 import ProductCard from '../components/Common/ProductCard';
 
-
 const ShopPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [viewMode, setViewMode] = useState('grid');
+  const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  
   const { filters, updateFilter, clearFilters, filteredProducts } = useShopFilters(products);
 
   useEffect(() => {
@@ -25,8 +26,8 @@ const ShopPage = () => {
   return (
     <>
       <Helmet>
-        <title>Shop Premium Sneakers & Gear | Dealora</title>
-        <meta name="description" content="Browse our premium collection of sneakers, apparel, and accessories." />
+        <title>Shop Premium Men's Lifestyle | Dealora</title>
+        <meta name="description" content="Browse our premium collection of clothing, footwear, accessories, and grooming products." />
       </Helmet>
       
       <ShopHero />
@@ -37,12 +38,20 @@ const ShopPage = () => {
           updateFilter={updateFilter} 
           viewMode={viewMode} 
           setViewMode={setViewMode} 
-          count={filteredProducts.length} 
+          count={filteredProducts.length}
+          onMobileFilterOpen={() => setMobileFilterOpen(true)}
         />
         
         <div className="flex flex-col lg:flex-row gap-8 mt-8">
           <aside className="lg:w-64 shrink-0">
-            <ShopFilters filters={filters} updateFilter={updateFilter} clearFilters={clearFilters} />
+            <ShopFilters 
+              filters={filters} 
+              updateFilter={updateFilter} 
+              clearFilters={clearFilters}
+              products={products}
+              mobileOpen={mobileFilterOpen}
+              setMobileOpen={setMobileFilterOpen}
+            />
           </aside>
           
           <div className="flex-1">
@@ -51,10 +60,16 @@ const ShopPage = () => {
                 {[...Array(6)].map((_, i) => <SkeletonCard key={i} viewMode={viewMode} />)}
               </div>
             ) : filteredProducts.length === 0 ? (
-              <div className="text-center py-20">
+              <div className="text-center py-20 bg-white rounded-2xl border border-gray-100">
+                <div className="text-6xl mb-4">🔍</div>
                 <h3 className="text-xl font-bold text-gray-900">No products found</h3>
                 <p className="text-gray-500 mt-2">Try adjusting your filters or search terms.</p>
-                <button onClick={clearFilters} className="mt-4 text-orange-500 font-medium hover:underline">Clear all filters</button>
+                <button 
+                  onClick={clearFilters} 
+                  className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600 transition-colors"
+                >
+                  Clear all filters
+                </button>
               </div>
             ) : (
               <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
