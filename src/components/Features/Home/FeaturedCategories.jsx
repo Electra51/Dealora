@@ -8,16 +8,18 @@ import office from "../../../assets/office.png";
 import black from "../../../assets/black.jpeg";
 import groomingpick from "../../../assets/groomingpick.jpeg";
 import active from "../../../assets/active.jpeg";
+import { useNavigate } from "react-router-dom";
 
 
 const FeaturedCategories = () => {
+  const navigate = useNavigate();
 const categories = [
   {
     id: 1,
     name: "Weekend Casual",
     count: "150+ Products",
     image:weekend,
-    category: "Weekend Casual",
+    category: "WeekendCasual",
     gradientClass: "bg-[linear-gradient(160deg,#3A2A2A80,#1111111E)]",
     span: "lg:col-span-2 lg:row-span-2",
     accent: "sporty",
@@ -27,7 +29,7 @@ const categories = [
     name: "Office Ready",
     count: "80+ Products",
     image: office,
-    category: "Office Ready",
+    category: "OfficeReady",
     gradientClass: "bg-[linear-gradient(160deg,#2E3440A0,#0A0A0AE6)]",
     span: "",
     accent: "classic",
@@ -37,7 +39,7 @@ const categories = [
     name: "Black Edition",
     count: "200+ Products",
     image:black,
-    category: "Black Edition",
+    category: "BlackEdition",
     gradientClass: "bg-[linear-gradient(160deg,#C6F13530,#0A0A0AE6)]",
     span: "",
     accent: "sporty",
@@ -47,7 +49,7 @@ const categories = [
     name: "Active Lifestyle",
     count: "90+ Products",
     image: active,
-    category: "Active Lifestyle",
+    category: "ActiveLifestyle",
     gradientClass: "bg-[linear-gradient(160deg,#E8A85450,#0A0A0AE6)]",
     span: "",
     accent: "travel",
@@ -57,13 +59,12 @@ const categories = [
     name: "Grooming Picks",
     count: "60+ Products",
     image: groomingpick,
-    category: "Luxury Fragrance",
+    category: "GroomingPicks",
     gradientClass: "bg-[linear-gradient(160deg,#4A254580,#0A0A0AF2)]",
     span: "",
     accent: "luxury",
   },
 ];
-
   const handleCategoryClick = (category) => {
     const shopSection = document.querySelector(".products-container");
     if (shopSection) {
@@ -73,7 +74,7 @@ const categories = [
   };
 
   return (
-    <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden lg:py-20">
+    <section className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 overflow-hidden py-14 lg:py-20">
       {/* Radial glow top */}
       <div className="absolute top-0 left-0 right-0 h-75 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,165,0,0.05)_0%,transparent_70%)]"></div>
 
@@ -122,7 +123,11 @@ const categories = [
                 {cat.count}
               </p>
 
-              <button
+              <button  onClick={(e) => {
+                  e.stopPropagation(); // Parent card-er click event jeno trigger na hoy
+                  // URL-e query parameter hishebe collection name pass korchi
+                  navigate(`/shop?collection=${encodeURIComponent(cat.category)}`);
+                }}
                 className={`flex items-center gap-2 px-6 py-3 font-bold rounded-full text-sm opacity-0 transform translate-y-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 hover:translate-x-1 ${
                   cat.accent === "luxury"
                     ? "bg-white text-[#4A2545] hover:bg-[#4A2545] hover:text-white"

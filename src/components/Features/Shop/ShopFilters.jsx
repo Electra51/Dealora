@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen, setMobileOpen }) => {
   // Extract unique values from products.json
   const categories = [...new Set(products.map(p => p.category))].sort();
-  const subCategories = [...new Set(products.map(p => p.subCategory))].sort();
-  const brands = [...new Set(products.map(p => p.brand))].sort();
   const collections = [...new Set(products.map(p => p.collection))].sort();
 
   const FilterContent = () => (
@@ -41,46 +39,9 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
         </div>
       </div>
 
-      {/* Sub Category */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Sub Category</h4>
-        <div className="space-y-2 max-h-48 overflow-y-auto">
-          {subCategories.map(subCat => (
-            <label key={subCat} className="flex items-center gap-2 cursor-pointer group">
-              <input 
-                type="radio" 
-                name="subCategory" 
-                checked={filters.subCategory === subCat} 
-                onChange={() => updateFilter('subCategory', subCat)} 
-                className="accent-orange-500" 
-              />
-              <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
-                {subCat}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
+   
 
-      {/* Brand */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Brand</h4>
-        <div className="space-y-2 max-h-48 overflow-y-auto">
-          {brands.map(brand => (
-            <label key={brand} className="flex items-center gap-2 cursor-pointer group">
-              <input 
-                type="checkbox" 
-                checked={filters.brand === brand} 
-                onChange={() => updateFilter('brand', filters.brand === brand ? '' : brand)} 
-                className="accent-orange-500 rounded" 
-              />
-              <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
-                {brand}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
+
 
       {/* Collection */}
       <div>

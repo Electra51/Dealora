@@ -1,19 +1,34 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const useShopFilters = (products) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Initialize filters from URL parameters
   const [filters, setFilters] = useState({
-    search: '',
-    category: '',
-    subCategory: '',
-    brand: '',
-    collection: '',
-    minPrice: null,
-    maxPrice: null,
-    rating: null,
-    sort: 'default',
-    inStock: false,
-    onSale: false,
+    category: searchParams.get('category') || null,
+    collection: searchParams.get('collection') || null,
+    minPrice: searchParams.get('minPrice') || null,
+    maxPrice: searchParams.get('maxPrice') || null,
+    rating: searchParams.get('rating') ? Number(searchParams.get('rating')) : null,
+    inStock: searchParams.get('inStock') === 'true',
+    onSale: searchParams.get('onSale') === 'true',
+    sortBy: searchParams.get('sortBy') || 'featured',
+    search: searchParams.get('search') || '',
   });
+
+  // Sync filters to URL whenever they change
+  useEffect(() => {
+    const params = new URLSearchParams();
+    
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value !== null && value !== '' && value !== false) {
+        params.set(key, value);
+      }
+    });
+    
+    setSearchParams(params, { replace: true });
+  }, [filters, setSearchParams]);
 
   const updateFilter = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
@@ -21,115 +36,103 @@ export const useShopFilters = (products) => {
 
   const clearFilters = () => {
     setFilters({
-      search: '',
-      category: '',
-      subCategory: '',
-      brand: '',
-      collection: '',
+      category: null,
+      collection: null,
       minPrice: null,
       maxPrice: null,
       rating: null,
-      sort: 'default',
       inStock: false,
       onSale: false,
+      sortBy: 'featured',
+      search: '',
     });
   };
 
   const filteredProducts = useMemo(() => {
-    let result = [...products];
+    return products.filter(product => {
+      // Category filter
+      if (filters.category && product.category !== filters.category) {
+        return false;
+      }
 
-    // Search filter
-    if (filters.search) {
-      const searchLower = filters.search.toLowerCase();
-      result = result.filter(p => 
-        p.name.toLowerCase().includes(searchLower) ||
-        p.brand.toLowerCase().includes(searchLower) ||
-        p.category.toLowerCase().includes(searchLower) ||
-        p.subCategory.toLowerCase().includes(searchLower) ||
-        (p.tags && p.tags.some(tag => tag.toLowerCase().includes(searchLower)))
-      );
-    }
+      // Collection filter (from URL or manual selection)
+      if (filters.collection && product.collection !== filters.collection) {
+        return false;
+      }
 
-    // Category filter
-    if (filters.category) {
-      result = result.filter(p => p.category === filters.category);
-    }
+      // Price range filter
+      if (filters.minPrice && product.price < Number(filters.minPrice)) {
+        return false;
+      }
+      if (filters.maxPrice && product.price > Number(filters.maxPrice)) {
+        return false;
+      }
 
-    // Sub Category filter
-    if (filters.subCategory) {
-      result = result.filter(p => p.subCategory === filters.subCategory);
-    }
+      // Rating filter
+      if (filters.rating && product.rating < filters.rating) {
+        return false;
+      }
 
-    // Brand filter
-    if (filters.brand) {
-      result = result.filter(p => p.brand === filters.brand);
-    }
+      // Stock filter
+      if (filters.inStock && product.stock <= 0) {
+        return false;
+      }
 
-    // Collection filter
-    if (filters.collection) {
-      result = result.filter(p => p.collection === filters.collection);
-    }
+      // Sale filter
+      if (filters.onSale && (!product.discount || product.discount <= 0)) {
+        return false;
+      }
 
-    // Price range filter
-    if (filters.minPrice) {
-      result = result.filter(p => p.price >= Number(filters.minPrice));
-    }
-    if (filters.maxPrice) {
-      result = result.filter(p => p.price <= Number(filters.maxPrice));
-    }
+      // Search filter
+      if (filters.search) {
+        const searchLower = filters.search.toLowerCase();
+        const matchesSearch = 
+          product.name.toLowerCase().includes(searchLower) ||
+          product.brand.toLowerCase().includes(searchLower) ||
+          product.category.toLowerCase().includes(searchLower);
+        
+        if (!matchesSearch) return false;
+      }
 
-    // Rating filter
-    if (filters.rating) {
-      result = result.filter(p => p.rating >= filters.rating);
-    }
+      return true;
+    });
+  }, [products, filters]);
 
-    // Stock filter
-    if (filters.inStock) {
-      result = result.filter(p => p.stock > 0);
-    }
-
-    // Sale filter
-    if (filters.onSale) {
-      result = result.filter(p => p.discount > 0);
-    }
-
-    // Sorting
-    switch (filters.sort) {
+  // Sort filtered products
+  const sortedProducts = useMemo(() => {
+    const sorted = [...filteredProducts];
+    
+    switch (filters.sortBy) {
       case 'price-low':
-        result.sort((a, b) => a.price - b.price);
-        break;
+        return sorted.sort((a, b) => a.price - b.price);
       case 'price-high':
-        result.sort((a, b) => b.price - a.price);
-        break;
+        return sorted.sort((a, b) => b.price - a.price);
       case 'rating':
-        result.sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
-        break;
+        return sorted.sort((a, b) => b.rating - a.rating);
       case 'newest':
-        result.sort((a, b) => {
+        return sorted.sort((a, b) => {
           if (a.newArrival && !b.newArrival) return -1;
           if (!a.newArrival && b.newArrival) return 1;
           return 0;
         });
-        break;
-      case 'discount':
-        result.sort((a, b) => b.discount - a.discount);
-        break;
+      case 'name-asc':
+        return sorted.sort((a, b) => a.name.localeCompare(b.name));
+      case 'name-desc':
+        return sorted.sort((a, b) => b.name.localeCompare(a.name));
       default:
-        // Featured: prioritize featured, trending, bestSeller
-        result.sort((a, b) => {
-          const scoreA = (a.featured ? 3 : 0) + (a.trending ? 2 : 0) + (a.bestSeller ? 1 : 0);
-          const scoreB = (b.featured ? 3 : 0) + (b.trending ? 2 : 0) + (b.bestSeller ? 1 : 0);
+        // featured - prioritize best sellers and trending
+        return sorted.sort((a, b) => {
+          const scoreA = (a.bestSeller ? 2 : 0) + (a.trending ? 1 : 0);
+          const scoreB = (b.bestSeller ? 2 : 0) + (b.trending ? 1 : 0);
           return scoreB - scoreA;
         });
     }
-
-    return result;
-  }, [products, filters]);
+  }, [filteredProducts, filters.sortBy]);
 
   return {
     filters,
     updateFilter,
     clearFilters,
-    filteredProducts,
+    filteredProducts: sortedProducts,
   };
 };

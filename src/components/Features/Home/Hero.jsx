@@ -5,12 +5,12 @@ import { cn } from "../../../utils/cn";
 
 const Hero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-13 px-35">
+    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-13 px-6 sm:px-10 lg:px-35">
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}
       ></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  relative grid grid-cols-2 gap-20 items-center w-full z-10">
+      <div className="max-w-7xl mx-auto lg:px-8  relative grid grid-cols-1 lg:grid-cols-2 gap-20 items-center w-full z-10">
         <div className="animate-fade-in-up">
           
           <h1 className="text-[56px] font-extrabold text-white leading-15 mb-6 m-0">

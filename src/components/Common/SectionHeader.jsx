@@ -14,7 +14,7 @@ const SectionHeader = ({
       className={`flex flex-col gap-6 md:flex-row md:items-end md:justify-between mb-10 ${className}`}
     >
       <div>
-        <h2 className="text-4xl font-black text-gray-900 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
           {title}
         </h2>
 
