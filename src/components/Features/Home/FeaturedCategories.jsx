@@ -10,8 +10,6 @@ import groomingpick from "../../../assets/groomingpick.jpeg";
 import active from "../../../assets/active.jpeg";
 
 
-
-
 const FeaturedCategories = () => {
 const categories = [
   {
