@@ -30,6 +30,26 @@ export const useShopFilters = (products) => {
     setSearchParams(params, { replace: true });
   }, [filters, setSearchParams]);
 
+  // Sync from URL to filters when URL changes externally
+  useEffect(() => {
+    setFilters(prev => {
+      const newFilters = {
+        category: searchParams.get('category') || null,
+        collection: searchParams.get('collection') || null,
+        minPrice: searchParams.get('minPrice') || null,
+        maxPrice: searchParams.get('maxPrice') || null,
+        rating: searchParams.get('rating') ? Number(searchParams.get('rating')) : null,
+        inStock: searchParams.get('inStock') === 'true',
+        onSale: searchParams.get('onSale') === 'true',
+        sortBy: searchParams.get('sortBy') || 'featured',
+        search: searchParams.get('search') || '',
+      };
+
+      const hasChanges = Object.keys(newFilters).some(key => newFilters[key] !== prev[key]);
+      return hasChanges ? newFilters : prev;
+    });
+  }, [searchParams]);
+
   const updateFilter = (key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
   };
@@ -51,12 +71,12 @@ export const useShopFilters = (products) => {
   const filteredProducts = useMemo(() => {
     return products.filter(product => {
       // Category filter
-      if (filters.category && product.category !== filters.category) {
+      if (filters.category && product.category?.toLowerCase() !== filters.category.toLowerCase()) {
         return false;
       }
 
       // Collection filter (from URL or manual selection)
-      if (filters.collection && product.collection !== filters.collection) {
+      if (filters.collection && product.collection?.toLowerCase() !== filters.collection.toLowerCase()) {
         return false;
       }
 

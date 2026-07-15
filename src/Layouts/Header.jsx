@@ -271,7 +271,7 @@ const SearchBar = memo(({ isOpen, onClose }) => {
                   <>
                     <p className="text-sm text-gray-500 mb-3">Popular Searches</p>
                     <div className="flex flex-wrap gap-2">
-                      {["Running Shoes", "Basketball", "New Arrivals", "Sale"].map((term) => (
+                      {["Aviator Sunglasses", "Basketball", "New Arrivals", "Sale"].map((term) => (
                         <button
                           key={term}
                           type="button"
