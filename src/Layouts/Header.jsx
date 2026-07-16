@@ -14,6 +14,11 @@ import {
   FiArrowRight, FiTrendingUp, FiStar, FiZap, FiGift 
 } from "react-icons/fi";
 import { useCartStore } from "../stores/cart.store";
+import dbData from "../data/db.json";
+
+const getCategoryCount = (subCategory) => {
+  return dbData.products.filter(p => p.subCategory === subCategory).length;
+};
 
 // Enhanced Static Data with more details
 const MEGA_MENU_CATEGORIES = [
@@ -21,11 +26,11 @@ const MEGA_MENU_CATEGORIES = [
     title: "Clothing",
     icon: "👕",
     items: [
-      { name: "T-Shirts", count: 124, trending: true },
-      { name: "Shirts", count: 89 },
-      { name: "Hoodies", count: 67, trending: true },
-      { name: "Jackets", count: 45 },
-      { name: "Jeans", count: 156 },
+      { name: "T-Shirts", count: getCategoryCount("T-Shirts"), trending: true },
+      { name: "Shirts", count: getCategoryCount("Shirts") },
+      { name: "Hoodies", count: getCategoryCount("Hoodies"), trending: true },
+      { name: "Jackets", count: getCategoryCount("Jackets") },
+      { name: "Jeans", count: getCategoryCount("Jeans") },
     ],
     color: "from-blue-500 to-cyan-500",
     accentColor: "blue",
@@ -36,11 +41,11 @@ const MEGA_MENU_CATEGORIES = [
     title: "Footwear",
     icon: "👟",
     items: [
-      { name: "Sneakers", count: 234, trending: true },
-      { name: "Running Shoes", count: 178 },
-      { name: "Boots", count: 89 },
-      { name: "Sandals", count: 56 },
-      { name: "Formal Shoes", count: 112 },
+      { name: "Sneakers", count: getCategoryCount("Sneakers"), trending: true },
+      { name: "Running Shoes", count: getCategoryCount("Running Shoes") },
+      { name: "Boots", count: getCategoryCount("Boots") },
+      { name: "Sandals", count: getCategoryCount("Sandals") },
+      { name: "Formal Shoes", count: getCategoryCount("Formal Shoes") },
     ],
     color: "from-pink-500 to-rose-500",
     accentColor: "pink",
@@ -51,11 +56,11 @@ const MEGA_MENU_CATEGORIES = [
     title: "Accessories",
     icon: "⌚",
     items: [
-      { name: "Bags", count: 78 },
-      { name: "Watches", count: 145, trending: true },
-      { name: "Caps", count: 92 },
-      { name: "Wallets", count: 67 },
-      { name: "Belts", count: 54 },
+      { name: "Bags", count: getCategoryCount("Bags") },
+      { name: "Watches", count: getCategoryCount("Watches"), trending: true },
+      { name: "Caps", count: getCategoryCount("Caps") },
+      { name: "Wallets", count: getCategoryCount("Wallets") },
+      { name: "Belts", count: getCategoryCount("Belts") },
     ],
     color: "from-yellow-500 to-amber-500",
     accentColor: "yellow",
@@ -66,11 +71,11 @@ const MEGA_MENU_CATEGORIES = [
     title: "Grooming",
     icon: "🌿",
     items: [
-      { name: "Perfumes", count: 189, trending: true },
-      { name: "Body Sprays", count: 134 },
-      { name: "Face Wash", count: 78 },
-      { name: "Hair Care", count: 92 },
-      { name: "Shaving Kits", count: 45 },
+      { name: "Perfumes", count: getCategoryCount("Perfumes"), trending: true },
+      { name: "Body Sprays", count: getCategoryCount("Body Sprays") },
+      { name: "Face Wash", count: getCategoryCount("Face Wash") },
+      { name: "Hair Care", count: getCategoryCount("Hair Care") },
+      { name: "Shaving Kits", count: getCategoryCount("Shaving Kits") },
     ],
     color: "from-purple-500 to-violet-500",
     accentColor: "purple",

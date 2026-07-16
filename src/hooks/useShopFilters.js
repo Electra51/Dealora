@@ -7,6 +7,7 @@ export const useShopFilters = (products) => {
   // Initialize filters from URL parameters
   const [filters, setFilters] = useState({
     category: searchParams.get('category') || null,
+    item: searchParams.get('item') || null,
     collection: searchParams.get('collection') || null,
     minPrice: searchParams.get('minPrice') || null,
     maxPrice: searchParams.get('maxPrice') || null,
@@ -35,6 +36,7 @@ export const useShopFilters = (products) => {
     setFilters(prev => {
       const newFilters = {
         category: searchParams.get('category') || null,
+        item: searchParams.get('item') || null,
         collection: searchParams.get('collection') || null,
         minPrice: searchParams.get('minPrice') || null,
         maxPrice: searchParams.get('maxPrice') || null,
@@ -57,6 +59,7 @@ export const useShopFilters = (products) => {
   const clearFilters = () => {
     setFilters({
       category: null,
+      item: null,
       collection: null,
       minPrice: null,
       maxPrice: null,
@@ -72,6 +75,11 @@ export const useShopFilters = (products) => {
     return products.filter(product => {
       // Category filter
       if (filters.category && product.category?.toLowerCase() !== filters.category.toLowerCase()) {
+        return false;
+      }
+
+      // SubCategory (item) filter
+      if (filters.item && product.subCategory?.toLowerCase().replace(/\s+/g, "-") !== filters.item.toLowerCase()) {
         return false;
       }
 
@@ -94,12 +102,12 @@ export const useShopFilters = (products) => {
       }
 
       // Stock filter
-      if (filters.inStock && product.stock <= 0) {
+      if (filters.inStock && product.inventory?.stock <= 0) {
         return false;
       }
 
       // Sale filter
-      if (filters.onSale && (!product.discount || product.discount <= 0)) {
+      if (filters.onSale && (!(product.comparePrice > product.price))) {
         return false;
       }
 
@@ -131,19 +139,25 @@ export const useShopFilters = (products) => {
         return sorted.sort((a, b) => b.rating - a.rating);
       case 'newest':
         return sorted.sort((a, b) => {
-          if (a.newArrival && !b.newArrival) return -1;
-          if (!a.newArrival && b.newArrival) return 1;
+          if (a.flags?.newArrival && !b.flags?.newArrival) return -1;
+          if (!a.flags?.newArrival && b.flags?.newArrival) return 1;
           return 0;
         });
       case 'name-asc':
         return sorted.sort((a, b) => a.name.localeCompare(b.name));
       case 'name-desc':
         return sorted.sort((a, b) => b.name.localeCompare(a.name));
+      case 'discount':
+        return sorted.sort((a, b) => {
+          const discountA = (a.comparePrice > a.price && a.comparePrice > 0) ? Math.round(((a.comparePrice - a.price) / a.comparePrice) * 100) : 0;
+          const discountB = (b.comparePrice > b.price && b.comparePrice > 0) ? Math.round(((b.comparePrice - b.price) / b.comparePrice) * 100) : 0;
+          return discountB - discountA;
+        });
       default:
         // featured - prioritize best sellers and trending
         return sorted.sort((a, b) => {
-          const scoreA = (a.bestSeller ? 2 : 0) + (a.trending ? 1 : 0);
-          const scoreB = (b.bestSeller ? 2 : 0) + (b.trending ? 1 : 0);
+          const scoreA = (a.flags?.bestSeller ? 2 : 0) + (a.flags?.trending ? 1 : 0);
+          const scoreB = (b.flags?.bestSeller ? 2 : 0) + (b.flags?.trending ? 1 : 0);
           return scoreB - scoreA;
         });
     }

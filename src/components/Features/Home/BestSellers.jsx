@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
-
+import { productService } from "../../../services/product.service";
 const BestSellers = ({ handleAddToCart }) => {
   const [bestSellers, setBestSellers] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
+    productService.getBestSellerProducts()
       .then((data) => {
         const sorted = data
-          .filter((p) => p.bestSeller)
           .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
           .slice(0, 4);
         setBestSellers(sorted);
@@ -21,7 +18,6 @@ const BestSellers = ({ handleAddToCart }) => {
         console.error("Error loading products:", err);
         setLoading(false);
       });
-  }, []);
 
   if (loading) {
     return (

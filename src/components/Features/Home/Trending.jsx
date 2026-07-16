@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
-
+import { productService } from "../../../services/product.service";
 const Trending = ({ handleAddToCart }) => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -11,12 +11,9 @@ const Trending = ({ handleAddToCart }) => {
   useEffect(() => {
     const getTrendingProducts = async () => {
       try {
-        const res = await fetch("/products.json");
-        if (!res.ok) throw new Error("Failed to fetch products");
-        const data = await res.json();
+        const data = await productService.getTrendingProducts();
 
         const trending = data
-          .filter((product) => product.trending)
           .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
           .slice(0, 4);
 
@@ -149,9 +146,9 @@ const Trending = ({ handleAddToCart }) => {
                   {selectedProduct.comparePrice > selectedProduct.price && (
                     <span className="text-xl text-gray-500 line-through">${selectedProduct.comparePrice}</span>
                   )}
-                  {selectedProduct.discount > 0 && (
+                  {selectedProduct.comparePrice > selectedProduct.price && (
                     <span className="px-3 py-1.5 bg-red-50 text-red-600 rounded-full text-xs font-bold">
-                      -{selectedProduct.discount}%
+                      -{Math.round(((selectedProduct.comparePrice - selectedProduct.price) / selectedProduct.comparePrice) * 100)}%
                     </span>
                   )}
                 </div>
@@ -161,7 +158,7 @@ const Trending = ({ handleAddToCart }) => {
                     handleAddToCart(selectedProduct);
                     closeQuickView();
                   }}
-                  disabled={selectedProduct.stock === 0}
+                  disabled={selectedProduct.inventory?.stock === 0}
                   className="w-full py-4 bg-linear-to-br from-orange-500 to-orange-600 text-white rounded-full text-base font-bold flex items-center justify-center gap-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
                   Add to Cart

@@ -24,10 +24,10 @@ const ProductCard = memo(({
   // Safety values
   const rating = product.rating || 0;
   const reviewCount = product.reviewCount || 0;
-  const stock = product.stock || 0;
-  const discount = product.discount || 0;
+  const stock = product.inventory?.stock || 0;
   const price = product.price || 0;
   const comparePrice = product.comparePrice || 0;
+  const discount = (comparePrice > price && comparePrice > 0) ? Math.round(((comparePrice - price) / comparePrice) * 100) : 0;
   const shipping = product.shipping || 0;
 
   const handleAddToCart = (e) => {
@@ -116,14 +116,14 @@ const ProductCard = memo(({
     } else if (variant === 'newArrival') {
       badges.push({ text: 'NEW', className: styles.badge });
     } else if (variant === 'bestSeller') {
-      if (product.bestSeller) badges.push({ text: 'Best Seller', className: styles.badge });
-      if (product.newArrival) badges.push({ text: 'New', className: 'bg-gradient-to-r from-cyan-500 to-blue-500' });
-      if (product.trending) badges.push({ text: 'Trending', className: 'bg-gradient-to-r from-pink-500 to-rose-500' });
+      if (product.flags?.bestSeller) badges.push({ text: 'Best Seller', className: styles.badge });
+      if (product.flags?.newArrival) badges.push({ text: 'New', className: 'bg-gradient-to-r from-cyan-500 to-blue-500' });
+      if (product.flags?.trending) badges.push({ text: 'Trending', className: 'bg-gradient-to-r from-pink-500 to-rose-500' });
     } else {
       // Default variant
-      if (product.newArrival) badges.push({ text: 'NEW', className: 'bg-gradient-to-r from-blue-500 to-cyan-500' });
-      if (product.trending) badges.push({ text: 'HOT', className: 'bg-gradient-to-r from-orange-500 to-amber-500' });
-      if (product.bestSeller) badges.push({ text: 'BEST', className: 'bg-gradient-to-r from-purple-500 to-pink-500' });
+      if (product.flags?.newArrival) badges.push({ text: 'NEW', className: 'bg-gradient-to-r from-blue-500 to-cyan-500' });
+      if (product.flags?.trending) badges.push({ text: 'HOT', className: 'bg-gradient-to-r from-orange-500 to-amber-500' });
+      if (product.flags?.bestSeller) badges.push({ text: 'BEST', className: 'bg-gradient-to-r from-purple-500 to-pink-500' });
     }
 
     return badges;

@@ -1,13 +1,15 @@
-import productsData from '../../public/products.json';
+import dbData from '../data/db.json';
+
+const productsData = dbData.products;
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const productService = {
   getProducts: async () => { await delay(600); return productsData; },
-  getTrendingProducts: async () => { await delay(400); return productsData.filter(p => p.trending); },
-  getBestSellerProducts: async () => { await delay(400); return productsData.filter(p => p.bestSeller); },
-  getNewArrivalProducts: async () => { await delay(400); return productsData.filter(p => p.newArrival); },
-  getDeals: async () => { await delay(500); return productsData.filter(p => p.discount > 0); },
+  getTrendingProducts: async () => { await delay(400); return productsData.filter(p => p.flags?.trending); },
+  getBestSellerProducts: async () => { await delay(400); return productsData.filter(p => p.flags?.bestSeller); },
+  getNewArrivalProducts: async () => { await delay(400); return productsData.filter(p => p.flags?.newArrival); },
+  getDeals: async () => { await delay(500); return productsData.filter(p => p.comparePrice > p.price); },
   
   filterProducts: async (filters) => {
     await delay(300);

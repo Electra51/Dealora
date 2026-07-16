@@ -1,21 +1,16 @@
 import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
-
+import { productService } from "../../../services/product.service";
 const NewArrivals = ({ handleAddToCart }) => {
   const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("products.json")
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch products");
-        return res.json();
-      })
+    productService.getNewArrivalProducts()
       .then((data) => {
         const latest = data
-          .filter((p) => p.newArrival)
           .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
           .slice(0, 4);
         setNewArrivals(latest);
