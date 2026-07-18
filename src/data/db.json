@@ -10,7 +10,7 @@
       "brand": "Tom Ford",
       "category": "Clothing",
       "subCategory": "Hoodies",
-      "collection": "WeekendCasual",
+      "collection": "Weekend Casual",
       "gender": "Men",
       "tags": [
         "clothing",
@@ -90,7 +90,7 @@
       "brand": "Tommy Hilfiger",
       "category": "Clothing",
       "subCategory": "Jeans",
-      "collection": "WeekendCasual",
+      "collection": "Weekend Casual",
       "gender": "Unisex",
       "tags": [
         "clothing",
@@ -164,254 +164,254 @@
       ]
     },
     {
-  "id": "n8xv5k2qm",
-  "sku": "CLO-88247",
-  "slug": "premium-fleece-pullover-hoodie",
-  "name": "Premium Fleece Pullover Hoodie",
-  "shortDescription": "Stay warm in style with our Premium Fleece Pullover Hoodie, crafted for everyday comfort and modern streetwear.",
-  "fullDescription": "The Premium Fleece Pullover Hoodie is designed for men who value comfort without compromising on style. Made from a soft cotton-blend fleece fabric, it features a relaxed fit, adjustable drawstring hood, and spacious kangaroo pocket. Whether you're heading out on a weekend trip, meeting friends, or lounging at home, this hoodie delivers warmth, durability, and effortless style.",
-  "brand": "Tom Ford",
-  "category": "Clothing",
-  "subCategory": "Hoodies",
-  "collection": "WeekendCasual",
-  "gender": "Men",
-  "tags": [
-    "hoodie",
-    "streetwear",
-    "weekend",
-    "fleece",
-    "casual"
-  ],
-  "thumbnail": "src/assets/images/hoodie/hoodie3.jpg",
-  "gallery": [
-    "src/assets/images/hoodie/hoodie3.jpg",
-    "src/assets/images/hoodie/hoodie3-side.jpg",
-    "src/assets/images/hoodie/hoodie3-back.jpg",
-    "src/assets/images/hoodie/hoodie3-detail.jpg"
-  ],
-  "price": 72,
-  "comparePrice": 95,
-  "inventory": {
-    "stock": 286,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 3
-  },
-  "rating": 4.8,
-  "reviewCount": 217,
-  "soldCount": 1846,
-  "colors": [
-    "Black",
-    "Grey",
-    "Beige"
-  ],
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "2 - 4 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": true,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2026-04-12T09:45:00.000Z",
-  "updatedAt": "2026-07-10T15:20:00.000Z",
-  "relatedProducts": [
-    "bs134xkg4",
-    "5a2t3wbu3",
-    "lwkkc2md6",
-    "q8pwh2vrh"
-  ],
-  "recommendedProducts": [
-    "yrtsek60s",
-    "371jvciy1",
-    "loca0hz7i",
-    "y0f2nzg9b"
-  ],
-  "frequentlyBoughtTogether": [
-    "es4yoohd9",
-    "h3wxwhlej",
-    "73bqub42x"
-  ]
-},
-{
-  "id": "jkt4n9xp2",
-  "sku": "CLO-41382",
-  "slug": "puma-lightweight-training-jacket",
-  "name": "Puma Lightweight Training Jacket",
-  "shortDescription": "A lightweight performance jacket built for outdoor training, travel, and everyday active wear.",
-  "fullDescription": "The Puma Lightweight Training Jacket combines breathable comfort with weather-resistant protection. Designed for active lifestyles, it features a lightweight shell, zippered pockets, and a modern athletic fit that keeps you comfortable during workouts, running sessions, or casual outdoor activities. Its minimalist design makes it easy to pair with joggers or jeans for a sporty everyday look.",
-  "brand": "Puma",
-  "category": "Clothing",
-  "subCategory": "Jackets",
-  "collection": "ActiveLifestyle",
-  "gender": "Men",
-  "tags": [
-    "puma",
-    "training",
-    "running",
-    "sportswear",
-    "lightweight"
-  ],
-  "thumbnail": "src/assets/images/jackets/jacket4.png",
-  "gallery": [
-    "src/assets/images/jackets/jacket4.png",
-    "src/assets/images/jackets/jacket4-side.png",
-    "src/assets/images/jackets/jacket4-back.png",
-    "src/assets/images/jackets/jacket4-detail.png"
-  ],
-  "price": 110,
-  "comparePrice": 145,
-  "inventory": {
-    "stock": 92,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 3
-  },
-  "rating": 4.8,
-  "reviewCount": 286,
-  "soldCount": 2149,
-  "colors": [
-    "Black",
-    "Grey",
-    "Navy"
-  ],
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "2 - 4 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": false,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2026-02-18T08:15:00.000Z",
-  "updatedAt": "2026-07-10T10:45:00.000Z",
-  "relatedProducts": [
-    "mgumlt0ef",
-    "kfmbqbzuc",
-    "lllqb3e6v",
-    "bgb6bl77s"
-  ],
-  "recommendedProducts": [
-    "yrtsek60s",
-    "73bqub42x",
-    "bs134xkg4",
-    "371jvciy1"
-  ],
-  "frequentlyBoughtTogether": [
-    "gkt3ndo5l",
-    "p2784ody8",
-    "es4yoohd9"
-  ]
-},
-{
-  "id": "jkt5w8c6m",
-  "sku": "CLO-41765",
-  "slug": "puma-performance-track-jacket",
-  "name": "Puma Performance Track Jacket",
-  "shortDescription": "Premium performance track jacket engineered for workouts, travel, and everyday comfort.",
-  "fullDescription": "Stay prepared in changing weather with the Puma Performance Track Jacket. Crafted with durable, lightweight fabric and moisture-management technology, it delivers exceptional comfort during training sessions or daily commutes. Featuring secure zip pockets, stretch cuffs, and a streamlined athletic silhouette, it's an essential layer for every active wardrobe.",
-  "brand": "Puma",
-  "category": "Clothing",
-  "subCategory": "Jackets",
-  "collection": "ActiveLifestyle",
-  "gender": "Men",
-  "tags": [
-    "track jacket",
-    "gym",
-    "running",
-    "puma",
-    "active"
-  ],
-  "thumbnail": "src/assets/images/jackets/jacket5.png",
-  "gallery": [
-    "src/assets/images/jackets/jacket5.png",
-    "src/assets/images/jackets/jacket5-side.png",
-    "src/assets/images/jackets/jacket5-back.png",
-    "src/assets/images/jackets/jacket5-detail.png"
-  ],
-  "price": 120,
-  "comparePrice": 155,
-  "inventory": {
-    "stock": 67,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 2
-  },
-  "rating": 4.9,
-  "reviewCount": 418,
-  "soldCount": 2986,
-  "colors": [
-    "Black",
-    "White",
-    "Olive"
-  ],
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "1 - 3 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": true,
-    "bestSeller": true,
-    "isLimitedEdition": true,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2026-05-12T11:20:00.000Z",
-  "updatedAt": "2026-07-15T09:10:00.000Z",
-  "relatedProducts": [
-    "mgumlt0ef",
-    "jkt4n9xp2",
-    "lllqb3e6v",
-    "bgb6bl77s"
-  ],
-  "recommendedProducts": [
-    "yrtsek60s",
-    "bs134xkg4",
-    "371jvciy1",
-    "73bqub42x"
-  ],
-  "frequentlyBoughtTogether": [
-    "gkt3ndo5l",
-    "p2784ody8",
-    "es4yoohd9"
-  ]
-},
+      "id": "n8xv5k2qm",
+      "sku": "CLO-88247",
+      "slug": "premium-fleece-pullover-hoodie",
+      "name": "Premium Fleece Pullover Hoodie",
+      "shortDescription": "Stay warm in style with our Premium Fleece Pullover Hoodie, crafted for everyday comfort and modern streetwear.",
+      "fullDescription": "The Premium Fleece Pullover Hoodie is designed for men who value comfort without compromising on style. Made from a soft cotton-blend fleece fabric, it features a relaxed fit, adjustable drawstring hood, and spacious kangaroo pocket. Whether you're heading out on a weekend trip, meeting friends, or lounging at home, this hoodie delivers warmth, durability, and effortless style.",
+      "brand": "Tom Ford",
+      "category": "Clothing",
+      "subCategory": "Hoodies",
+      "collection": "Weekend Casual",
+      "gender": "Men",
+      "tags": [
+        "hoodie",
+        "streetwear",
+        "weekend",
+        "fleece",
+        "casual"
+      ],
+      "thumbnail": "src/assets/images/hoodie/hoodie3.jpg",
+      "gallery": [
+        "src/assets/images/hoodie/hoodie3.jpg",
+        "src/assets/images/hoodie/hoodie3-side.jpg",
+        "src/assets/images/hoodie/hoodie3-back.jpg",
+        "src/assets/images/hoodie/hoodie3-detail.jpg"
+      ],
+      "price": 72,
+      "comparePrice": 95,
+      "inventory": {
+        "stock": 286,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 3
+      },
+      "rating": 4.8,
+      "reviewCount": 217,
+      "soldCount": 1846,
+      "colors": [
+        "Black",
+        "Grey",
+        "Beige"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "2 - 4 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": true,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2026-04-12T09:45:00.000Z",
+      "updatedAt": "2026-07-10T15:20:00.000Z",
+      "relatedProducts": [
+        "bs134xkg4",
+        "5a2t3wbu3",
+        "lwkkc2md6",
+        "q8pwh2vrh"
+      ],
+      "recommendedProducts": [
+        "yrtsek60s",
+        "371jvciy1",
+        "loca0hz7i",
+        "y0f2nzg9b"
+      ],
+      "frequentlyBoughtTogether": [
+        "es4yoohd9",
+        "h3wxwhlej",
+        "73bqub42x"
+      ]
+    },
+    {
+      "id": "jkt4n9xp2",
+      "sku": "CLO-41382",
+      "slug": "puma-lightweight-training-jacket",
+      "name": "Puma Lightweight Training Jacket",
+      "shortDescription": "A lightweight performance jacket built for outdoor training, travel, and everyday active wear.",
+      "fullDescription": "The Puma Lightweight Training Jacket combines breathable comfort with weather-resistant protection. Designed for active lifestyles, it features a lightweight shell, zippered pockets, and a modern athletic fit that keeps you comfortable during workouts, running sessions, or casual outdoor activities. Its minimalist design makes it easy to pair with joggers or jeans for a sporty everyday look.",
+      "brand": "Puma",
+      "category": "Clothing",
+      "subCategory": "Jackets",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "tags": [
+        "puma",
+        "training",
+        "running",
+        "sportswear",
+        "lightweight"
+      ],
+      "thumbnail": "src/assets/images/jackets/jacket4.png",
+      "gallery": [
+        "src/assets/images/jackets/jacket4.png",
+        "src/assets/images/jackets/jacket4-side.png",
+        "src/assets/images/jackets/jacket4-back.png",
+        "src/assets/images/jackets/jacket4-detail.png"
+      ],
+      "price": 110,
+      "comparePrice": 145,
+      "inventory": {
+        "stock": 92,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 3
+      },
+      "rating": 4.8,
+      "reviewCount": 286,
+      "soldCount": 2149,
+      "colors": [
+        "Black",
+        "Grey",
+        "Navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "2 - 4 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": false,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2026-02-18T08:15:00.000Z",
+      "updatedAt": "2026-07-10T10:45:00.000Z",
+      "relatedProducts": [
+        "mgumlt0ef",
+        "kfmbqbzuc",
+        "lllqb3e6v",
+        "bgb6bl77s"
+      ],
+      "recommendedProducts": [
+        "yrtsek60s",
+        "73bqub42x",
+        "bs134xkg4",
+        "371jvciy1"
+      ],
+      "frequentlyBoughtTogether": [
+        "gkt3ndo5l",
+        "p2784ody8",
+        "es4yoohd9"
+      ]
+    },
+    {
+      "id": "jkt5w8c6m",
+      "sku": "CLO-41765",
+      "slug": "puma-performance-track-jacket",
+      "name": "Puma Performance Track Jacket",
+      "shortDescription": "Premium performance track jacket engineered for workouts, travel, and everyday comfort.",
+      "fullDescription": "Stay prepared in changing weather with the Puma Performance Track Jacket. Crafted with durable, lightweight fabric and moisture-management technology, it delivers exceptional comfort during training sessions or daily commutes. Featuring secure zip pockets, stretch cuffs, and a streamlined athletic silhouette, it's an essential layer for every active wardrobe.",
+      "brand": "Puma",
+      "category": "Clothing",
+      "subCategory": "Jackets",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "tags": [
+        "track jacket",
+        "gym",
+        "running",
+        "puma",
+        "active"
+      ],
+      "thumbnail": "src/assets/images/jackets/jacket5.png",
+      "gallery": [
+        "src/assets/images/jackets/jacket5.png",
+        "src/assets/images/jackets/jacket5-side.png",
+        "src/assets/images/jackets/jacket5-back.png",
+        "src/assets/images/jackets/jacket5-detail.png"
+      ],
+      "price": 120,
+      "comparePrice": 155,
+      "inventory": {
+        "stock": 67,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 2
+      },
+      "rating": 4.9,
+      "reviewCount": 418,
+      "soldCount": 2986,
+      "colors": [
+        "Black",
+        "White",
+        "Olive"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "1 - 3 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": true,
+        "bestSeller": true,
+        "isLimitedEdition": true,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2026-05-12T11:20:00.000Z",
+      "updatedAt": "2026-07-15T09:10:00.000Z",
+      "relatedProducts": [
+        "mgumlt0ef",
+        "jkt4n9xp2",
+        "lllqb3e6v",
+        "bgb6bl77s"
+      ],
+      "recommendedProducts": [
+        "yrtsek60s",
+        "bs134xkg4",
+        "371jvciy1",
+        "73bqub42x"
+      ],
+      "frequentlyBoughtTogether": [
+        "gkt3ndo5l",
+        "p2784ody8",
+        "es4yoohd9"
+      ]
+    },
     {
       "id": "9nrv3s1w6",
       "sku": "FOO-25066",
@@ -422,7 +422,7 @@
       "brand": "Adidas",
       "category": "Footwear",
       "subCategory": "Sneakers",
-      "collection": "WeekendCasual",
+      "collection": "Weekend Casual",
       "gender": "Men",
       "tags": [
         "footwear",
@@ -504,7 +504,7 @@
       "brand": "Aesop",
       "category": "Clothing",
       "subCategory": "Jackets",
-      "collection": "WeekendCasual",
+      "collection": "Weekend Casual",
       "gender": "Men",
       "tags": [
         "clothing",
@@ -582,7 +582,7 @@
       "brand": "Nike",
       "category": "Clothing",
       "subCategory": "T-Shirts",
-      "collection": "WeekendCasual",
+      "collection": "Weekend Casual",
       "gender": "Men",
       "tags": [
         "clothing",
@@ -743,7 +743,7 @@
       "brand": "Calvin Klein",
       "category": "Clothing",
       "subCategory": "Jeans",
-      "collection": "OfficeReady",
+      "collection": "Office Ready",
       "gender": "Unisex",
       "tags": [
         "clothing",
@@ -816,172 +816,442 @@
         "yrtsek60s"
       ]
     },
-    
     {
-  "id": "v92nk8qdf",
-  "sku": "CLO-60891",
-  "slug": "richman-slim-fit-formal-shirt",
-  "name": "Richman Slim Fit Formal Shirt",
-  "shortDescription": "A premium slim-fit formal shirt designed for professionals who value comfort, elegance, and confidence.",
-  "fullDescription": "Upgrade your workwear with the Richman Slim Fit Formal Shirt. Tailored from premium cotton-blend fabric, this shirt offers a modern slim fit with breathable comfort for all-day wear. Perfect for office meetings, business events, or formal occasions, it combines timeless style with everyday functionality. Pair it effortlessly with dress pants or chinos for a polished professional look.",
-  "brand": "Richman",
-  "category": "Clothing",
-  "subCategory": "Shirts",
-  "collection": "OfficeReady",
-  "gender": "Men",
-  "tags": [
-    "richman",
-    "formal",
-    "office",
-    "slim-fit",
-    "business"
-  ],
-  "thumbnail": "src/assets/images/shirt/richman-shirt-2.png",
-  "gallery": [
-    "src/assets/images/shirt/richman-shirt-2.png",
-    "src/assets/images/shirt/richman-shirt-2-side.png",
-    "src/assets/images/shirt/richman-shirt-2-back.png",
-    "src/assets/images/shirt/richman-shirt-2-detail.png"
-  ],
-  "price": 52,
-  "comparePrice": 72,
-  "inventory": {
-    "stock": 128,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 3
-  },
-  "rating": 4.7,
-  "reviewCount": 186,
-  "soldCount": 1425,
-  "colors": [
-    "White",
-    "Sky Blue",
-    "Navy"
-  ],
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "2 - 5 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": false,
-    "newArrival": true,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2026-02-18T09:20:00.000Z",
-  "updatedAt": "2026-07-15T14:45:00.000Z",
-  "relatedProducts": [
-    "k47kn74xt",
-    "5a2t3wbu3",
-    "h3wxwhlej",
-    "loca0hz7i"
-  ],
-  "recommendedProducts": [
-    "yrtsek60s",
-    "sugybl7cq",
-    "bs134xkg4",
-    "73bqub42x"
-  ],
-  "frequentlyBoughtTogether": [
-    "bs134xkg4",
-    "kfmbqbzuc",
-    "371jvciy1"
-  ]
-},
-{
-  "id": "f8m2qz7kp",
-  "sku": "FOO-25067",
-  "slug": "urban-leather-sneakers",
-  "name": "Urban Leather Sneakers",
-  "shortDescription": "Premium leather sneakers crafted for everyday comfort and modern street style.",
-  "fullDescription": "The Urban Leather Sneakers combines premium craftsmanship with lightweight comfort. Featuring a durable leather upper, cushioned insole, and non-slip rubber outsole, it's perfect for casual outings, office wear, and weekend adventures.",
-  "brand": "Nike",
-  "category": "Footwear",
-  "subCategory": "Sneakers",
-  "collection": "Office Ready",
-  "gender": "Men",
-  "tags": [
-    "footwear",
-    "leather",
-    "urban",
-    "premium",
-    "trending"
-  ],
-  "thumbnail": "src/assets/images/sneakers/sneakar2.png",
-  "gallery": [
-    "src/assets/images/sneakers/sneaker2-1.png",
-    "src/assets/images/sneakers/sneaker2-2.png",
-    "src/assets/images/sneakers/sneaker2-3.png",
-    "src/assets/images/sneakers/sneaker2-4.png"
-  ],
-  "price": 65,
-  "comparePrice": 85,
-  "inventory": {
-    "stock": 184,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 2
-  },
-  "rating": 4.8,
-  "reviewCount": 287,
-  "soldCount": 521,
-  "colors": [
-    "Black",
-    "Brown"
-  ],
-  "sizes": [
-    "8",
-    "9",
-    "10",
-    "11",
-    "12"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "3 - 5 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": false,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2024-02-10T09:30:00.000Z",
-  "updatedAt": "2025-05-22T14:20:00.000Z",
-  "relatedProducts": [
-    "9nrv3s1w6",
-    "lllqb3e6v",
-    "hqzj9oqna",
-    "h3wxwhlej"
-  ],
-  "recommendedProducts": [
-    "p2784ody8",
-    "k47kn74xt",
-    "y0f2nzg9b",
-    "p7ge29rk8"
-  ],
-  "frequentlyBoughtTogether": [
-    "q8pwh2vrh",
-    "p0brps0ln",
-    "k47kn74xt"
-  ]
-},
+      "id": "boots001",
+      "sku": "BOOT-1001",
+      "slug": "classic-leather-boots",
+      "name": "Classic Leather Boots",
+      "brand": "Timberland",
+      "category": "Footwear",
+      "subCategory": "Boots",
+      "collection": "Weekend Casual",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/boots/boots1.png",
+      "gallery": [
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png"
+      ],
+      "price": 160,
+      "comparePrice": 190,
+      "rating": 5,
+      "reviewCount": 78,
+      "soldCount": 340,
+      "inventory": {
+        "stock": 90,
+        "inStock": true
+      }
+    },
+    {
+      "id": "boots002",
+      "sku": "BOOT-1002",
+      "slug": "urban-hiking-boots",
+      "name": "Urban Hiking Boots",
+      "brand": "Columbia",
+      "category": "Footwear",
+      "subCategory": "Boots",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/boots/boots2.png",
+      "gallery": [
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots2.png"
+      ],
+      "price": 175,
+      "comparePrice": 210,
+      "rating": 4.8,
+      "reviewCount": 62,
+      "soldCount": 298,
+      "inventory": {
+        "stock": 75,
+        "inStock": true
+      }
+    },
+    {
+      "id": "boots003",
+      "sku": "BOOT-1003",
+      "slug": "mountain-trek-boots",
+      "name": "Mountain Trek Boots",
+      "brand": "Merrell",
+      "category": "Footwear",
+      "subCategory": "Boots",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/boots/boots3.png",
+      "gallery": [
+        "src/assets/images/boots/boots3.png",
+        "src/assets/images/boots/boots1.png",
+        "src/assets/images/boots/boots2.png",
+        "src/assets/images/boots/boots3.png"
+      ],
+      "price": 185,
+      "comparePrice": 220,
+      "rating": 4.9,
+      "reviewCount": 91,
+      "soldCount": 512,
+      "inventory": {
+        "stock": 45,
+        "inStock": true
+      }
+    },
+    {
+      "id": "sandals001",
+      "sku": "SAND-2001",
+      "slug": "comfort-casual-sandals",
+      "name": "Comfort Casual Sandals",
+      "brand": "Birkenstock",
+      "category": "Footwear",
+      "subCategory": "Sandals",
+      "collection": "Weekend Casual",
+      "gender": "Unisex",
+      "thumbnail": "src/assets/images/sandals/sandals1.png",
+      "gallery": [
+        "src/assets/images/sandals/sandals1.png",
+        "src/assets/images/sandals/sandals2.png",
+        "src/assets/images/sandals/sandals3.png",
+        "src/assets/images/sandals/sandals4.png"
+      ],
+      "price": 70,
+      "comparePrice": 90,
+      "rating": 4.8,
+      "reviewCount": 123,
+      "soldCount": 860,
+      "inventory": {
+        "stock": 180,
+        "inStock": true
+      }
+    },
+    {
+      "id": "sandals002",
+      "sku": "SAND-2002",
+      "slug": "summer-beach-sandals",
+      "name": "Summer Beach Sandals",
+      "brand": "Crocs",
+      "category": "Footwear",
+      "subCategory": "Sandals",
+      "collection": "Weekend Casual",
+      "gender": "Unisex",
+      "thumbnail": "src/assets/images/sandals/sandals2.png",
+      "gallery": [
+        "src/assets/images/sandals/sandals2.png",
+        "src/assets/images/sandals/sandals1.png",
+        "src/assets/images/sandals/sandals3.png",
+        "src/assets/images/sandals/sandals4.png"
+      ],
+      "price": 65,
+      "comparePrice": 80,
+      "rating": 4.6,
+      "reviewCount": 84,
+      "soldCount": 645,
+      "inventory": {
+        "stock": 130,
+        "inStock": true
+      }
+    },
+    {
+      "id": "sandals003",
+      "sku": "SAND-2003",
+      "slug": "premium-sports-sandals",
+      "name": "Premium Sports Sandals",
+      "brand": "Teva",
+      "category": "Footwear",
+      "subCategory": "Sandals",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/sandals/sandals3.png",
+      "gallery": [
+        "src/assets/images/sandals/sandals3.png",
+        "src/assets/images/sandals/sandals1.png",
+        "src/assets/images/sandals/sandals2.png",
+        "src/assets/images/sandals/sandals4.png"
+      ],
+      "price": 88,
+      "comparePrice": 110,
+      "rating": 4.9,
+      "reviewCount": 92,
+      "soldCount": 534,
+      "inventory": {
+        "stock": 95,
+        "inStock": true
+      }
+    },
+    {
+      "id": "sandals004",
+      "sku": "SAND-2004",
+      "slug": "everyday-slide-sandals",
+      "name": "Everyday Slide Sandals",
+      "brand": "Adidas",
+      "category": "Footwear",
+      "subCategory": "Sandals",
+      "collection": "Weekend Casual",
+      "gender": "Unisex",
+      "thumbnail": "src/assets/images/sandals/sandals4.png",
+      "gallery": [
+        "src/assets/images/sandals/sandals4.png",
+        "src/assets/images/sandals/sandals1.png",
+        "src/assets/images/sandals/sandals2.png",
+        "src/assets/images/sandals/sandals3.png"
+      ],
+      "price": 55,
+      "comparePrice": 75,
+      "rating": 4.5,
+      "reviewCount": 67,
+      "soldCount": 710,
+      "inventory": {
+        "stock": 155,
+        "inStock": true
+      }
+    },
+    {
+      "id": "formal001",
+      "sku": "FORM-3001",
+      "slug": "executive-leather-oxford",
+      "name": "Executive Leather Oxford",
+      "brand": "Clarks",
+      "category": "Footwear",
+      "subCategory": "Formal Shoes",
+      "collection": "Office Ready",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe1.png",
+      "gallery": [
+        "src/assets/images/formal-shoe/formal1.png",
+        "src/assets/images/formal-shoe/formal2.png",
+        "src/assets/images/formal-shoe/formal3.png",
+        "src/assets/images/formal-shoe/formal4.png"
+      ],
+      "price": 140,
+      "comparePrice": 175,
+      "rating": 4.9,
+      "reviewCount": 88,
+      "soldCount": 390,
+      "inventory": {
+        "stock": 80,
+        "inStock": true
+      }
+    },
+    {
+      "id": "formal002",
+      "sku": "FORM-3002",
+      "slug": "premium-office-derby",
+      "name": "Premium Office Derby",
+      "brand": "ECCO",
+      "category": "Footwear",
+      "subCategory": "Formal Shoes",
+      "collection": "Office Ready",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe2.png",
+      "gallery": [
+        "src/assets/images/formal-shoes/formal2.png",
+        "src/assets/images/formal-shoes/formal1.png",
+        "src/assets/images/formal-shoes/formal3.png",
+        "src/assets/images/formal-shoes/formal4.png"
+      ],
+      "price": 155,
+      "comparePrice": 190,
+      "rating": 4.8,
+      "reviewCount": 72,
+      "soldCount": 288,
+      "inventory": {
+        "stock": 60,
+        "inStock": true
+      }
+    },
+  
+    {
+      "id": "formal004",
+      "sku": "FORM-3004",
+      "slug": "signature-dress-shoes",
+      "name": "Signature Dress Shoes",
+      "brand": "Johnston & Murphy",
+      "category": "Footwear",
+      "subCategory": "Formal Shoes",
+      "collection": "Office Ready",
+      "gender": "Men",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe3.png",
+      "gallery": [
+        "src/assets/images/formal-shoes/formal4.png",
+        "src/assets/images/formal-shoes/formal1.png",
+        "src/assets/images/formal-shoes/formal2.png",
+        "src/assets/images/formal-shoes/formal3.png"
+      ],
+      "price": 180,
+      "comparePrice": 220,
+      "rating": 5,
+      "reviewCount": 97,
+      "soldCount": 421,
+      "inventory": {
+        "stock": 48,
+        "inStock": true
+      }
+    },
+    {
+      "id": "v92nk8qdf",
+      "sku": "CLO-60891",
+      "slug": "richman-slim-fit-formal-shirt",
+      "name": "Richman Slim Fit Formal Shirt",
+      "shortDescription": "A premium slim-fit formal shirt designed for professionals who value comfort, elegance, and confidence.",
+      "fullDescription": "Upgrade your workwear with the Richman Slim Fit Formal Shirt. Tailored from premium cotton-blend fabric, this shirt offers a modern slim fit with breathable comfort for all-day wear. Perfect for office meetings, business events, or formal occasions, it combines timeless style with everyday functionality. Pair it effortlessly with dress pants or chinos for a polished professional look.",
+      "brand": "Richman",
+      "category": "Clothing",
+      "subCategory": "Shirts",
+      "collection": "Office Ready",
+      "gender": "Men",
+      "tags": [
+        "richman",
+        "formal",
+        "office",
+        "slim-fit",
+        "business"
+      ],
+      "thumbnail": "src/assets/images/shirt/richman-shirt-2.png",
+      "gallery": [
+        "src/assets/images/shirt/richman-shirt-2.png",
+        "src/assets/images/shirt/richman-shirt-2-side.png",
+        "src/assets/images/shirt/richman-shirt-2-back.png",
+        "src/assets/images/shirt/richman-shirt-2-detail.png"
+      ],
+      "price": 52,
+      "comparePrice": 72,
+      "inventory": {
+        "stock": 128,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 3
+      },
+      "rating": 4.7,
+      "reviewCount": 186,
+      "soldCount": 1425,
+      "colors": [
+        "White",
+        "Sky Blue",
+        "Navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "2 - 5 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": false,
+        "newArrival": true,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2026-02-18T09:20:00.000Z",
+      "updatedAt": "2026-07-15T14:45:00.000Z",
+      "relatedProducts": [
+        "k47kn74xt",
+        "5a2t3wbu3",
+        "h3wxwhlej",
+        "loca0hz7i"
+      ],
+      "recommendedProducts": [
+        "yrtsek60s",
+        "sugybl7cq",
+        "bs134xkg4",
+        "73bqub42x"
+      ],
+      "frequentlyBoughtTogether": [
+        "bs134xkg4",
+        "kfmbqbzuc",
+        "371jvciy1"
+      ]
+    },
+    {
+      "id": "f8m2qz7kp",
+      "sku": "FOO-25067",
+      "slug": "urban-leather-sneakers",
+      "name": "Urban Leather Sneakers",
+      "shortDescription": "Premium leather sneakers crafted for everyday comfort and modern street style.",
+      "fullDescription": "The Urban Leather Sneakers combines premium craftsmanship with lightweight comfort. Featuring a durable leather upper, cushioned insole, and non-slip rubber outsole, it's perfect for casual outings, office wear, and weekend adventures.",
+      "brand": "Nike",
+      "category": "Footwear",
+      "subCategory": "Sneakers",
+      "collection": "Office Ready",
+      "gender": "Men",
+      "tags": [
+        "footwear",
+        "leather",
+        "urban",
+        "premium",
+        "trending"
+      ],
+      "thumbnail": "src/assets/images/sneakers/sneakar2.png",
+      "gallery": [
+        "src/assets/images/sneakers/sneaker2-1.png",
+        "src/assets/images/sneakers/sneaker2-2.png",
+        "src/assets/images/sneakers/sneaker2-3.png",
+        "src/assets/images/sneakers/sneaker2-4.png"
+      ],
+      "price": 65,
+      "comparePrice": 85,
+      "inventory": {
+        "stock": 184,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 2
+      },
+      "rating": 4.8,
+      "reviewCount": 287,
+      "soldCount": 521,
+      "colors": [
+        "Black",
+        "Brown"
+      ],
+      "sizes": [
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "3 - 5 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": false,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2024-02-10T09:30:00.000Z",
+      "updatedAt": "2025-05-22T14:20:00.000Z",
+      "relatedProducts": [
+        "9nrv3s1w6",
+        "lllqb3e6v",
+        "hqzj9oqna",
+        "h3wxwhlej"
+      ],
+      "recommendedProducts": [
+        "p2784ody8",
+        "k47kn74xt",
+        "y0f2nzg9b",
+        "p7ge29rk8"
+      ],
+      "frequentlyBoughtTogether": [
+        "q8pwh2vrh",
+        "p0brps0ln",
+        "k47kn74xt"
+      ]
+    },
     {
       "id": "h3wxwhlej",
       "sku": "FOO-68038",
@@ -1065,89 +1335,89 @@
       ]
     },
     {
-  "id": "v3x9jd8lw",
-  "sku": "FOO-25068",
-  "slug": "performance-running-shoes",
-  "name": "Performance Running Shoes",
-  "shortDescription": "Lightweight running shoes engineered for speed, stability, and all-day comfort.",
-  "fullDescription": "Built for athletes and active lifestyles, the Performance Running Shoes features breathable mesh fabric, responsive cushioning, and enhanced grip for maximum performance. Whether you're training or walking, it delivers superior comfort and durability.",
-  "brand": "Puma",
-  "category": "Footwear",
-  "subCategory": "Sneakers",
-  "collection": "ActiveLifestyle",
-  "gender": "Men",
-  "tags": [
-    "running",
-    "sports",
-    "active",
-    "lightweight",
-    "best-seller"
-  ],
-  "thumbnail": "src/assets/images/sneakers/sneakar3.png",
-  "gallery": [
-    "src/assets/images/sneakers/sneaker3-1.png",
-    "src/assets/images/sneakers/sneaker3-2.png",
-    "src/assets/images/sneakers/sneaker3-3.png",
-    "src/assets/images/sneakers/sneaker3-4.png"
-  ],
-  "price": 72,
-  "comparePrice": 95,
-  "inventory": {
-    "stock": 143,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 3
-  },
-  "rating": 4.9,
-  "reviewCount": 413,
-  "soldCount": 798,
-  "colors": [
-    "White",
-    "Blue",
-    "Gray"
-  ],
-  "sizes": [
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "4 - 6 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": true,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2024-06-15T12:45:00.000Z",
-  "updatedAt": "2025-06-10T11:10:00.000Z",
-  "relatedProducts": [
-    "9nrv3s1w6",
-    "f8m2qz7kp",
-    "hqzj9oqna",
-    "h3wxwhlej"
-  ],
-  "recommendedProducts": [
-    "y0f2nzg9b",
-    "p7ge29rk8",
-    "k47kn74xt",
-    "lllqb3e6v"
-  ],
-  "frequentlyBoughtTogether": [
-    "q8pwh2vrh",
-    "p0brps0ln",
-    "k47kn74xt"
-  ]
-},
+      "id": "v3x9jd8lw",
+      "sku": "FOO-25068",
+      "slug": "performance-running-shoes",
+      "name": "Performance Running Shoes",
+      "shortDescription": "Lightweight running shoes engineered for speed, stability, and all-day comfort.",
+      "fullDescription": "Built for athletes and active lifestyles, the Performance Running Shoes features breathable mesh fabric, responsive cushioning, and enhanced grip for maximum performance. Whether you're training or walking, it delivers superior comfort and durability.",
+      "brand": "Puma",
+      "category": "Footwear",
+      "subCategory": "Running Shoes",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "tags": [
+        "running",
+        "sports",
+        "active",
+        "lightweight",
+        "best-seller"
+      ],
+      "thumbnail": "src/assets/images/running/running2.png",
+      "gallery": [
+        "src/assets/images/sneakers/sneaker3-1.png",
+        "src/assets/images/sneakers/sneaker3-2.png",
+        "src/assets/images/sneakers/sneaker3-3.png",
+        "src/assets/images/sneakers/sneaker3-4.png"
+      ],
+      "price": 72,
+      "comparePrice": 95,
+      "inventory": {
+        "stock": 143,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 3
+      },
+      "rating": 4.9,
+      "reviewCount": 413,
+      "soldCount": 798,
+      "colors": [
+        "White",
+        "Blue",
+        "Gray"
+      ],
+      "sizes": [
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "4 - 6 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": true,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2024-06-15T12:45:00.000Z",
+      "updatedAt": "2025-06-10T11:10:00.000Z",
+      "relatedProducts": [
+        "9nrv3s1w6",
+        "f8m2qz7kp",
+        "hqzj9oqna",
+        "h3wxwhlej"
+      ],
+      "recommendedProducts": [
+        "y0f2nzg9b",
+        "p7ge29rk8",
+        "k47kn74xt",
+        "lllqb3e6v"
+      ],
+      "frequentlyBoughtTogether": [
+        "q8pwh2vrh",
+        "p0brps0ln",
+        "k47kn74xt"
+      ]
+    },
     {
       "id": "pbby4trav",
       "sku": "ACC-82423",
@@ -1551,85 +1821,6 @@
       ]
     },
     {
-      "id": "hqzj9oqna",
-      "sku": "FOO-47231",
-      "slug": "matte-black-chelsea-boots",
-      "name": "Matte Black Chelsea Boots",
-      "shortDescription": "Experience the best of Black Edition with our Matte Black Chelsea Boots. Designed for quality and comfort.",
-      "fullDescription": "The Matte Black Chelsea Boots is a premium product from our Black Edition collection. Crafted with the finest materials to ensure durability and style. Perfect for any occasion, it seamlessly blends functionality with modern aesthetics. Available in various sizes and colors to match your personal preference. Add this essential piece to your collection today.",
-      "brand": "The Ordinary",
-      "category": "Footwear",
-      "subCategory": "Boots",
-      "collection": "Black Edition",
-      "gender": "Men",
-      "tags": [
-        "footwear",
-        "boots",
-        "black-edition",
-        "premium",
-        "new"
-      ],
-      "thumbnail": "src/assets/active.jpeg",
-      "gallery": [
-        "src/assets/active.jpeg",
-        "src/assets/active.jpeg",
-        "src/assets/active.jpeg",
-        "src/assets/active.jpeg"
-      ],
-      "price": 135,
-      "comparePrice": 180,
-      "inventory": {
-        "stock": 7,
-        "lowStock": true,
-        "inStock": true,
-        "preorder": false,
-        "shippingDays": 3
-      },
-      "rating": 4,
-      "reviewCount": 88,
-      "soldCount": 889,
-      "colors": [],
-      "sizes": [
-        "8",
-        "9",
-        "10",
-        "11",
-        "12"
-      ],
-      "shipping": {
-        "freeShipping": false,
-        "cost": 0
-      },
-      "estimatedDelivery": "3 - 6 Business Days",
-      "flags": {
-        "featured": false,
-        "trending": true,
-        "newArrival": false,
-        "bestSeller": true,
-        "isLimitedEdition": false,
-        "isFeaturedCollection": true
-      },
-      "createdAt": "2025-05-23T21:54:02.273Z",
-      "updatedAt": "2025-08-24T19:25:09.458Z",
-      "relatedProducts": [
-        "5a2t3wbu3",
-        "es4yoohd9",
-        "pbbq8txdn",
-        "y0f2nzg9b"
-      ],
-      "recommendedProducts": [
-        "p2784ody8",
-        "sugybl7cq",
-        "k47kn74xt",
-        "bs134xkg4"
-      ],
-      "frequentlyBoughtTogether": [
-        "bs134xkg4",
-        "73bqub42x",
-        "bgb6bl77s"
-      ]
-    },
-    {
       "id": "pbbq8txdn",
       "sku": "ACC-73233",
       "slug": "black-baseball-cap",
@@ -1809,7 +2000,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/active.jpeg",
+      "thumbnail": "src/assets/images/sandals/sandals5.png",
       "gallery": [
         "src/assets/active.jpeg",
         "src/assets/active.jpeg",
@@ -1888,7 +2079,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/active.jpeg",
+      "thumbnail": "src/assets/images/running/running.png",
       "gallery": [
         "src/assets/active.jpeg",
         "src/assets/active.jpeg",
@@ -2036,89 +2227,89 @@
       ]
     },
     {
-  "id": "m4t9xk81n",
-  "sku": "CLO-87415",
-  "slug": "nike-dri-fit-training-tee",
-  "name": "Nike Dri-FIT Training Tee",
-  "shortDescription": "Stay cool and comfortable during every workout with the Nike Dri-FIT Training Tee.",
-  "fullDescription": "The Nike Dri-FIT Training Tee is designed for athletes who demand comfort and performance. Featuring moisture-wicking fabric, lightweight construction, and a modern athletic fit, this t-shirt keeps you dry during intense training sessions or casual everyday wear. Whether you're at the gym, on a run, or relaxing on the weekend, it's the perfect blend of style and functionality.",
-  "brand": "Nike",
-  "category": "Clothing",
-  "subCategory": "T-Shirts",
-  "collection": "Active Lifestyle",
-  "gender": "Men",
-  "tags": [
-    "nike",
-    "dri-fit",
-    "training",
-    "gym",
-    "running"
-  ],
-  "thumbnail": "src/assets/images/t-shirt/nike-t-shirt3.png",
-  "gallery": [
-    "src/assets/images/t-shirt/nike-t-shirt3.png",
-    "src/assets/images/t-shirt/nike-t-shirt3-side.png",
-    "src/assets/images/t-shirt/nike-t-shirt3-back.png",
-    "src/assets/images/t-shirt/nike-t-shirt3-detail.png"
-  ],
-  "price": 42,
-  "comparePrice": 55,
-  "inventory": {
-    "stock": 325,
-    "lowStock": false,
-    "inStock": true,
-    "preorder": false,
-    "shippingDays": 5
-  },
-  "rating": 4.8,
-  "reviewCount": 214,
-  "soldCount": 1348,
-  "colors": [
-    "Black",
-    "White",
-    "Grey",
-    "Blue"
-  ],
-  "sizes": [
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
-  ],
-  "shipping": {
-    "freeShipping": true,
-    "cost": 0
-  },
-  "estimatedDelivery": "2 - 5 Business Days",
-  "flags": {
-    "featured": true,
-    "trending": true,
-    "newArrival": false,
-    "bestSeller": true,
-    "isLimitedEdition": false,
-    "isFeaturedCollection": true
-  },
-  "createdAt": "2026-02-14T10:15:00.000Z",
-  "updatedAt": "2026-07-01T08:30:00.000Z",
-  "relatedProducts": [
-    "yrtsek60s",
-    "bs134xkg4",
-    "bgb6bl77s",
-    "lllqb3e6v"
-  ],
-  "recommendedProducts": [
-    "371jvciy1",
-    "y0f2nzg9b",
-    "hqzj9oqna",
-    "p7ge29rk8"
-  ],
-  "frequentlyBoughtTogether": [
-    "h3wxwhlej",
-    "k47kn74xt",
-    "371jvciy1"
-  ]
-},
+      "id": "m4t9xk81n",
+      "sku": "CLO-87415",
+      "slug": "nike-dri-fit-training-tee",
+      "name": "Nike Dri-FIT Training Tee",
+      "shortDescription": "Stay cool and comfortable during every workout with the Nike Dri-FIT Training Tee.",
+      "fullDescription": "The Nike Dri-FIT Training Tee is designed for athletes who demand comfort and performance. Featuring moisture-wicking fabric, lightweight construction, and a modern athletic fit, this t-shirt keeps you dry during intense training sessions or casual everyday wear. Whether you're at the gym, on a run, or relaxing on the weekend, it's the perfect blend of style and functionality.",
+      "brand": "Nike",
+      "category": "Clothing",
+      "subCategory": "T-Shirts",
+      "collection": "Active Lifestyle",
+      "gender": "Men",
+      "tags": [
+        "nike",
+        "dri-fit",
+        "training",
+        "gym",
+        "running"
+      ],
+      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt3.png",
+      "gallery": [
+        "src/assets/images/t-shirt/nike-t-shirt3.png",
+        "src/assets/images/t-shirt/nike-t-shirt3-side.png",
+        "src/assets/images/t-shirt/nike-t-shirt3-back.png",
+        "src/assets/images/t-shirt/nike-t-shirt3-detail.png"
+      ],
+      "price": 42,
+      "comparePrice": 55,
+      "inventory": {
+        "stock": 325,
+        "lowStock": false,
+        "inStock": true,
+        "preorder": false,
+        "shippingDays": 5
+      },
+      "rating": 4.8,
+      "reviewCount": 214,
+      "soldCount": 1348,
+      "colors": [
+        "Black",
+        "White",
+        "Grey",
+        "Blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "shipping": {
+        "freeShipping": true,
+        "cost": 0
+      },
+      "estimatedDelivery": "2 - 5 Business Days",
+      "flags": {
+        "featured": true,
+        "trending": true,
+        "newArrival": false,
+        "bestSeller": true,
+        "isLimitedEdition": false,
+        "isFeaturedCollection": true
+      },
+      "createdAt": "2026-02-14T10:15:00.000Z",
+      "updatedAt": "2026-07-01T08:30:00.000Z",
+      "relatedProducts": [
+        "yrtsek60s",
+        "bs134xkg4",
+        "bgb6bl77s",
+        "lllqb3e6v"
+      ],
+      "recommendedProducts": [
+        "371jvciy1",
+        "y0f2nzg9b",
+        "hqzj9oqna",
+        "p7ge29rk8"
+      ],
+      "frequentlyBoughtTogether": [
+        "h3wxwhlej",
+        "k47kn74xt",
+        "371jvciy1"
+      ]
+    },
     {
       "id": "mgumlt0ef",
       "sku": "CLO-40978",

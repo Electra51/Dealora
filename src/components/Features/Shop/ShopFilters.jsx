@@ -1,146 +1,217 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, ChevronUp, Star, Filter, X, Check } from 'lucide-react';
+
+const FilterAccordion = ({ title, defaultOpen = true, children }) => {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="border-b border-gray-100 last:border-0 py-5 first:pt-0">
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full flex items-center justify-between group"
+      >
+        <h4 className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
+          {title}
+        </h4>
+        <div className="text-gray-400 group-hover:text-orange-500 transition-colors">
+          {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        </div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="overflow-hidden"
+          >
+            <div className="pt-4 space-y-3">
+              {children}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen, setMobileOpen }) => {
   // Extract unique values from products.json
-  const categories = [...new Set(products.map(p => p.category))].sort();
-  const collections = [...new Set(products.map(p => p.collection))].sort();
+  const categories = [...new Set(products.map(p => p.category))].filter(Boolean).sort();
+  const collections = [...new Set(products.map(p => p.collection))].filter(Boolean).sort();
+
+  const hasActiveFilters = Object.values(filters).some(val => val !== null && val !== false && val !== '');
 
   const FilterContent = () => (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h3 className="font-bold text-lg text-gray-900">Filters</h3>
-        <button 
-          onClick={clearFilters} 
-          className="text-sm text-orange-500 hover:underline font-medium"
-        >
-          Clear All
-        </button>
+    <div className="space-y-2">
+      <div className="flex items-center justify-between pb-4 border-b border-gray-100">
+        <div className="flex items-center gap-2 text-gray-900">
+          <Filter size={20} />
+          <h3 className="font-bold text-lg">Filters</h3>
+        </div>
+        {hasActiveFilters && (
+          <button 
+            onClick={clearFilters} 
+            className="text-sm text-orange-500 hover:text-orange-600 font-medium px-3 py-1 bg-orange-50 rounded-full transition-colors"
+          >
+            Clear All
+          </button>
+        )}
       </div>
 
       {/* Category */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Category</h4>
-        <div className="space-y-2">
-          {categories.map(cat => (
-            <label key={cat} className="flex items-center gap-2 cursor-pointer group">
+      <FilterAccordion title="Category" defaultOpen={true}>
+        {categories.map(cat => (
+          <label key={cat} className="flex items-center gap-3 cursor-pointer group">
+            <div className="relative flex items-center justify-center">
               <input 
                 type="radio" 
                 name="category" 
                 checked={filters.category === cat} 
                 onChange={() => updateFilter('category', cat)} 
-                className="accent-orange-500" 
+                className="peer sr-only" 
               />
-              <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
-                {cat}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
-
-   
-
-
+              <div className="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-orange-500 peer-checked:bg-orange-500 transition-all flex items-center justify-center shadow-sm">
+                <div className={`w-2 h-2 bg-white rounded-full transition-all ${filters.category === cat ? 'scale-100' : 'scale-0'}`} />
+              </div>
+            </div>
+            <span className={`text-sm transition-colors ${filters.category === cat ? 'text-gray-900 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
+              {cat}
+            </span>
+          </label>
+        ))}
+      </FilterAccordion>
 
       {/* Collection */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Collection</h4>
-        <div className="space-y-2">
+      {collections.length > 0 && (
+        <FilterAccordion title="Collection" defaultOpen={true}>
           {collections.map(collection => (
-            <label key={collection} className="flex items-center gap-2 cursor-pointer group">
-              <input 
-                type="radio" 
-                name="collection" 
-                checked={filters.collection === collection} 
-                onChange={() => updateFilter('collection', collection)} 
-                className="accent-orange-500" 
-              />
-              <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
+            <label key={collection} className="flex items-center gap-3 cursor-pointer group">
+              <div className="relative flex items-center justify-center">
+                <input 
+                  type="radio" 
+                  name="collection" 
+                  checked={filters.collection === collection} 
+                  onChange={() => updateFilter('collection', collection)} 
+                  className="peer sr-only" 
+                />
+                <div className="w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-orange-500 peer-checked:bg-orange-500 transition-all flex items-center justify-center shadow-sm">
+                  <div className={`w-2 h-2 bg-white rounded-full transition-all ${filters.collection === collection ? 'scale-100' : 'scale-0'}`} />
+                </div>
+              </div>
+              <span className={`text-sm transition-colors ${filters.collection === collection ? 'text-gray-900 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
                 {collection}
               </span>
             </label>
           ))}
-        </div>
-      </div>
+        </FilterAccordion>
+      )}
 
       {/* Price Range */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Price Range</h4>
-        <div className="flex items-center gap-2">
-          <input 
-            type="number" 
-            placeholder="Min" 
-            value={filters.minPrice || ''} 
-            onChange={e => updateFilter('minPrice', e.target.value)} 
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" 
-          />
-          <span className="text-gray-400">-</span>
-          <input 
-            type="number" 
-            placeholder="Max" 
-            value={filters.maxPrice || ''} 
-            onChange={e => updateFilter('maxPrice', e.target.value)} 
-            className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500" 
-          />
+      <FilterAccordion title="Price Range" defaultOpen={false}>
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3">
+            <div className="relative flex-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input 
+                type="number" 
+                placeholder="Min" 
+                value={filters.minPrice || ''} 
+                onChange={e => updateFilter('minPrice', e.target.value)} 
+                className="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all placeholder:text-gray-300 font-medium" 
+              />
+            </div>
+            <span className="text-gray-300">-</span>
+            <div className="relative flex-1">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <input 
+                type="number" 
+                placeholder="Max" 
+                value={filters.maxPrice || ''} 
+                onChange={e => updateFilter('maxPrice', e.target.value)} 
+                className="w-full pl-7 pr-3 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/20 focus:border-orange-500 transition-all placeholder:text-gray-300 font-medium" 
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </FilterAccordion>
 
       {/* Rating */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Minimum Rating</h4>
-        <div className="flex flex-wrap gap-2">
+      <FilterAccordion title="Minimum Rating" defaultOpen={false}>
+        <div className="flex flex-col gap-2">
           {[4, 3, 2, 1].map(r => (
             <button 
               key={r} 
               onClick={() => updateFilter('rating', filters.rating === r ? null : r)} 
-              className={`px-3 py-1.5 rounded-full text-sm border transition-all ${
+              className={`flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
                 filters.rating === r 
-                  ? 'bg-orange-500 text-white border-orange-500 shadow-sm' 
-                  : 'bg-white text-gray-600 border-gray-200 hover:border-orange-500 hover:text-orange-500'
+                  ? 'bg-orange-50 border border-orange-200' 
+                  : 'hover:bg-gray-50 border border-transparent'
               }`}
             >
-              {r}★ & up
+              <div className="flex items-center gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star 
+                    key={i} 
+                    size={16} 
+                    className={i < r ? 'fill-orange-400 text-orange-400' : 'fill-gray-200 text-gray-200'} 
+                  />
+                ))}
+              </div>
+              <span className={`text-sm font-medium ${filters.rating === r ? 'text-orange-600' : 'text-gray-500'}`}>
+                & Up
+              </span>
             </button>
           ))}
         </div>
-      </div>
+      </FilterAccordion>
 
       {/* Availability */}
-      <div>
-        <h4 className="font-semibold text-gray-900 mb-3">Availability</h4>
-        <div className="space-y-2">
-          <label className="flex items-center gap-2 cursor-pointer group">
-            <input 
-              type="checkbox" 
-              checked={filters.inStock || false} 
-              onChange={() => updateFilter('inStock', !filters.inStock)} 
-              className="accent-orange-500 rounded" 
-            />
-            <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
+      <FilterAccordion title="Availability" defaultOpen={false}>
+        <div className="space-y-3">
+          <label className="flex items-center gap-3 cursor-pointer group">
+            <div className="relative flex items-center justify-center">
+              <input 
+                type="checkbox" 
+                checked={filters.inStock || false} 
+                onChange={() => updateFilter('inStock', !filters.inStock)} 
+                className="peer sr-only" 
+              />
+              <div className="w-5 h-5 rounded-md border-2 border-gray-300 peer-checked:border-orange-500 peer-checked:bg-orange-500 transition-all flex items-center justify-center shadow-sm">
+                <Check size={14} className={`text-white transition-all ${filters.inStock ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} strokeWidth={3} />
+              </div>
+            </div>
+            <span className={`text-sm transition-colors ${filters.inStock ? 'text-gray-900 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
               In Stock Only
             </span>
           </label>
-          <label className="flex items-center gap-2 cursor-pointer group">
-            <input 
-              type="checkbox" 
-              checked={filters.onSale || false} 
-              onChange={() => updateFilter('onSale', !filters.onSale)} 
-              className="accent-orange-500 rounded" 
-            />
-            <span className="text-gray-600 text-sm group-hover:text-gray-900 transition-colors">
+          <label className="flex items-center gap-3 cursor-pointer group">
+            <div className="relative flex items-center justify-center">
+              <input 
+                type="checkbox" 
+                checked={filters.onSale || false} 
+                onChange={() => updateFilter('onSale', !filters.onSale)} 
+                className="peer sr-only" 
+              />
+              <div className="w-5 h-5 rounded-md border-2 border-gray-300 peer-checked:border-orange-500 peer-checked:bg-orange-500 transition-all flex items-center justify-center shadow-sm">
+                <Check size={14} className={`text-white transition-all ${filters.onSale ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`} strokeWidth={3} />
+              </div>
+            </div>
+            <span className={`text-sm transition-colors ${filters.onSale ? 'text-gray-900 font-medium' : 'text-gray-600 group-hover:text-gray-900'}`}>
               On Sale
             </span>
           </label>
         </div>
-      </div>
+      </FilterAccordion>
     </div>
   );
 
   return (
     <>
       {/* Desktop Filters */}
-      <div className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-100 sticky top-24">
+      <div className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-100 shadow-sm sticky top-24">
         <FilterContent />
       </div>
 
@@ -153,27 +224,35 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
               animate={{ opacity: 1 }} 
               exit={{ opacity: 0 }} 
               onClick={() => setMobileOpen(false)} 
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden" 
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden" 
             />
             <motion.div 
               initial={{ x: '-100%' }} 
               animate={{ x: 0 }} 
               exit={{ x: '-100%' }} 
-              transition={{ type: 'spring', damping: 25 }} 
-              className="fixed top-0 left-0 bottom-0 w-80 bg-white z-50 p-6 overflow-y-auto lg:hidden"
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }} 
+              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-50 overflow-y-auto lg:hidden shadow-2xl flex flex-col"
             >
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-bold">Filters</h2>
+              <div className="sticky top-0 bg-white/80 backdrop-blur-md z-10 p-6 pb-4 flex justify-between items-center border-b border-gray-100">
+                <h2 className="text-xl font-bold text-gray-900">Filters</h2>
                 <button 
                   onClick={() => setMobileOpen(false)} 
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  className="p-2 bg-gray-50 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <X size={20} />
                 </button>
               </div>
-              <FilterContent />
+              <div className="p-6 pt-2 flex-1">
+                <FilterContent />
+              </div>
+              <div className="sticky bottom-0 bg-white border-t border-gray-100 p-4">
+                <button 
+                  onClick={() => setMobileOpen(false)} 
+                  className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors shadow-sm shadow-orange-500/20"
+                >
+                  Show Results
+                </button>
+              </div>
             </motion.div>
           </>
         )}

@@ -18,7 +18,7 @@ const ShopByBrand = () => {
     {
       id: 3,
       name: "Puma",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/7/76/Puma_logo.svg",
+      logo: "/assets/Puma_logo.svg",
       color: "#111",
     },
     {
