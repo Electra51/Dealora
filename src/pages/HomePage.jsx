@@ -1,6 +1,7 @@
 import React, { lazy } from "react";
 import Hero from "../components/Features/Home/Hero";
 import LazySection from "../components/Common/LazySection";
+import SEO from "../components/Common/SEO";
 
 const FeaturedCategories = lazy(() => import("../components/Features/Home/FeaturedCategories"));
 const Trending = lazy(() => import("../components/Features/Home/Trending"));
@@ -16,6 +17,10 @@ const Newsletter = lazy(() => import("../components/Features/Home/Newsletter"));
 const HomePage = () => {
   return (
     <div>
+      <SEO 
+        title="Home" 
+        description="Shop the best premium sneakers and apparel at Dealora. Exclusive deals, fast delivery, and guaranteed quality."
+      />
       <Hero />
       <LazySection>
         <FeaturedCategories />

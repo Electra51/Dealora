@@ -14,7 +14,7 @@ const Hero = () => {
         }}
       ></div>
       <div className="max-w-7xl mx-auto lg:px-8  relative grid grid-cols-1 lg:grid-cols-2 gap-20 items-center w-full z-10">
-        <div className="animate-fade-in-up">
+        <div>
           <h1 className="text-[56px] font-extrabold text-white leading-15 mb-6 m-0">
             Find Your Perfect Pair to
             <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
@@ -83,7 +83,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="relative h-127 animate-fade-in-right perspective-[1000px]">
+        <div className="relative h-127 perspective-[1000px]">
           <div className="absolute inset-0 bg-linear-to-br from-[rgba(255,165,0,0.2)] to-[rgba(138,43,226,0.2)] rounded-[30px] backdrop-blur-[15px] border border-[rgba(240,248,255,0.2)] shadow-[0_20px_60px_rgba(0,0,0,0.3)] transform-[translateZ(0)]"></div>
 
           <img
