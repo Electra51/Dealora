@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Home, ShoppingBag, Search, Tag } from "lucide-react";
-import { useCartStore } from "../stores/cart.store"; // আপনার store-এর পাথ ঠিক করুন
+import { useCartStore } from "../../stores/cart.store";
 
 const BottomNav = () => {
   const location = useLocation();
@@ -20,8 +20,8 @@ const BottomNav = () => {
   };
 
   return (
-    // pb-[env(safe-area-inset-bottom)] আইফোনের নিচের হোম ইন্ডিকেটরের জন্য
-    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#1a1a24]/95 backdrop-blur-xl border-t border-white/10 z-[1000] pb-[env(safe-area-inset-bottom)]">
+    // pb-[env(safe-area-inset-bottom)] for iOS devices with a notch to avoid content being hidden behind the home indicator
+    <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-[#1a1a24]/95 backdrop-blur-xl border-t border-white/10 z-1000 pb-[env(safe-area-inset-bottom)]">
       <div className="flex items-center justify-around h-16 max-w-lg mx-auto">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -51,9 +51,9 @@ const BottomNav = () => {
               
               {/* Active Indicator Dot */}
               {active && (
-                <motion.div
+                <div
                   layoutId="bottomNavIndicator"
-                  className="absolute -top-0 w-8 h-0.5 bg-orange-500 rounded-full"
+                  className="absolute top-0 w-8 h-0.5 bg-orange-500 rounded-full"
                 />
               )}
             </Link>

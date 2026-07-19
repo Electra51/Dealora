@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/images/Logo.png"; // আপনার লোগোর পাথ ঠিক করুন
+import logo from "../../assets/images/Logo.png"; 
 
 const SplashScreen = ({ onComplete }) => {
   useEffect(() => {
-    // ২.৫ সেকেন্ড পর অ্যানিমেশন শেষ করে মেইন অ্যাপ দেখাবে
     const timer = setTimeout(() => {
       onComplete();
     }, 2500);
