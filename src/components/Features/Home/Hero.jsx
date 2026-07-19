@@ -5,18 +5,20 @@ import { cn } from "../../../utils/cn";
 
 const Hero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-13 px-6 sm:px-10 lg:px-35">
-      <div
+    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-13"> <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
             "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)",
         }}
       ></div>
-      <div className="max-w-7xl mx-auto lg:px-8  relative grid grid-cols-1 lg:grid-cols-2 gap-20 items-center w-full z-10">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 md:py-0">
+
+      <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full z-10">
         <div>
-          <h1 className="text-[56px] font-extrabold text-white leading-15 mb-6 m-0">
-            Find Your Perfect Pair to
+          <h1 className="text-[49px] md:text-[40px] xl:text-[56px] font-extrabold text-white leading-15 mb-6 m-0">
+            Find Your Perfect 
+            <br/>Pair to
             <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
               {" "}
               Move
@@ -129,6 +131,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      </div>
+     
     </section>
   );
 };

@@ -339,7 +339,7 @@
       "brand": "Puma",
       "category": "Clothing",
       "subCategory": "Jackets",
-      "collection": "Active Lifestyle",
+      "collection": "Black Edition",
       "gender": "Men",
       "tags": [
         "track jacket",
@@ -504,7 +504,7 @@
       "brand": "Aesop",
       "category": "Clothing",
       "subCategory": "Jackets",
-      "collection": "Weekend Casual",
+      "collection": "Black Edition",
       "gender": "Men",
       "tags": [
         "clothing",
@@ -824,7 +824,7 @@
       "brand": "Timberland",
       "category": "Footwear",
       "subCategory": "Boots",
-      "collection": "Weekend Casual",
+      "collection": "Black Edition",
       "gender": "Men",
       "thumbnail": "src/assets/images/boots/boots1.png",
       "gallery": [
@@ -932,7 +932,7 @@
       "brand": "Crocs",
       "category": "Footwear",
       "subCategory": "Sandals",
-      "collection": "Weekend Casual",
+      "collection": "Black Edition",
       "gender": "Unisex",
       "thumbnail": "src/assets/images/sandals/sandals2.png",
       "gallery": [
@@ -1013,7 +1013,7 @@
       "brand": "Clarks",
       "category": "Footwear",
       "subCategory": "Formal Shoes",
-      "collection": "Office Ready",
+      "collection": "Black Edition",
       "gender": "Men",
       "thumbnail": "src/assets/images/formal-shoe/formal-shoe1.png",
       "gallery": [
@@ -1582,7 +1582,7 @@
       "brand": "H&M",
       "category": "Clothing",
       "subCategory": "Jackets",
-      "collection": "Black Edition",
+      "collection": "Active Lifestyle",
       "gender": "Men",
       "tags": [
         "clothing",
@@ -1662,7 +1662,7 @@
       "brand": "Tommy Hilfiger",
       "category": "Clothing",
       "subCategory": "Jeans",
-      "collection": "Black Edition",
+      "collection": "Active Lifestyle",
       "gender": "Unisex",
       "tags": [
         "clothing",
@@ -1746,7 +1746,7 @@
       "brand": "Adidas",
       "category": "Accessories",
       "subCategory": "Watches",
-      "collection": "Black Edition",
+      "collection": "Office Ready",
       "gender": "Men",
       "tags": [
         "accessories",
@@ -1830,7 +1830,7 @@
       "brand": "Tommy Hilfiger",
       "category": "Accessories",
       "subCategory": "Caps",
-      "collection": "Black Edition",
+      "collection": "Weekend Casual",
       "gender": "Unisex",
       "tags": [
         "accessories",
@@ -2852,7 +2852,7 @@
       ]
     }
   ],
-  
+
   "reviews": [
     {
       "id": "x7br1x36v",

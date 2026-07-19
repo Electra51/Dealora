@@ -829,7 +829,7 @@ const Header = () => {
                 className="lg:hidden fixed top-0 right-0 h-full w-[80%] max-w-sm bg-[#1a1a24] z-1000 shadow-2xl"
               >
                 <div className="flex flex-col h-full pt-24 pb-8 px-6">
-                  <div className="flex-1 flex flex-col gap-2 overflow-y-auto pb-4">
+                  <div className="flex-1 flex flex-col gap-2 pb-4">
                     {NAV_LINKS.map((link, index) => (
                       <motion.div key={link.path} variants={variants.navItem}>
                         {link.hasMegaMenu ? (
@@ -918,7 +918,7 @@ const Header = () => {
                     <Link
                       to="/cart"
                       onClick={() => setIsMenuOpen(false)}
-                      className="w-full flex items-center justify-between p-4 bg-orange-500 rounded-xl text-white font-semibold"
+                      className="w-full flex items-center justify-between p-3 md:p-4 bg-orange-500 rounded-xl text-white font-medium text-sm md:text-sm"
                     >
                       <span className="flex items-center gap-2">
                         <ShoppingBag className="w-5 h-5" />
