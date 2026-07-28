@@ -2,7 +2,8 @@
 
 const FeaturedBanner = () => {
   return (
-    <section className="relative w-full bg-linear-to-br from-orange-400 via-orange-500 to-red-500 shadow-xl md:shadow-2xl md:mx-0 rounded-2xl md:rounded-none">
+  <div className="mx-6 md:mx-0">
+      <section className="relative w-full bg-linear-to-br from-orange-400 via-orange-500 to-red-500 shadow-xl md:shadow-2xl md:mx-0 rounded-2xl md:rounded-none">
       <div className="relative max-w-7xl mx-auto px-5 md:px-6 lg:px-8 py-8 md:py-0">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -89,6 +90,7 @@ const FeaturedBanner = () => {
    
       </div>
     </section>
+  </div>
   );
 };
 

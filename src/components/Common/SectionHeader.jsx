@@ -71,7 +71,7 @@ const SectionHeader = ({
             <span className="hidden md:inline">{actionText}</span>
 
             {/* Desktop Arrow */}
-            <svg
+            {/* <svg
               className="w-5 h-5 hidden md:block"
               fill="none"
               stroke="#FF7203"
@@ -83,10 +83,10 @@ const SectionHeader = ({
                 strokeWidth="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
-            </svg>
+            </svg> */}
             
             {/* Mobile Angle Icon */}
-            <svg 
+            {/* <svg 
               className="w-6 h-6 md:hidden" 
               fill="none" 
               stroke="#FF7203" 
@@ -98,7 +98,7 @@ const SectionHeader = ({
                 strokeWidth="2" 
                 d="M9 5l7 7-7 7" 
               />
-            </svg>
+            </svg> */}
           </button>
         ))}
     </div>

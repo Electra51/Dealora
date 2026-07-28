@@ -4,31 +4,31 @@ import SectionHeader from "../../Common/SectionHeader";
 
 // Memoized Review Card Component for better performance
 const ReviewCard = memo(({ review, renderStars }) => (
-  <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 relative overflow-hidden">
+  <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-md sm:shadow-md hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 sm:hover:-translate-y-2 border border-gray-100 relative overflow-hidden h-full flex flex-col">
     {/* Hover gradient effect */}
     <div className="absolute inset-0 bg-linear-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-    <div className="relative z-10">
+    <div className="relative z-10 flex flex-col h-full flex-grow">
       {/* Header */}
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-3 sm:mb-4">
         <div className="flex items-center gap-3">
           <img
             src={review.avatar}
             alt={review.name}
-            className="w-14 h-14 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/50 transition-all duration-300"
+            className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/50 transition-all duration-300"
             loading="lazy"
           />
           <div>
-            <h4 className="text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+            <h4 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
               {review.name}
             </h4>
-            <p className="text-sm text-gray-500">{review.location}</p>
+            <p className="text-xs sm:text-sm text-gray-500">{review.location}</p>
           </div>
         </div>
         {review.verified && (
-          <span className="flex items-center gap-1 px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-semibold">
+          <span className="flex items-center gap-1 px-2 sm:px-3 py-1 bg-green-50 text-green-700 rounded-full text-[10px] sm:text-xs font-semibold">
             <svg
-              className="w-3.5 h-3.5"
+              className="w-3 h-3 sm:w-3.5 sm:h-3.5"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -44,26 +44,26 @@ const ReviewCard = memo(({ review, renderStars }) => (
       </div>
 
       {/* Rating & Date */}
-      <div className="flex items-center justify-between mb-3">
+      <div className="flex items-center justify-between mb-2 sm:mb-3">
         {renderStars(review.rating)}
-        <span className="text-xs text-gray-500">{review.date}</span>
+        <span className="text-[10px] sm:text-xs text-gray-500">{review.date}</span>
       </div>
 
       {/* Product */}
-      <p className="text-sm text-gray-600 mb-3 font-medium">
+      <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 font-medium">
         Purchased: <span className="text-orange-600">{review.product}</span>
       </p>
 
       {/* Review Text */}
-      <p className="text-sm text-gray-700 leading-relaxed mb-4 line-clamp-4">
+      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 line-clamp-4 flex-grow">
         {review.review}
       </p>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-        <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-sm font-medium transition-all duration-300 group/btn">
+      <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
+        <button className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 group/btn">
           <svg
-            className="w-4 h-4 group-hover/btn:scale-110 transition-transform duration-300"
+            className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:scale-110 transition-transform duration-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -207,7 +207,7 @@ const CustomerReviews = () => {
         {[...Array(5)].map((_, index) => (
           <span
             key={index}
-            className={`text-base ${
+            className={`text-sm sm:text-base ${
               index < rating ? "text-orange-500" : "text-gray-300"
             }`}
           >
@@ -243,7 +243,7 @@ const CustomerReviews = () => {
         <button
           onClick={prevSlide}
           aria-label="Previous reviews"
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
+          className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
         >
           <svg
             className="w-6 h-6 transition-transform duration-300 group-hover:-translate-x-0.5"
@@ -260,8 +260,8 @@ const CustomerReviews = () => {
           </svg>
         </button>
 
-        {/* Reviews Slider */}
-        <div className="overflow-hidden">
+        {/* Reviews Slider (Desktop/Tablet) */}
+        <div className="hidden md:block overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -288,11 +288,25 @@ const CustomerReviews = () => {
           </div>
         </div>
 
+        {/* Mobile App-like Horizontal Scroll */}
+        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 pt-2 -mx-6 px-6 hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          {reviews.map((review) => (
+            <div key={review.id} className="w-[85vw] sm:w-[60vw] shrink-0 snap-center h-auto">
+              <ReviewCard review={review} renderStars={renderStars} />
+            </div>
+          ))}
+        </div>
+        <style dangerouslySetInnerHTML={{__html: `
+          .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+          }
+        `}} />
+
         {/* Next Button */}
         <button
           onClick={nextSlide}
           aria-label="Next reviews"
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
+          className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
         >
           <svg
             className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-0.5"
@@ -311,7 +325,7 @@ const CustomerReviews = () => {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 mt-10">
+      <div className="hidden md:flex justify-center gap-2 mt-10">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
             key={index}

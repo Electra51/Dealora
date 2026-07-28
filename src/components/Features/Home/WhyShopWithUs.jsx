@@ -7,7 +7,7 @@ const WhyShopWithUs = () => {
       id: 1,
       icon: (
         <svg
-          className="w-12 h-12"
+          className="w-7 h-7 sm:w-12 sm:h-12"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -36,7 +36,7 @@ const WhyShopWithUs = () => {
       id: 2,
       icon: (
         <svg
-          className="w-12 h-12"
+          className="w-7 h-7 sm:w-12 sm:h-12"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -59,7 +59,7 @@ const WhyShopWithUs = () => {
       id: 3,
       icon: (
         <svg
-          className="w-12 h-12"
+          className="w-7 h-7 sm:w-12 sm:h-12"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ const WhyShopWithUs = () => {
       id: 4,
       icon: (
         <svg
-          className="w-12 h-12"
+          className="w-7 h-7 sm:w-12 sm:h-12"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -114,11 +114,11 @@ const WhyShopWithUs = () => {
   actionLink="/shop"
 />
       {/* Features Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
         {features.map((feature) => (
           <div
             key={feature.id}
-            className="group relative bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 overflow-hidden"
+            className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-sm sm:shadow-md hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 sm:hover:-translate-y-3 overflow-hidden flex flex-col items-center sm:items-start text-center sm:text-left"
           >
             {/* Background gradient on hover */}
             <div
@@ -127,7 +127,7 @@ const WhyShopWithUs = () => {
 
             {/* Icon */}
             <div
-              className={`relative w-20 h-20 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}
+              className={`relative w-12 h-12 sm:w-20 sm:h-20 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-500`}
             >
               <div className={`${feature.iconColor} group-hover:scale-110 transition-transform duration-500`}>
                 {feature.icon}
@@ -135,10 +135,10 @@ const WhyShopWithUs = () => {
             </div>
 
             {/* Content */}
-            <h3 className="relative text-xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-300">
+            <h3 className="relative text-sm sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-3 group-hover:text-orange-600 transition-colors duration-300">
               {feature.title}
             </h3>
-            <p className="relative text-sm text-gray-600 leading-relaxed">
+            <p className="relative text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none">
               {feature.description}
             </p>
 

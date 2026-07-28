@@ -60,8 +60,8 @@ const ShopByBrand = () => {
           description="Explore collections from the world's most iconic footwear and
               apparel brands."
           showAction
-          actionText="View All Products"
-          actionLink="/shop"
+          actionText=""
+          actionLink=""
         />
         {/* Carousel Container with gradient fade edges */}
         <div className="relative">
