@@ -25,6 +25,7 @@ const CartPage = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Your cart is empty</h2>
             <p className="text-gray-500 mb-6">Add some products to get started!</p>
             <Link
+            aria-label="start"
               to="/shop"
               className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-colors"
             >
@@ -49,6 +50,7 @@ const CartPage = () => {
             </p>
           </div>
           <button
+          aria-label="clear"
             onClick={clearCart}
             className="text-sm text-red-500 hover:text-red-600 font-medium"
           >
@@ -70,10 +72,11 @@ const CartPage = () => {
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex gap-4"
                 >
                   {/* Image */}
-                  <Link to={`/product/${item.slug || item.id}`} className="shrink-0">
+                  <Link aria-label="product image" to={`/product/${item.slug || item.id}`} className="shrink-0">
                     <img
                       src={item.thumbnail}
                       alt={item.name}
+                      loading="lazy"
                       className="w-24 h-24 md:w-32 md:h-32 object-cover rounded-xl"
                     />
                   </Link>
@@ -86,6 +89,7 @@ const CartPage = () => {
                           {item.brand}
                         </p>
                         <Link 
+                        aria-label={item.name}
                           to={`/product/${item.slug || item.id}`}
                           className="font-semibold text-gray-900 hover:text-orange-500 transition-colors line-clamp-2"
                         >
@@ -93,8 +97,9 @@ const CartPage = () => {
                         </Link>
                       </div>
                       <button
+                      aria-label="trash"
                         onClick={() => removeItem(item.id)}
-                        className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                        className="p-2 text-gray-600 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
                       >
                         <Trash className="w-4 h-4" />
                       </button>
@@ -104,6 +109,7 @@ const CartPage = () => {
                       {/* Quantity Controls */}
                       <div className="flex items-center gap-2 bg-gray-100 rounded-full p-1">
                         <button
+                        aria-label="Minus"
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
                         >
@@ -113,6 +119,7 @@ const CartPage = () => {
                           {item.quantity}
                         </span>
                         <button
+                        aria-label="Plus"
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:bg-orange-500 hover:text-white transition-colors"
                         >
@@ -173,6 +180,7 @@ const CartPage = () => {
               </div>
 
               <button
+              aria-label="Proceed to Checkout"
                 onClick={() => navigate('/checkout')}
                 className="w-full py-4 bg-orange-500 text-white rounded-full font-bold flex items-center justify-center gap-2 hover:bg-orange-600 transition-colors hover:shadow-lg hover:shadow-orange-500/30"
               >
@@ -181,6 +189,7 @@ const CartPage = () => {
               </button>
 
               <Link
+          aria-label="Continue Shopping"
                 to="/shop"
                 className="block text-center mt-4 text-sm text-gray-500 hover:text-orange-500 transition-colors"
               >

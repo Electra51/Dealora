@@ -29,6 +29,7 @@ const BottomNav = () => {
           
           return (
             <Link
+              aria-label={item.name}
               key={item.name}
               to={item.path}
               className={`relative flex flex-col items-center justify-center w-full h-full transition-all duration-300 ${

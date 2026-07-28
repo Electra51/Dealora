@@ -57,9 +57,10 @@ const SaleBanner = () => {
         style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}
       ></div>
       <button
+      aria-label="close"
         onClick={closeBanner}
         aria-label="Close banner"
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-400 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-500"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-500"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -86,6 +87,7 @@ const SaleBanner = () => {
           </p>
 
           <Link
+          aria-label="Shop Now"
             to="/shop"
             className="group inline-flex items-center gap-2 mt-1 px-7 py-3 bg-orange-500 text-white text-sm font-bold rounded-full transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-300"
           >
@@ -128,12 +130,12 @@ const SaleBanner = () => {
                   <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums">
                     {String(unit.value).padStart(2, "0")}
                   </span>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-400 font-semibold mt-0.5">
+                  <span className="text-[10px] uppercase tracking-widest text-gray-600 font-semibold mt-0.5">
                     {unit.label}
                   </span>
                 </div>
                 {i < units.length - 1 && (
-                  <span className="text-orange-400 text-xl font-bold">:</span>
+                  <span className="text-orange-600 text-xl font-bold">:</span>
                 )}
               </div>
             ))}

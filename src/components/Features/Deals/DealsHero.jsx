@@ -38,7 +38,7 @@ const DealsHero = () => {
         <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
           Don't miss out on our biggest sale of the year. Premium sneakers and gear at unbeatable prices.
         </p>
-          <button className="group inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-linear-to-br from-[#FF7203] to-[#FF9A03] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]">
+          <button aria-label="flash deals" className="group inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-linear-to-br from-[#FF7203] to-[#FF9A03] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]">
           Shop Flash Deals
         </button>
        </div>

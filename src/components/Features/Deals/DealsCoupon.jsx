@@ -80,6 +80,7 @@ const CouponCard = ({ coupon }) => {
                 {coupon.code}
               </span>
               <button
+              aria-label="copy"
                 onClick={handleCopy}
                 className={`p-1.5 rounded-lg transition-all ${
                   copied 
@@ -142,7 +143,7 @@ const CouponCard = ({ coupon }) => {
         </div>
 
         {/* Apply Button */}
-        <button className="w-full mt-4 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-orange-500 transition-colors">
+        <button aria-label="apply coupon" className="w-full mt-4 py-2.5 bg-gray-900 text-white text-sm font-semibold rounded-xl hover:bg-orange-500 transition-colors">
           Apply Coupon
         </button>
       </div>

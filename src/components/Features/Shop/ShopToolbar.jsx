@@ -10,6 +10,7 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
       {/* Search & Mobile Filter */}
       <div className="flex items-center gap-3 flex-1">
         <button 
+        aria-label="Search products"
           onClick={onMobileFilterOpen} 
           className="lg:hidden p-2.5 bg-gray-100 rounded-xl text-gray-700 hover:bg-gray-200 transition-colors"
         >
@@ -19,10 +20,11 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
         </button>
         
         <div className="relative flex-1 max-w-md">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input 
+          aria-label="Search products"
             type="text" 
             placeholder="Search products..." 
             defaultValue={filters.search}
@@ -53,8 +55,9 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
 
         <div className="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-xl p-1">
           <button 
+          aria-label="Search products"
             onClick={() => setViewMode('grid')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-400 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-600 hover:text-gray-600'}`}
             aria-label="Grid view"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,8 +65,9 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
             </svg>
           </button>
           <button 
+          aria-label="Search products"
             onClick={() => setViewMode('list')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-400 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-600 hover:text-gray-600'}`}
             aria-label="List view"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

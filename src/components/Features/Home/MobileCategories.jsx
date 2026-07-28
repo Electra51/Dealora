@@ -66,7 +66,7 @@ const MobileCategories = memo(() => {
               transition={{ delay: index * 0.08, duration: 0.4 }}
               className="shrink-0"
             >
-              <Link to={category.link} className="block group">
+              <Link aria-label={category.image} to={category.link} className="block group">
                 {/* Category Card */}
                 {/* <div className="w-full h-36 rounded-2xl bg-[#5d5d5d] border border-white/5 overflow-hidden relative transition-all duration-300 hover:border-orange-500/30 active:scale-95"> */}
                   {/* Gradient Background */}
@@ -87,7 +87,7 @@ const MobileCategories = memo(() => {
 
                   {/* Category Name */}
                   <div className="px-3 pb-2.5 text-center">
-                    <h3 className="text-sm font-semibold text-black group-hover:text-orange-400 transition-colors duration-300">
+                    <h3 className="text-sm font-semibold text-black group-hover:text-orange-600 transition-colors duration-300">
                       {category.title}
                     </h3>
                   </div>

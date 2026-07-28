@@ -82,6 +82,7 @@ const Newsletter = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex-1 relative">
                 <input
+                aria-label="Enter Email"
                   type="email"
                   placeholder="Enter your email address"
                   value={email}
@@ -97,6 +98,7 @@ const Newsletter = () => {
                 />
               </div>
               <button
+              aria-label="Subscribe"
                 onClick={handleSubscribe}
                 className={`px-8 py-4 font-bold rounded-xl transition-all duration-300 whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed shadow-xl ${
                   isSubscribed

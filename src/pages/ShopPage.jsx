@@ -65,6 +65,7 @@ const ShopPage = () => {
                 <h3 className="text-xl font-bold text-gray-900">No products found</h3>
                 <p className="text-gray-500 mt-2">Try adjusting your filters or search terms.</p>
                 <button 
+                aria-label="Clear all filters"
                   onClick={clearFilters} 
                   className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-full font-medium hover:bg-orange-600 transition-colors"
                 >

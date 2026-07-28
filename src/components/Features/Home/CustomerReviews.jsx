@@ -15,6 +15,7 @@ const ReviewCard = memo(({ review, renderStars }) => (
           <img
             src={review.avatar}
             alt={review.name}
+            loading="lazy"
             className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/50 transition-all duration-300"
             loading="lazy"
           />
@@ -61,7 +62,7 @@ const ReviewCard = memo(({ review, renderStars }) => (
 
       {/* Footer */}
       <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
-        <button className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 group/btn">
+        <button aria-label="help icon" className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 group/btn">
           <svg
             className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:scale-110 transition-transform duration-300"
             fill="none"
@@ -241,6 +242,7 @@ const CustomerReviews = () => {
       <div className="relative">
         {/* Previous Button */}
         <button
+        aria-label="previous button"
           onClick={prevSlide}
           aria-label="Previous reviews"
           className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
@@ -304,6 +306,7 @@ const CustomerReviews = () => {
 
         {/* Next Button */}
         <button
+        aria-label="next button"
           onClick={nextSlide}
           aria-label="Next reviews"
           className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
@@ -328,6 +331,7 @@ const CustomerReviews = () => {
       <div className="hidden md:flex justify-center gap-2 mt-10">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
+          aria-label="dots"
             key={index}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
@@ -345,7 +349,7 @@ const CustomerReviews = () => {
         <p className="text-lg text-gray-700 mb-4">
           Have you purchased from us?
         </p>
-        <button className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <button aria-label="review write" className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
           <svg
             className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
             fill="none"

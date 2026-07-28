@@ -200,6 +200,7 @@ const CategoryCard = memo(({ category, index, onClose }) => {
       className="group relative"
     >
       <Link
+       aria-label="category"
         to={`/shop?category=${category.title.toLowerCase()}`}
         onClick={onClose}
         className="block"
@@ -228,10 +229,10 @@ const CategoryCard = memo(({ category, index, onClose }) => {
                 {category.icon}
               </motion.div>
               <div>
-                <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-white group-hover:text-orange-600 transition-colors duration-300">
                   {category.title}
                 </h3>
-                <p className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors">
+                <p className="text-sm text-gray-500 group-hover:text-gray-600 transition-colors">
                   {category.description}
                 </p>
               </div>
@@ -249,12 +250,13 @@ const CategoryCard = memo(({ category, index, onClose }) => {
                 className="flex items-center justify-start group/item"
               >
                 <Link
+                aria-label="category"
                   to={`/shop?category=${category.title.toLowerCase()}&item=${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                   onClick={(e) => {
                     e.stopPropagation();
                     onClose();
                   }}
-                  className="flex items-center gap-2 text-sm text-gray-400 hover:text-orange-400 transition-all duration-300 flex-1"
+                  className="flex items-center gap-2 text-sm text-gray-600 hover:text-orange-600 transition-all duration-300 flex-1"
                 >
                   <motion.div
                     animate={{ x: isHovered ? 4 : 0 }}
@@ -365,7 +367,7 @@ const Header = () => {
       >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Link to="/" className="shrink-0">
+            <Link aria-label="Dealora Home" to="/" className="shrink-0">
               <motion.img 
                 src={logo} 
                 alt="Dealora" 
@@ -407,6 +409,7 @@ const Header = () => {
                   </div>
                 ) : (
                   <Link
+                  aria-label={link.name}
                     key={link.path}
                     to={link.path}
                     className="relative text-[#f0f8ff] text-base font-medium py-2 hover:text-orange-500 transition-colors"
@@ -426,6 +429,7 @@ const Header = () => {
 
             <div className="flex items-center gap-4">
               <motion.button
+              aria-label="Search products"
                 onClick={() => setIsSearchOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -434,8 +438,9 @@ const Header = () => {
                 <Search className="w-5 h-5" />
               </motion.button>
 
-              <Link to="/cart">
+              <Link  aria-label="cart" to="/cart">
                 <motion.button
+                  aria-label="Cart"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   className="relative p-2 text-[#f0f8ff] hover:text-orange-500 transition-colors"
@@ -479,7 +484,7 @@ const Header = () => {
             <div className="flex items-center gap-3 min-w-25">
               {isHomePage ? (
                 // Homepage: Show Logo
-                <Link to="/" className="shrink-0">
+                <Link  aria-label="Dealora Home" to="/" className="shrink-0">
                   <motion.img 
                     src={logoMobile} 
                     alt="Dealora" 
@@ -520,7 +525,7 @@ const Header = () => {
                 <Search className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
 
- <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-400" />
+ <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" />
               {/* Cart Icon with Badge */}
               {/* <Link to="/cart" className="relative">
                 <motion.button
@@ -547,8 +552,9 @@ const Header = () => {
           {/* SEARCH BAR - Full Width Below Header (Like Instacart) */}
           {/* <div className="pb-0 md:pb-4">
             <div className="relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600" />
               <input
+              aria-label="Search products"
                 type="text"
                 placeholder="Search products, brands..."
                 onClick={() => setIsSearchOpen(true)}
@@ -628,11 +634,12 @@ const MegaMenu = memo(({ isOpen, onClose }) => {
                     <h4 className="text-xl font-bold text-white mb-2">
                       New Arrivals 2026
                     </h4>
-                    <p className="text-gray-400">
+                    <p className="text-gray-600">
                       Check out our latest collection with up to 40% off
                     </p>
                   </div>
                   <Link
+                   aria-label="Shop Now"
                     to="/shop?filter=new"
                     onClick={onClose}
                     className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-colors flex items-center gap-2"
@@ -699,6 +706,7 @@ const SearchBar = memo(({ isOpen, onClose }) => {
             <form onSubmit={handleSubmit} className="flex items-center gap-4">
               <Search className="w-6 h-6 text-orange-500" />
               <input
+              aria-label="Search products"
                 ref={inputRef}
                 type="text"
                 value={query}
@@ -707,9 +715,10 @@ const SearchBar = memo(({ isOpen, onClose }) => {
                 className="flex-1 bg-transparent text-white text-lg placeholder:text-gray-500 focus:outline-none"
               />
               <button
+              aria-label="close"
                 type="button"
                 onClick={onClose}
-                className="p-2 text-gray-400 hover:text-white"
+                className="p-2 text-gray-600 hover:text-white"
               >
                 <X className="w-6 h-6" />
               </button>

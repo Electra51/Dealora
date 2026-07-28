@@ -16,86 +16,82 @@ const Hero = () => {
       ></div>
 
       <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-0 md:py-0">
-        
         {/* ========== MOBILE VIEW (App-like) ========== */}
         <div className="md:hidden">
-         
-
-          {/* Mobile Hero Content */}
           <div className="grid grid-cols-2 gap-3 md:pb-8">
-             {/* Text Content */}
             <div className="pl-8 pt-4 w-full">
-               {/* Floating Badge */}
-              {/* <div className="bg-[#1a1a24]/95 backdrop-blur-xl py-3 px-4 rounded-2xl border border-white/10 shadow-xl"> */}
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-2xl">🔥</span>
-                  <div>
-                    <p className="text-[10px] text-gray-400 uppercase tracking-wider">Hot Deal</p>
-                    <p className="text-sm font-bold text-white">Up to 40% Off</p>
-                  </div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-2xl">🔥</span>
+                <div>
+                  <p className="text-[10px] text-gray-600 uppercase tracking-wider">
+                    Hot Deal
+                  </p>
+                  <p className="text-sm font-bold text-white">Up to 40% Off</p>
                 </div>
-              {/* </div> */}
-              <h1 className="text-xl font-semibold text-white leading-tight mb-4 mt-4 md:mt-0">
-                Find Your Pair {" "}
-                {/* <br /> */}
-                 to {" "}
-                <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
-                   Move
-                </span>
-              </h1> 
-             
+              </div>
 
-              {/* CTA Buttons */}
+              <h1 className="text-xl font-semibold text-white leading-tight mb-4 mt-4 md:mt-0">
+                Find Your Pair to{" "}
+                <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
+                  Move
+                </span>
+              </h1>
+
               <div className="flex gap-3 mb-6 mt-3">
                 <Link
+                aria-label="Shop Now"
                   to="/shop"
                   className="flex justify-center items-center py-2 px-3 rounded-full text-xs font-bold border border-gray-100 text-white"
                 >
                   Shop Now
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
                   </svg>
                 </Link>
-              
               </div>
-
-            
             </div>
-         
-           
-              <div >
-                <img
+
+            <div>
+              <img
                 src={homeImage}
                 alt="Athletic Performance"
+                fetchPriority="high"
                 className="absolute -bottom-19.5 right-3  w-67.5  drop-shadow-2xl -rotate-12"
               />
-              </div>
-           
-             
-        
-   
-           
+            </div>
           </div>
         </div>
 
-        {/* ========== DESKTOP VIEW (Original - Unchanged) ========== */}
+        {/* ========== DESKTOP VIEW ========== */}
         <div className="hidden md:block">
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 xl:gap-20 items-center w-full z-10">
             <div>
               <h1 className="text-[49px] md:text-[40px] xl:text-[56px] font-extrabold text-white leading-15 mb-6 m-0">
-                Find Your Perfect 
-                <br/>Pair to
+                Find Your Perfect
+                <br />
+                Pair to
                 <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
                   {" "}
                   Move
                 </span>
               </h1>
               <p className="text-[18px] text-[rgba(240,248,255,0.8)] leading-[1.8] mb-10 max-w-135 max-lg:text-[17px] max-md:max-w-full max-sm:text-[14px] m-0">
-                Shop premium sneakers with exclusive deals, fast delivery, secure
-                payments, and guaranteed quality.
+                Shop premium sneakers with exclusive deals, fast delivery,
+                secure payments, and guaranteed quality.
               </p>
               <div className="flex gap-5 mb-15">
                 <Link
+                aria-label="Shop Now"
                   to="/shop"
                   className="group inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-linear-to-br from-[#FF7203] to-[#FF9A03] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]"
                 >
@@ -115,6 +111,7 @@ const Hero = () => {
                   </svg>
                 </Link>
                 <Link
+                aria-label="Learn More"
                   to="/about"
                   className="inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-transparent text-white border-2 border-[rgba(240,248,255,0.3)] hover:bg-[rgba(240,248,255,0.1)] hover:border-white hover:-translate-y-0.75"
                 >
@@ -198,7 +195,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </section>
   );

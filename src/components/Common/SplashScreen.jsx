@@ -22,7 +22,7 @@ const SplashScreen = ({ onComplete }) => {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 10 }}
       >
-        <img src={logo} alt="Dealora" className="w-48 md:w-64 h-auto" />
+        <img src={logo} alt="Dealora" className="w-48 md:w-64 h-auto" loading="lazy"/>
       </motion.div>
       
       {/* Loading Bar Animation */}
@@ -37,7 +37,7 @@ const SplashScreen = ({ onComplete }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-gray-400 text-sm mt-4 font-medium tracking-widest"
+        className="text-gray-600 text-sm mt-4 font-medium tracking-widest"
       >
         DEALORA
       </motion.p>

@@ -82,8 +82,8 @@ const ProductCard = memo(({
           badge: 'bg-gradient-to-r from-orange-500 to-amber-500',
           button: 'bg-gradient-to-br from-orange-500 to-amber-500 text-white',
           textPrimary: 'text-black hover:text-white',
-          textSecondary: 'text-gray-400',
-          accent: 'text-orange-400'
+          textSecondary: 'text-gray-600',
+          accent: 'text-orange-600'
         };
       default:
         return {
@@ -148,6 +148,7 @@ const ProductCard = memo(({
         <img 
           src={product.thumbnail || '/placeholder.jpg'} 
           alt={product.name || 'Product'} 
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
           loading="lazy" 
         />
@@ -171,6 +172,7 @@ const ProductCard = memo(({
 
         {/* Wishlist Button */}
         <button 
+        aria-label="wishlist add"
           onClick={handleWishlistToggle}
           className={`absolute top-2 right-2 md:top-3 md:right-3 w-7 h-7 md:w-9 md:h-9 rounded-full flex items-center justify-center shadow-sm md:shadow-md transition-all duration-300 z-10 ${
             isInWishlist 
@@ -215,6 +217,7 @@ const ProductCard = memo(({
         {variant === 'trending' && onQuickView && (
           <div className="hidden md:flex absolute inset-0 bg-linear-to-t from-black/70 to-transparent items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button
+            aria-label="quick view"
               onClick={handleQuickView}
               className="flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full text-sm font-bold translate-y-5 group-hover:translate-y-0 transition-all duration-300 hover:bg-orange-500 hover:text-white"
             >
@@ -286,11 +289,12 @@ const ProductCard = memo(({
           </div>
           
           <button 
+          aria-label="add cart"
             onClick={handleAddToCart}
             disabled={stock === 0}
             className={`shrink-0 flex items-center justify-center transition-all duration-300 ${
               stock === 0
-                ? 'w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-gray-100 text-gray-400 cursor-not-allowed'
+                ? 'w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed'
                 : isAdding
                 ? 'w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-green-500 text-white scale-95'
                 : `w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg ${styles.button} hover:shadow-lg active:scale-90 md:hover:scale-105`

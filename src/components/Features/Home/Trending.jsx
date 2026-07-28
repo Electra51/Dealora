@@ -102,6 +102,7 @@ const Trending = ({ handleAddToCart }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <button
+            aria-label="close"
               className="absolute top-5 right-5 w-10 h-10 rounded-full bg-black/10 flex items-center justify-center hover:bg-black/20 hover:rotate-90 transition-all duration-300 z-10"
               onClick={closeQuickView}
             >
@@ -115,6 +116,7 @@ const Trending = ({ handleAddToCart }) => {
                 <img
                   src={selectedProduct.thumbnail}
                   alt={selectedProduct.name}
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -154,6 +156,7 @@ const Trending = ({ handleAddToCart }) => {
                 </div>
 
                 <button
+                aria-label="add cart"
                   onClick={() => {
                     handleAddToCart(selectedProduct);
                     closeQuickView();

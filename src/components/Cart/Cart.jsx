@@ -14,11 +14,13 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
   const grandTotal = total + shipping + tax;
 
   return (
-    <div className="sticky top-0 pl-[15px] rounded-[12px] p-[20px] max-w-[450px] mx-auto my-[20px] max-md:max-w-full max-md:m-[10px]">
+    <div className="sticky top-0 pl-3.75 rounded-xl p-5 max-w-[450px] mx-auto my-[20px] max-md:max-w-full max-md:m-[10px]">
       <div className="flex justify-between items-center mb-[20px] pb-[15px] border-b-2 border-[#f0f0f0]">
         <h3 className="m-0 text-[24px] text-[#333]">🛒 Order Summary</h3>
         {cart.length > 0 && (
-          <button className="bg-[#ff4444] text-white border-none py-[8px] px-[16px] rounded-[6px] cursor-pointer text-[14px] font-medium transition-colors duration-300 hover:bg-[#cc0000]" onClick={onClearCart}>
+          <button 
+          aria-label="cart clear"
+          className="bg-[#ff4444] text-white border-none py-[8px] px-[16px] rounded-[6px] cursor-pointer text-[14px] font-medium transition-colors duration-300 hover:bg-[#cc0000]" onClick={onClearCart}>
             Clear Cart
           </button>
         )}
@@ -66,6 +68,7 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
                 <img 
                   src={product.img} 
                   alt={product.name}
+                  loading="lazy"
                   className="w-[60px] h-[60px] object-cover rounded-[8px]"
                 />
                 
@@ -76,6 +79,7 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
 
                 <div className="flex items-center gap-[10px] bg-white p-[5px] rounded-[8px]">
                   <button 
+                  aria-label="decrease-number"
                     className="w-[32px] h-[32px] border-none bg-[#4f46e5] text-white rounded-[6px] cursor-pointer text-[18px] font-bold transition-colors duration-300 flex items-center justify-center hover:bg-[#4338ca] disabled:bg-[#d1d5db] disabled:cursor-not-allowed"
                     onClick={() => onDecrease(product.id)}
                     disabled={product.quantity <= 1}
@@ -84,6 +88,7 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
                   </button>
                   <span className="min-w-[30px] text-center font-bold text-[16px]">{product.quantity}</span>
                   <button 
+                  aria-label="increase number"
                     className="w-[32px] h-[32px] border-none bg-[#4f46e5] text-white rounded-[6px] cursor-pointer text-[18px] font-bold transition-colors duration-300 flex items-center justify-center hover:bg-[#4338ca]"
                     onClick={() => onIncrease(product.id)}
                   >
@@ -96,6 +101,7 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
                 </div>
 
                 <button 
+                aria-label="close"
                   className="w-[32px] h-[32px] border-none bg-[#fee] text-[#f44] rounded-[6px] cursor-pointer text-[18px] transition-all duration-300 hover:bg-[#fcc] hover:text-[#c00]"
                   onClick={() => onRemove(product.id)}
                   title="Remove item"
@@ -134,7 +140,7 @@ const Cart = ({ cart, onIncrease, onDecrease, onRemove, onClearCart }) => {
             </div>
           </div>
 
-          <button className="w-full p-[16px] bg-gradient-to-br from-[#4f46e5] to-[#7c3aed] text-white border-none rounded-[10px] text-[16px] font-bold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(79,70,229,0.3)] hover:-translate-y-[2px] hover:shadow-[0_6px_16px_rgba(79,70,229,0.4)] active:translate-y-0">
+          <button aria-label="procced checkout" className="w-full p-[16px] bg-gradient-to-br from-[#4f46e5] to-[#7c3aed] text-white border-none rounded-[10px] text-[16px] font-bold cursor-pointer transition-all duration-300 shadow-[0_4px_12px_rgba(79,70,229,0.3)] hover:-translate-y-[2px] hover:shadow-[0_6px_16px_rgba(79,70,229,0.4)] active:translate-y-0">
             Proceed to Checkout
           </button>
         </>

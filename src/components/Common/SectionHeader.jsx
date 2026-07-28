@@ -28,6 +28,7 @@ const SectionHeader = ({
       {showAction &&
         (actionLink ? (
           <Link
+            aria-label={actionText}
             to={actionLink}
             className="inline-flex items-center gap-1 md:gap-2 bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent font-semibold transition-all duration-300 md:hover:gap-3 shrink-0"
           >
@@ -65,6 +66,7 @@ const SectionHeader = ({
           </Link>
         ) : (
           <button
+          aria-label="section text"
             onClick={onActionClick}
             className="inline-flex items-center gap-1 md:gap-2 bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent font-semibold transition-all duration-300 md:hover:gap-3 shrink-0"
           >

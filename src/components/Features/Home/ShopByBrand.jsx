@@ -85,6 +85,7 @@ const ShopByBrand = () => {
                       <img
                         src={brand.logo}
                         alt={brand.name}
+                        loading="lazy"
                         className="max-w-full max-h-full object-contain filter md:group-hover/card:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           // Fallback to text if image fails

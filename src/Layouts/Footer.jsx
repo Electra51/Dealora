@@ -70,10 +70,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block mb-6">
-              <img src={logo} alt="Dealora Logo" className="h-12 w-auto" />
+            <Link  aria-label="Dealora Home" to="/" className="inline-block mb-6">
+              <img src={logo} alt="Dealora Logo" className="h-12 w-auto" loading="lazy"/>
             </Link>
-            <p className="text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed">
               Your trusted online shopping destination for quality products at amazing prices. Shop with confidence and style.
             </p>
             <div className="flex gap-3">
@@ -97,8 +97,9 @@ const Footer = () => {
               {footerLinks.quickLinks.map((link, index) => (
                 <li key={index}>
                   <Link
+                 aria-label="Dealora Home"
                     to={link.path}
-                    className="text-gray-400 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                    className="text-gray-600 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
                   >
                     {link.name}
                   </Link>
@@ -114,8 +115,9 @@ const Footer = () => {
               {footerLinks.customerService.map((link, index) => (
                 <li key={index}>
                   <Link
+                   aria-label={link.name}
                     to={link.path}
-                    className="text-gray-400 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                    className="text-gray-600 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
                   >
                     {link.name}
                   </Link>
@@ -130,19 +132,19 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Map className="w-5 h-5 text-orange-500 mt-1 shrink-0" />
-                <span className="text-gray-400">123 Shopping Street, NY 10001</span>
+                <span className="text-gray-600">123 Shopping Street, NY 10001</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-orange-500 shrink-0" />
-                <span className="text-gray-400">+1 (555) 123-4567</span>
+                <span className="text-gray-600">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-orange-500 shrink-0" />
-                <span className="text-gray-400">support@dealora.com</span>
+                <span className="text-gray-600">support@dealora.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-orange-500 shrink-0" />
-                <span className="text-gray-400">Mon - Fri: 9AM - 6PM</span>
+                <span className="text-gray-600">Mon - Fri: 9AM - 6PM</span>
               </li>
             </ul>
           </div>
@@ -153,20 +155,20 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
+            <p className="text-gray-600 text-sm text-center md:text-left">
               © {currentYear} Dealora. All rights reserved. Made with ❤️ by safayet
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
                 Facebook
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
                 Twitter
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
                 Instagram
               </a>
-              <a href="#" className="text-gray-400 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
                 LinkedIn
               </a>
             </div>

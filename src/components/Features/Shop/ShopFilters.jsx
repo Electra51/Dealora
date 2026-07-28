@@ -8,13 +8,14 @@ const FilterAccordion = ({ title, defaultOpen = true, children }) => {
   return (
     <div className="border-b border-gray-100 last:border-0 py-5 first:pt-0">
       <button 
+      aria-label="title"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between group"
       >
         <h4 className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
           {title}
         </h4>
-        <div className="text-gray-400 group-hover:text-orange-500 transition-colors">
+        <div className="text-gray-600 group-hover:text-orange-500 transition-colors">
           {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </div>
       </button>
@@ -53,6 +54,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
         </div>
         {hasActiveFilters && (
           <button 
+          aria-label="clear"
             onClick={clearFilters} 
             className="text-sm text-orange-500 hover:text-orange-600 font-medium px-3 py-1 bg-orange-50 rounded-full transition-colors"
           >
@@ -67,6 +69,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
           <label key={cat} className="flex items-center gap-3 cursor-pointer group">
             <div className="relative flex items-center justify-center">
               <input 
+              aria-label="Search products"
                 type="radio" 
                 name="category" 
                 checked={filters.category === cat} 
@@ -91,6 +94,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
             <label key={collection} className="flex items-center gap-3 cursor-pointer group">
               <div className="relative flex items-center justify-center">
                 <input 
+                aria-label="Search products"
                   type="radio" 
                   name="collection" 
                   checked={filters.collection === collection} 
@@ -114,8 +118,9 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <div className="relative flex-1">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 font-medium">$</span>
               <input 
+              aria-label="Search products"
                 type="number" 
                 placeholder="Min" 
                 value={filters.minPrice || ''} 
@@ -125,8 +130,9 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
             </div>
             <span className="text-gray-300">-</span>
             <div className="relative flex-1">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 font-medium">$</span>
               <input 
+              aria-label="Search products"
                 type="number" 
                 placeholder="Max" 
                 value={filters.maxPrice || ''} 
@@ -143,6 +149,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
         <div className="flex flex-col gap-2">
           {[4, 3, 2, 1].map(r => (
             <button 
+            aria-label="rating"
               key={r} 
               onClick={() => updateFilter('rating', filters.rating === r ? null : r)} 
               className={`flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
@@ -156,7 +163,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
                   <Star 
                     key={i} 
                     size={16} 
-                    className={i < r ? 'fill-orange-400 text-orange-400' : 'fill-gray-200 text-gray-200'} 
+                    className={i < r ? 'fill-orange-400 text-orange-600' : 'fill-gray-200 text-gray-200'} 
                   />
                 ))}
               </div>
@@ -174,6 +181,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
           <label className="flex items-center gap-3 cursor-pointer group">
             <div className="relative flex items-center justify-center">
               <input 
+              aria-label="Search products"
                 type="checkbox" 
                 checked={filters.inStock || false} 
                 onChange={() => updateFilter('inStock', !filters.inStock)} 
@@ -190,6 +198,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
           <label className="flex items-center gap-3 cursor-pointer group">
             <div className="relative flex items-center justify-center">
               <input 
+              aria-label="Search products"
                 type="checkbox" 
                 checked={filters.onSale || false} 
                 onChange={() => updateFilter('onSale', !filters.onSale)} 
@@ -236,6 +245,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
               <div className="sticky top-0 bg-white/80 backdrop-blur-md z-10 p-6 pb-4 flex justify-between items-center border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900">Filters</h2>
                 <button 
+                aria-label="close"
                   onClick={() => setMobileOpen(false)} 
                   className="p-2 bg-gray-50 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all"
                 >
@@ -247,6 +257,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
               </div>
               <div className="sticky bottom-0 bg-white border-t border-gray-100 p-4">
                 <button 
+                aria-label="Show result"
                   onClick={() => setMobileOpen(false)} 
                   className="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors shadow-sm shadow-orange-500/20"
                 >

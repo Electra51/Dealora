@@ -72,7 +72,7 @@ const categories = [
 
   return (
     <section className="hidden md:block relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 overflow-hidden py-14 lg:py-20">
-      {/* Radial glow top */}
+   
       <div className="absolute top-0 left-0 right-0 h-75 pointer-events-none bg-[radial-gradient(circle_at_50%_0%,rgba(255,165,0,0.05)_0%,transparent_70%)]"></div>
 
       <SectionHeader
@@ -96,6 +96,7 @@ const categories = [
               <img
                 src={cat.image}
                 alt={cat.name}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -120,7 +121,7 @@ const categories = [
                 {cat.count}
               </p>
 
-              <button  onClick={(e) => {
+              <button aria-label="Shop" onClick={(e) => {
                   e.stopPropagation(); // Parent card-er click event jeno trigger na hoy
                   // URL-e query parameter hishebe collection name pass korchi
                   navigate(`/shop?collection=${encodeURIComponent(cat.category)}`);
