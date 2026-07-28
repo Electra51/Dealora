@@ -5,7 +5,7 @@ import { Search, ShoppingBag } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center overflow-hidden py-4.5 md:py-13 mt-32 md:mt-20 rounded-4xl md:rounded-none mx-4 md:mx-0">
+    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center md:overflow-hidden py-4.5 md:py-13 mt-20 md:mt-20 rounded-4xl md:rounded-none mx-4 md:mx-0">
       {/* Background Effects */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -15,7 +15,7 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 md:py-0">
+      <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-0 md:py-0">
         
         {/* ========== MOBILE VIEW (App-like) ========== */}
         <div className="md:hidden">
@@ -24,10 +24,10 @@ const Hero = () => {
           {/* Mobile Hero Content */}
           <div className="grid grid-cols-2 gap-3 md:pb-8">
              {/* Text Content */}
-            <div className="px-2 w-full">
+            <div className="pl-8 pt-4 w-full">
                {/* Floating Badge */}
               {/* <div className="bg-[#1a1a24]/95 backdrop-blur-xl py-3 px-4 rounded-2xl border border-white/10 shadow-xl"> */}
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 mb-3">
                   <span className="text-2xl">🔥</span>
                   <div>
                     <p className="text-[10px] text-gray-400 uppercase tracking-wider">Hot Deal</p>
@@ -35,9 +35,9 @@ const Hero = () => {
                   </div>
                 </div>
               {/* </div> */}
-              <h1 className="text-xl font-semibold text-white leading-tight mb-3 mt-3 md:mt-0">
-                Find Your Pair
-                <br />
+              <h1 className="text-xl font-semibold text-white leading-tight mb-4 mt-4 md:mt-0">
+                Find Your Pair {" "}
+                {/* <br /> */}
                  to {" "}
                 <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
                    Move
@@ -49,7 +49,7 @@ const Hero = () => {
               <div className="flex gap-3 mb-6 mt-3">
                 <Link
                   to="/shop"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-6 rounded-full text-sm font-semibold bg-linear-to-br from-[#FF7203] to-[#FF9A03] text-white shadow-lg shadow-orange-500/30 active:scale-95 transition-transform"
+                  className="flex justify-center items-center py-2 px-3 rounded-full text-xs font-bold border border-gray-100 text-white"
                 >
                   Shop Now
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,11 +63,13 @@ const Hero = () => {
             </div>
          
            
-              <img
+              <div >
+                <img
                 src={homeImage}
                 alt="Athletic Performance"
-                className="relative w-full h-50 object-cover drop-shadow-2xl"
+                className="absolute -bottom-19.5 right-3  w-67.5  drop-shadow-2xl -rotate-12"
               />
+              </div>
            
              
         

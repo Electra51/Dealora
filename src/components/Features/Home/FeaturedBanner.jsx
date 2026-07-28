@@ -51,7 +51,7 @@ const FeaturedBanner = () => {
               </a>
               <a
                 href="/deals"
-                className="inline-flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-white text-white font-bold rounded-full text-sm md:text-base hover:bg-white hover:text-orange-600 transition-all duration-300"
+                className="md:inline-flex items-center justify-center gap-2 md:gap-3 px-6 py-3 md:px-8 md:py-4 bg-transparent border-2 border-white text-white font-bold rounded-full text-sm md:text-base hover:bg-white hover:text-orange-600 transition-all duration-300 hidden"
               >
                 View All Deals
               </a>

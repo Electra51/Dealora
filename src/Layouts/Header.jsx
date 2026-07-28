@@ -467,7 +467,7 @@ const Header = () => {
     <div className="md:hidden">
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-1000 transition-all duration-500 pb-5 md:border-b",
+          "fixed top-0 left-0 right-0 z-1000 transition-all duration-500 md:border-b",
           isScrolled
             ? "bg-white backdrop-blur-md shadow-lg"
             : "bg-transparent md:bg-[#1a1a24]"
@@ -520,8 +520,9 @@ const Header = () => {
                 <Search className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
 
+ <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-400" />
               {/* Cart Icon with Badge */}
-              <Link to="/cart" className="relative">
+              {/* <Link to="/cart" className="relative">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -539,12 +540,12 @@ const Header = () => {
                     {totalCartItems > 9 ? "9+" : totalCartItems}
                   </motion.span>
                 )}
-              </Link>
+              </Link> */}
             </div>
           </div>
 
           {/* SEARCH BAR - Full Width Below Header (Like Instacart) */}
-          <div className="pb-0 md:pb-4">
+          {/* <div className="pb-0 md:pb-4">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -555,7 +556,7 @@ const Header = () => {
                 className="w-full border border-[#2d2d3a] md:bg-[#2d2d3a] text-white placeholder-gray-400 rounded-full py-2.5 md:py-3 pl-12 pr-4 text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-orange-500/50 cursor-pointer"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </header>
     </div>

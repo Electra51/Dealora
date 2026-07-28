@@ -1,0 +1,1 @@
+var e=`/assets/clothing-3cqJjrAw.png`,t=`/assets/accessesories-BCOYBEAW.png`,n=`/assets/footwaer-CuX2kmTs.png`,r=`/assets/grooming-C1sWIcB6.png`;export{e as i,n,t as r,r as t};
