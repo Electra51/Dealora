@@ -19,7 +19,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/hoodie/hoodie2.jpg",
+      "thumbnail": "src/assets/images/hoodie/hoodie2.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -99,7 +99,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jeans/jeans3.png",
+      "thumbnail": "src/assets/images/jeans/jeans3.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -182,9 +182,9 @@
         "fleece",
         "casual"
       ],
-      "thumbnail": "src/assets/images/hoodie/hoodie3.jpg",
+      "thumbnail": "src/assets/images/hoodie/hoodie3.webp",
       "gallery": [
-        "src/assets/images/hoodie/hoodie3.jpg",
+        "src/assets/images/hoodie/hoodie3.webp",
         "src/assets/images/hoodie/hoodie3-side.jpg",
         "src/assets/images/hoodie/hoodie3-back.jpg",
         "src/assets/images/hoodie/hoodie3-detail.jpg"
@@ -265,9 +265,9 @@
         "sportswear",
         "lightweight"
       ],
-      "thumbnail": "src/assets/images/jackets/jacket4.png",
+      "thumbnail": "src/assets/images/jackets/jacket4.webp",
       "gallery": [
-        "src/assets/images/jackets/jacket4.png",
+        "src/assets/images/jackets/jacket4.webp",
         "src/assets/images/jackets/jacket4-side.png",
         "src/assets/images/jackets/jacket4-back.png",
         "src/assets/images/jackets/jacket4-detail.png"
@@ -348,9 +348,9 @@
         "puma",
         "active"
       ],
-      "thumbnail": "src/assets/images/jackets/jacket5.png",
+      "thumbnail": "src/assets/images/jackets/jacket5.webp",
       "gallery": [
-        "src/assets/images/jackets/jacket5.png",
+        "src/assets/images/jackets/jacket5.webp",
         "src/assets/images/jackets/jacket5-side.png",
         "src/assets/images/jackets/jacket5-back.png",
         "src/assets/images/jackets/jacket5-detail.png"
@@ -431,7 +431,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/sneakers/sneakar1.png",
+      "thumbnail": "src/assets/images/sneakers/sneakar1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -513,7 +513,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jackets/jacket1.png",
+      "thumbnail": "src/assets/images/jackets/jacket1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -591,7 +591,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt1.png",
+      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -672,7 +672,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/shirt/richman-shirt-1.png",
+      "thumbnail": "src/assets/images/shirt/richman-shirt-1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -752,7 +752,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jeans/jeans1.png",
+      "thumbnail": "src/assets/images/jeans/jeans1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -826,12 +826,12 @@
       "subCategory": "Boots",
       "collection": "Black Edition",
       "gender": "Men",
-      "thumbnail": "src/assets/images/boots/boots1.png",
+      "thumbnail": "src/assets/images/boots/boots1.webp",
       "gallery": [
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png"
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp"
       ],
       "price": 160,
       "comparePrice": 190,
@@ -853,12 +853,12 @@
       "subCategory": "Boots",
       "collection": "Active Lifestyle",
       "gender": "Men",
-      "thumbnail": "src/assets/images/boots/boots2.png",
+      "thumbnail": "src/assets/images/boots/boots2.webp",
       "gallery": [
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots2.png"
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots2.webp"
       ],
       "price": 175,
       "comparePrice": 210,
@@ -880,12 +880,12 @@
       "subCategory": "Boots",
       "collection": "Active Lifestyle",
       "gender": "Men",
-      "thumbnail": "src/assets/images/boots/boots3.png",
+      "thumbnail": "src/assets/images/boots/boots3.webp",
       "gallery": [
-        "src/assets/images/boots/boots3.png",
-        "src/assets/images/boots/boots1.png",
-        "src/assets/images/boots/boots2.png",
-        "src/assets/images/boots/boots3.png"
+        "src/assets/images/boots/boots3.webp",
+        "src/assets/images/boots/boots1.webp",
+        "src/assets/images/boots/boots2.webp",
+        "src/assets/images/boots/boots3.webp"
       ],
       "price": 185,
       "comparePrice": 220,
@@ -907,12 +907,12 @@
       "subCategory": "Sandals",
       "collection": "Weekend Casual",
       "gender": "Unisex",
-      "thumbnail": "src/assets/images/sandals/sandals1.png",
+      "thumbnail": "src/assets/images/sandals/sandals1.webp",
       "gallery": [
-        "src/assets/images/sandals/sandals1.png",
-        "src/assets/images/sandals/sandals2.png",
-        "src/assets/images/sandals/sandals3.png",
-        "src/assets/images/sandals/sandals4.png"
+        "src/assets/images/sandals/sandals1.webp",
+        "src/assets/images/sandals/sandals2.webp",
+        "src/assets/images/sandals/sandals3.webp",
+        "src/assets/images/sandals/sandals4.webp"
       ],
       "price": 70,
       "comparePrice": 90,
@@ -934,12 +934,12 @@
       "subCategory": "Sandals",
       "collection": "Black Edition",
       "gender": "Unisex",
-      "thumbnail": "src/assets/images/sandals/sandals2.png",
+      "thumbnail": "src/assets/images/sandals/sandals2.webp",
       "gallery": [
-        "src/assets/images/sandals/sandals2.png",
-        "src/assets/images/sandals/sandals1.png",
-        "src/assets/images/sandals/sandals3.png",
-        "src/assets/images/sandals/sandals4.png"
+        "src/assets/images/sandals/sandals2.webp",
+        "src/assets/images/sandals/sandals1.webp",
+        "src/assets/images/sandals/sandals3.webp",
+        "src/assets/images/sandals/sandals4.webp"
       ],
       "price": 65,
       "comparePrice": 80,
@@ -961,12 +961,12 @@
       "subCategory": "Sandals",
       "collection": "Active Lifestyle",
       "gender": "Men",
-      "thumbnail": "src/assets/images/sandals/sandals3.png",
+      "thumbnail": "src/assets/images/sandals/sandals3.webp",
       "gallery": [
-        "src/assets/images/sandals/sandals3.png",
-        "src/assets/images/sandals/sandals1.png",
-        "src/assets/images/sandals/sandals2.png",
-        "src/assets/images/sandals/sandals4.png"
+        "src/assets/images/sandals/sandals3.webp",
+        "src/assets/images/sandals/sandals1.webp",
+        "src/assets/images/sandals/sandals2.webp",
+        "src/assets/images/sandals/sandals4.webp"
       ],
       "price": 88,
       "comparePrice": 110,
@@ -988,12 +988,12 @@
       "subCategory": "Sandals",
       "collection": "Weekend Casual",
       "gender": "Unisex",
-      "thumbnail": "src/assets/images/sandals/sandals4.png",
+      "thumbnail": "src/assets/images/sandals/sandals4.webp",
       "gallery": [
-        "src/assets/images/sandals/sandals4.png",
-        "src/assets/images/sandals/sandals1.png",
-        "src/assets/images/sandals/sandals2.png",
-        "src/assets/images/sandals/sandals3.png"
+        "src/assets/images/sandals/sandals4.webp",
+        "src/assets/images/sandals/sandals1.webp",
+        "src/assets/images/sandals/sandals2.webp",
+        "src/assets/images/sandals/sandals3.webp"
       ],
       "price": 55,
       "comparePrice": 75,
@@ -1015,7 +1015,7 @@
       "subCategory": "Formal Shoes",
       "collection": "Black Edition",
       "gender": "Men",
-      "thumbnail": "src/assets/images/formal-shoe/formal-shoe1.png",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe1.webp",
       "gallery": [
         "src/assets/images/formal-shoe/formal1.png",
         "src/assets/images/formal-shoe/formal2.png",
@@ -1042,7 +1042,7 @@
       "subCategory": "Formal Shoes",
       "collection": "Office Ready",
       "gender": "Men",
-      "thumbnail": "src/assets/images/formal-shoe/formal-shoe2.png",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe2.webp",
       "gallery": [
         "src/assets/images/formal-shoes/formal2.png",
         "src/assets/images/formal-shoes/formal1.png",
@@ -1070,7 +1070,7 @@
       "subCategory": "Formal Shoes",
       "collection": "Office Ready",
       "gender": "Men",
-      "thumbnail": "src/assets/images/formal-shoe/formal-shoe3.png",
+      "thumbnail": "src/assets/images/formal-shoe/formal-shoe3.webp",
       "gallery": [
         "src/assets/images/formal-shoes/formal4.png",
         "src/assets/images/formal-shoes/formal1.png",
@@ -1106,9 +1106,9 @@
         "slim-fit",
         "business"
       ],
-      "thumbnail": "src/assets/images/shirt/richman-shirt-2.png",
+      "thumbnail": "src/assets/images/shirt/richman-shirt-2.webp",
       "gallery": [
-        "src/assets/images/shirt/richman-shirt-2.png",
+        "src/assets/images/shirt/richman-shirt-2.webp",
         "src/assets/images/shirt/richman-shirt-2-side.png",
         "src/assets/images/shirt/richman-shirt-2-back.png",
         "src/assets/images/shirt/richman-shirt-2-detail.png"
@@ -1189,7 +1189,7 @@
         "premium",
         "trending"
       ],
-      "thumbnail": "src/assets/images/sneakers/sneakar2.png",
+      "thumbnail": "src/assets/images/sneakers/sneakar2.webp",
       "gallery": [
         "src/assets/images/sneakers/sneaker2-1.png",
         "src/assets/images/sneakers/sneaker2-2.png",
@@ -1353,7 +1353,7 @@
         "lightweight",
         "best-seller"
       ],
-      "thumbnail": "src/assets/images/running/running2.png",
+      "thumbnail": "src/assets/images/running/running2.webp",
       "gallery": [
         "src/assets/images/sneakers/sneaker3-1.png",
         "src/assets/images/sneakers/sneaker3-2.png",
@@ -1437,7 +1437,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/belts/belts.png",
+      "thumbnail": "src/assets/images/belts/belts.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1516,7 +1516,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/bags/bag1.png",
+      "thumbnail": "src/assets/images/bags/bag1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1591,7 +1591,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jackets/jacket2.png",
+      "thumbnail": "src/assets/images/jackets/jacket2.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1671,7 +1671,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jeans/jeans2.png",
+      "thumbnail": "src/assets/images/jeans/jeans2.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1755,7 +1755,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/watches/watch1.png",
+      "thumbnail": "src/assets/images/watches/watch1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1839,7 +1839,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/caps/cap1.png",
+      "thumbnail": "src/assets/images/caps/cap1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -1916,7 +1916,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt2.png",
+      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt2.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2000,7 +2000,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/sandals/sandals5.png",
+      "thumbnail": "src/assets/images/sandals/sandals5.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2079,7 +2079,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/running/running.png",
+      "thumbnail": "src/assets/images/running/running.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2161,7 +2161,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/hoodie/hoodie1.jpg",
+      "thumbnail": "src/assets/images/hoodie/hoodie1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2245,9 +2245,9 @@
         "gym",
         "running"
       ],
-      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt3.png",
+      "thumbnail": "src/assets/images/t-shirt/nike-t-shirt3.webp",
       "gallery": [
-        "src/assets/images/t-shirt/nike-t-shirt3.png",
+        "src/assets/images/t-shirt/nike-t-shirt3.webp",
         "src/assets/images/t-shirt/nike-t-shirt3-side.png",
         "src/assets/images/t-shirt/nike-t-shirt3-back.png",
         "src/assets/images/t-shirt/nike-t-shirt3-detail.png"
@@ -2329,7 +2329,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/jackets/jacket3.png",
+      "thumbnail": "src/assets/images/jackets/jacket3.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2407,7 +2407,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/face-wash/face-wash2.png",
+      "thumbnail": "src/assets/images/face-wash/face-wash2.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2484,9 +2484,9 @@
     "men",
     "new"
   ],
-  "thumbnail": "src/assets/images/shaving-kits/shaving-kit1.png",
+  "thumbnail": "src/assets/images/shaving-kits/shaving-kit1.webp",
   "gallery": [
-    "src/assets/images/shaving-kits/shaving-kit1.png",
+    "src/assets/images/shaving-kits/shaving-kit1.webp",
     "src/assets/images/shaving-kits/shaving-kit2.png",
     "src/assets/images/shaving-kits/shaving-kit3.png",
     "src/assets/images/shaving-kits/shaving-kit4.png"
@@ -2562,7 +2562,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/face-wash/face-wash1.png",
+      "thumbnail": "src/assets/images/face-wash/face-wash1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2639,7 +2639,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/hair-care/hair-care1.png",
+      "thumbnail": "src/assets/images/hair-care/hair-care1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2716,7 +2716,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/perfume/perfume1.png",
+      "thumbnail": "src/assets/images/perfume/perfume1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
@@ -2793,7 +2793,7 @@
         "premium",
         "new"
       ],
-      "thumbnail": "src/assets/images/body-spray/body-spray1.png",
+      "thumbnail": "src/assets/images/body-spray/body-spray1.webp",
       "gallery": [
         "src/assets/active.webp",
         "src/assets/active.webp",
