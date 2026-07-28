@@ -1,13 +1,10 @@
-
-
-
 import React from "react";
 import SectionHeader from "../../Common/SectionHeader";
-import weekend from "../../../assets/weekend.png";
-import office from "../../../assets/office.png";
-import black from "../../../assets/black.jpeg";
-import groomingpick from "../../../assets/groomingpick.jpeg";
-import active from "../../../assets/active.jpeg";
+import weekend from "../../../assets/weekend.webp";
+import office from "../../../assets/office.webp";
+import black from "../../../assets/black.webp";
+import groomingpick from "../../../assets/groomingpick.webp";
+import active from "../../../assets/active.webp";
 import { useNavigate } from "react-router-dom";
 
 
