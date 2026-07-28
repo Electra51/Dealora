@@ -8,7 +8,7 @@ const ReviewCard = memo(({ review, renderStars }) => (
     {/* Hover gradient effect */}
     <div className="absolute inset-0 bg-linear-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-    <div className="relative z-10 flex flex-col h-full flex-grow">
+    <div className="relative z-10 flex flex-col h-full grow">
       {/* Header */}
       <div className="flex items-start justify-between mb-3 sm:mb-4">
         <div className="flex items-center gap-3">
@@ -55,7 +55,7 @@ const ReviewCard = memo(({ review, renderStars }) => (
       </p>
 
       {/* Review Text */}
-      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 line-clamp-4 flex-grow">
+      <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 line-clamp-4 grow">
         {review.review}
       </p>
 
