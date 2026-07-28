@@ -1,12 +1,12 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
-import DealsPage from "../pages/DealsPage";
-import CartPage from "../pages/CartPage";
 
-// Lazy loading the page components
+// ALL routes dynamically imported
 const HomePage = lazy(() => import("../pages/HomePage"));
 const ShopPage = lazy(() => import("../pages/ShopPage"));
+const DealsPage = lazy(() => import("../pages/DealsPage"));
+const CartPage = lazy(() => import("../pages/CartPage"));
 const About = lazy(() => import("../components/Features/About/About"));
 
 // A loading fallback component for Suspense
@@ -20,7 +20,6 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    // errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -64,8 +63,5 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  //   {
-  //     path: "/login",
-  //     element: <LoginPage />,
-  //   },
+  
 ]);
