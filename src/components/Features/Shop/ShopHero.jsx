@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ShopHero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24]  text-white py-16 overflow-hidden">
+    <section className="hidden md:flex relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24]  text-white py-16 overflow-hidden">
       {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 -left-20 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 -right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />

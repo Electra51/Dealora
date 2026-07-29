@@ -240,7 +240,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
               animate={{ x: 0 }} 
               exit={{ x: '-100%' }} 
               transition={{ type: 'spring', damping: 25, stiffness: 200 }} 
-              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-50 overflow-y-auto lg:hidden shadow-2xl flex flex-col"
+              className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-60 overflow-y-auto lg:hidden shadow-2xl flex flex-col"
             >
               <div className="sticky top-0 bg-white/80 backdrop-blur-md z-10 p-6 pb-4 flex justify-between items-center border-b border-gray-100">
                 <h2 className="text-xl font-bold text-gray-900">Filters</h2>

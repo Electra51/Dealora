@@ -383,6 +383,7 @@ const Header = () => {
                 link.hasMegaMenu ? (
                   <div key={link.path} className="relative">
                     <motion.button
+                      aria-label={link.name}
                       onClick={toggleMegaMenu}
                       className={cn(
                         "flex items-center gap-2 text-[#f0f8ff] text-base font-medium py-2 transition-colors",
@@ -483,7 +484,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 gap-4">
             {/* LEFT SECTION - Logo or Back Button */}
-            <div className="flex items-center gap-3 min-w-25">
+            <div className="flex items-center gap-3">
               {isHomePage ? (
                 // Homepage: Show Logo
                 <Link  aria-label="Dealora Home" to="/" className="shrink-0">
@@ -499,9 +500,17 @@ const Header = () => {
               ) : (
                 // Other Pages: Show Back Button
                 <motion.button
+                aria-label="back-button"
                   onClick={handleBack}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 -ml-2 text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
+                  // className=""
+                  className={cn(
+          "p-2 -ml-2  hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
+          isScrolled
+            ? "text-black"
+            : "text-black"
+        )}
+                
                 >
                   <ArrowLeft className="w-6 h-6" />
                 </motion.button>
@@ -511,7 +520,13 @@ const Header = () => {
             {/* CENTER SECTION - Page Title (Only on non-home pages) */}
             {!isHomePage && (
               <div className="flex-1 text-center">
-                <h1 className="text-lg md:text-xl font-bold text-white">
+                <h1 
+                    className={cn(
+          "text-xl md:text-xl font-bold",
+          isScrolled
+            ? "text-black"
+            : "text-black"
+        )}>
                   {getPageTitle()}
                 </h1>
               </div>
@@ -520,7 +535,10 @@ const Header = () => {
             {/* RIGHT SECTION - Search & Cart Icons */}
             <div className="flex items-center gap-2 md:gap-4 ml-auto">
               {/* Search Icon - Always Visible */}
+              {isHomePage && (
+              <>
               <motion.button
+                aria-label="search products"
                 onClick={() => setIsSearchOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -529,13 +547,22 @@ const Header = () => {
                 <Search className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
 
- <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" />
+ <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" /></>
+              )}
               {/* Cart Icon with Badge */}
-              {/* <Link to="/cart" className="relative">
+              <Link to="/cart" className="relative" aria-label="add to cart">
                 <motion.button
+                  aria-label="add to cart"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 text-black hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
+                  className=""
+                  className={cn(
+          "p-2 hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
+          isScrolled
+            ? "text-black"
+            : "text-black"
+        )}
+                
                 >
                   <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
                 </motion.button>
@@ -549,7 +576,7 @@ const Header = () => {
                     {totalCartItems > 9 ? "9+" : totalCartItems}
                   </motion.span>
                 )}
-              </Link> */}
+              </Link>
             </div>
           </div>
 
