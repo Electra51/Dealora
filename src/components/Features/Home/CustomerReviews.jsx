@@ -17,7 +17,7 @@ const ReviewCard = memo(({ review, renderStars }) => (
             alt={review.name}
             loading="lazy"
             className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/50 transition-all duration-300"
-            loading="lazy"
+          
           />
           <div>
             <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">

@@ -92,13 +92,13 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white rounded-md border border-gray-100 shadow-sm sticky top-20 z-30">
+    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white rounded-md sticky top-20 z-30">
       
       {/* Mobile Search Bar - Matches Image Design */}
       <div className="md:hidden flex items-center gap-3 w-full">
         <div className="relative flex-1 flex items-center bg-gray-100 rounded-md px-4 py-3">
           {/* Search Icon */}
-          <svg className="w-5 h-5 text-gray-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-gray-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           
@@ -170,11 +170,11 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
           <option value="discount">Biggest Discount</option>
         </select>
 
-        <div className="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-xl p-1">
+        <div className="hidden sm:flex items-center bg-gray-50 border border-gray-200 rounded-lg p-1">
           <button
             aria-label="Grid view"
             onClick={() => setViewMode('grid')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-md transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -183,7 +183,7 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
           <button
             aria-label="List view"
             onClick={() => setViewMode('list')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-md transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
