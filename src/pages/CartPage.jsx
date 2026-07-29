@@ -85,13 +85,13 @@ const CartPage = () => {
                   <div className="flex-1 flex flex-col">
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <p className="text-xs text-orange-500 uppercase tracking-wider font-semibold mb-1">
+                        <p className="text-xs text-orange-600 uppercase tracking-wider font-semibold mb-1">
                           {item.brand}
                         </p>
                         <Link 
                         aria-label={item.name}
                           to={`/product/${item.slug || item.id}`}
-                          className="font-semibold text-gray-900 hover:text-orange-500 transition-colors line-clamp-2"
+                          className="font-semibold text-gray-900 hover:text-orange-600 transition-colors line-clamp-2"
                         >
                           {item.name}
                         </Link>
@@ -166,7 +166,7 @@ const CartPage = () => {
                   </span>
                 </div>
                 {shipping > 0 && (
-                  <p className="text-xs text-orange-500">
+                  <p className="text-xs text-orange-600">
                     Add {formatPrice(100 - subtotal)} more for free shipping
                   </p>
                 )}
@@ -191,7 +191,7 @@ const CartPage = () => {
               <Link
           aria-label="Continue Shopping"
                 to="/shop"
-                className="block text-center mt-4 text-sm text-gray-500 hover:text-orange-500 transition-colors"
+                className="block text-center mt-4 text-sm text-gray-500 hover:text-orange-600 transition-colors"
               >
                 ← Continue Shopping
               </Link>

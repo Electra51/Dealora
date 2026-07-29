@@ -1,9 +1,8 @@
 import { lazy, Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Layouts/MainLayout";
-
+import HomePage from "../pages/HomePage";
 // ALL routes dynamically imported
-const HomePage = lazy(() => import("../pages/HomePage"));
 const ShopPage = lazy(() => import("../pages/ShopPage"));
 const DealsPage = lazy(() => import("../pages/DealsPage"));
 const CartPage = lazy(() => import("../pages/CartPage"));
@@ -23,11 +22,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <Suspense fallback={<LoadingFallback />}>
-            <HomePage />
-          </Suspense>
-        ),
+        element:<HomePage />
+         
       },
       {
         path: "/shop",

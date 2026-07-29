@@ -65,7 +65,7 @@ const ProductCard = memo(({
           button: 'bg-linear-to-tr from-[#FF7203] to-[#FF9A03] text-gray-900 hover:bg-[#FF7203] hover:text-black hover:bg-orange-600 text-white',
           textPrimary: 'text-gray-900',
           textSecondary: 'text-gray-600',
-          accent: 'text-orange-500'
+          accent: 'text-orange-600'
         };
       case 'newArrival':
         return {
@@ -92,7 +92,7 @@ const ProductCard = memo(({
           button: 'bg-gray-900 hover:bg-orange-500 text-white',
           textPrimary: 'text-gray-900',
           textSecondary: 'text-gray-600',
-          accent: 'text-orange-500'
+          accent: 'text-orange-600'
         };
     }
   };

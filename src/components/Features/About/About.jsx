@@ -125,7 +125,7 @@ const About = () => {
   </span>
 
   <h2 className="text-4xl font-black text-gray-900 mb-6">
-    Built for Smarter <span className="text-orange-500">Shopping</span>
+    Built for Smarter <span className="text-orange-600">Shopping</span>
   </h2>
 
   <div className="space-y-4 text-gray-600 leading-relaxed">
@@ -152,7 +152,7 @@ const About = () => {
   <div className="mt-8 flex flex-wrap gap-6">
     <div className="flex items-center gap-2">
       <svg
-        className="w-6 h-6 text-orange-500"
+        className="w-6 h-6 text-orange-600"
         fill="currentColor"
         viewBox="0 0 20 20"
       >
@@ -170,7 +170,7 @@ const About = () => {
 
     <div className="flex items-center gap-2">
       <svg
-        className="w-6 h-6 text-orange-500"
+        className="w-6 h-6 text-orange-600"
         fill="currentColor"
         viewBox="0 0 20 20"
       >

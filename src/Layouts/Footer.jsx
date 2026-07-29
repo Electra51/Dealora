@@ -71,7 +71,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link  aria-label="Dealora Home" to="/" className="inline-block mb-6">
-              <img src={logo} alt="Dealora Logo" className="h-12 w-auto" loading="lazy"/>
+              <img src={logo} alt="Dealora Logo" width="120" height="48" className="h-12 w-auto" loading="lazy"/>
             </Link>
             <p className="text-gray-600 mb-6 leading-relaxed">
               Your trusted online shopping destination for quality products at amazing prices. Shop with confidence and style.
@@ -99,7 +99,7 @@ const Footer = () => {
                   <Link
                  aria-label="Dealora Home"
                     to={link.path}
-                    className="text-gray-600 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                    className="text-gray-600 hover:text-orange-600 transition-colors duration-300 inline-block hover:translate-x-1 transform"
                   >
                     {link.name}
                   </Link>
@@ -117,7 +117,7 @@ const Footer = () => {
                   <Link
                    aria-label={link.name}
                     to={link.path}
-                    className="text-gray-600 hover:text-orange-500 transition-colors duration-300 inline-block hover:translate-x-1 transform"
+                    className="text-gray-600 hover:text-orange-600 transition-colors duration-300 inline-block hover:translate-x-1 transform"
                   >
                     {link.name}
                   </Link>
@@ -131,19 +131,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6 text-white">Get In Touch</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Map className="w-5 h-5 text-orange-500 mt-1 shrink-0" />
+                <Map className="w-5 h-5 text-orange-600 mt-1 shrink-0" />
                 <span className="text-gray-600">123 Shopping Street, NY 10001</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-orange-500 shrink-0" />
+                <Phone className="w-5 h-5 text-orange-600 shrink-0" />
                 <span className="text-gray-600">+1 (555) 123-4567</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-orange-500 shrink-0" />
+                <Mail className="w-5 h-5 text-orange-600 shrink-0" />
                 <span className="text-gray-600">support@dealora.com</span>
               </li>
               <li className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-orange-500 shrink-0" />
+                <Clock className="w-5 h-5 text-orange-600 shrink-0" />
                 <span className="text-gray-600">Mon - Fri: 9AM - 6PM</span>
               </li>
             </ul>
@@ -159,16 +159,16 @@ const Footer = () => {
               © {currentYear} Dealora. All rights reserved. Made with ❤️ by safayet
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Facebook
               </a>
-              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Twitter
               </a>
-              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors">
                 Instagram
               </a>
-              <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">
+              <a href="#" className="text-gray-600 hover:text-orange-600 transition-colors">
                 LinkedIn
               </a>
             </div>

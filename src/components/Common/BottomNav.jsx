@@ -33,7 +33,7 @@ const BottomNav = () => {
               key={item.name}
               to={item.path}
               className={`relative flex flex-col items-center justify-center w-full h-full transition-all duration-300 ${
-                active ? "text-orange-500" : "text-gray-500 hover:text-gray-300"
+                active ? "text-orange-600" : "text-gray-500 hover:text-gray-300"
               }`}
             >
               <div className="relative">
@@ -46,7 +46,7 @@ const BottomNav = () => {
                 </span>
                 )}
               </div>
-              <span className={`text-[10px] mt-1 font-medium ${active ? "text-orange-500" : ""}`}>
+              <span className={`text-[10px] mt-1 font-medium ${active ? "text-orange-600" : ""}`}>
                 {item.name}
               </span>
               

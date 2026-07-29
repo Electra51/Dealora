@@ -10,7 +10,7 @@ const DealsSection = ({ title, subtitle, products, loading, variant = 'primary' 
           <h2 className={`text-3xl font-black ${variant === 'primary' ? 'text-gray-900' : 'text-purple-900'}`}>{title}</h2>
           <p className="text-gray-500 mt-2">{subtitle}</p>
         </div>
-        <button aria-label="view deals" className="text-orange-500 font-semibold hover:underline flex items-center gap-1">
+        <button aria-label="view deals" className="text-orange-600 font-semibold hover:underline flex items-center gap-1">
           View All Deals 
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
         </button>

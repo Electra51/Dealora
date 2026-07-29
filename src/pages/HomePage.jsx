@@ -22,6 +22,7 @@ const HomePage = () => {
         title="Home" 
         description="Shop the best premium sneakers and apparel at Dealora. Exclusive deals, fast delivery, and guaranteed quality."
       />
+      
       <Hero />
        <MobileCategories />
       <LazySection>

@@ -57,7 +57,7 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
           <button 
           aria-label="Search products"
             onClick={() => setViewMode('grid')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-600 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'grid' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
             aria-label="Grid view"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,7 +67,7 @@ const ShopToolbar = ({ filters, updateFilter, viewMode, setViewMode, count, onMo
           <button 
           aria-label="Search products"
             onClick={() => setViewMode('list')}
-            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-500' : 'text-gray-600 hover:text-gray-600'}`}
+            className={`p-1.5 rounded-lg transition-colors ${viewMode === 'list' ? 'bg-white shadow-sm text-orange-600' : 'text-gray-600 hover:text-gray-600'}`}
             aria-label="List view"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

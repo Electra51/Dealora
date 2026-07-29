@@ -12,10 +12,10 @@ const FilterAccordion = ({ title, defaultOpen = true, children }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between group"
       >
-        <h4 className="font-semibold text-gray-900 group-hover:text-orange-500 transition-colors">
+        <h4 className="font-semibold text-gray-900 group-hover:text-orange-600 transition-colors">
           {title}
         </h4>
-        <div className="text-gray-600 group-hover:text-orange-500 transition-colors">
+        <div className="text-gray-600 group-hover:text-orange-600 transition-colors">
           {isOpen ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
         </div>
       </button>
@@ -56,7 +56,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
           <button 
           aria-label="clear"
             onClick={clearFilters} 
-            className="text-sm text-orange-500 hover:text-orange-600 font-medium px-3 py-1 bg-orange-50 rounded-full transition-colors"
+            className="text-sm text-orange-600 hover:text-orange-600 font-medium px-3 py-1 bg-orange-50 rounded-full transition-colors"
           >
             Clear All
           </button>

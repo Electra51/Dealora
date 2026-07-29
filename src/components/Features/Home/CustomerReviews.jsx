@@ -20,9 +20,9 @@ const ReviewCard = memo(({ review, renderStars }) => (
             loading="lazy"
           />
           <div>
-            <h4 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
+            <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
               {review.name}
-            </h4>
+            </h3>
             <p className="text-xs sm:text-sm text-gray-500">{review.location}</p>
           </div>
         </div>
@@ -209,7 +209,7 @@ const CustomerReviews = () => {
           <span
             key={index}
             className={`text-sm sm:text-base ${
-              index < rating ? "text-orange-500" : "text-gray-300"
+              index < rating ? "text-orange-600" : "text-gray-300"
             }`}
           >
             ★

@@ -371,6 +371,8 @@ const Header = () => {
               <motion.img 
                 src={logo} 
                 alt="Dealora" 
+                width="120"
+                height="48"
                 className="h-10 md:h-12 w-auto"
                 whileHover={{ scale: 1.05 }}
               />
@@ -384,7 +386,7 @@ const Header = () => {
                       onClick={toggleMegaMenu}
                       className={cn(
                         "flex items-center gap-2 text-[#f0f8ff] text-base font-medium py-2 transition-colors",
-                        isMegaMenuOpen ? "text-orange-500" : "hover:text-orange-500",
+                        isMegaMenuOpen ? "text-orange-600" : "hover:text-orange-600",
                       )}
                       whileHover={{ y: -2 }}
                     >
@@ -412,7 +414,7 @@ const Header = () => {
                   aria-label={link.name}
                     key={link.path}
                     to={link.path}
-                    className="relative text-[#f0f8ff] text-base font-medium py-2 hover:text-orange-500 transition-colors"
+                    className="relative text-[#f0f8ff] text-base font-medium py-2 hover:text-orange-600 transition-colors"
                   >
                     {link.name}
                     <motion.div
@@ -433,7 +435,7 @@ const Header = () => {
                 onClick={() => setIsSearchOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 text-[#f0f8ff] hover:text-orange-500 transition-colors"
+                className="p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
               >
                 <Search className="w-5 h-5" />
               </motion.button>
@@ -443,7 +445,7 @@ const Header = () => {
                   aria-label="Cart"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="relative p-2 text-[#f0f8ff] hover:text-orange-500 transition-colors"
+                  className="relative p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
                 >
                   <ShoppingBag className="w-6 h-6" />
                   {totalCartItems > 0 && (
@@ -488,6 +490,8 @@ const Header = () => {
                   <motion.img 
                     src={logoMobile} 
                     alt="Dealora" 
+                    width="100"
+                    height="40"
                     className="h-8 md:h-10 w-auto"
                     whileHover={{ scale: 1.05 }}
                   />
@@ -497,7 +501,7 @@ const Header = () => {
                 <motion.button
                   onClick={handleBack}
                   whileTap={{ scale: 0.9 }}
-                  className="p-2 -ml-2 text-white hover:text-orange-500 transition-colors rounded-full hover:bg-white/10"
+                  className="p-2 -ml-2 text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
                 >
                   <ArrowLeft className="w-6 h-6" />
                 </motion.button>
@@ -520,7 +524,7 @@ const Header = () => {
                 onClick={() => setIsSearchOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="p-2 md:block hidden text-white hover:text-orange-500 transition-colors rounded-full hover:bg-white/10"
+                className="p-2 md:block hidden text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
               >
                 <Search className="w-5 h-5 md:w-6 md:h-6" />
               </motion.button>
@@ -531,7 +535,7 @@ const Header = () => {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-2 text-black hover:text-orange-500 transition-colors rounded-full hover:bg-white/10"
+                  className="p-2 text-black hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
                 >
                   <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
                 </motion.button>
@@ -704,7 +708,7 @@ const SearchBar = memo(({ isOpen, onClose }) => {
             className="fixed top-20 left-4 right-4 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-[90%] md:max-w-2xl bg-[#1a1a24] border border-white/10 rounded-2xl shadow-2xl z-1101 p-6"
           >
             <form onSubmit={handleSubmit} className="flex items-center gap-4">
-              <Search className="w-6 h-6 text-orange-500" />
+              <Search className="w-6 h-6 text-orange-600" />
               <input
               aria-label="Search products"
                 ref={inputRef}

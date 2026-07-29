@@ -159,7 +159,7 @@ const DealsCoupon = () => {
         <div className="text-left mb-12">
           
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
-            Save More with <span className="text-orange-500">Coupon Codes</span>
+            Save More with <span className="text-orange-600">Coupon Codes</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mr-auto">
             Use these exclusive coupon codes at checkout to unlock additional savings on your favorite products.

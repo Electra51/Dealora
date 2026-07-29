@@ -1,1 +1,0 @@
-var e=`/assets/clothing-B9QQtVph.webp`,t=`/assets/accessesories-XZwZjncj.webp`,n=`/assets/footwaer-BRYVVnAy.webp`,r=`/assets/grooming-CV1JDZjj.webp`;export{e as i,n,t as r,r as t};

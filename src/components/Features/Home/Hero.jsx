@@ -1,5 +1,6 @@
 import React from "react";
 import homeImage from "../../../assets/shoe.webp";
+import homeImageMobile from "../../../assets/shoe-mobile.webp";
 import { Link } from "react-router-dom";
 import { Search, ShoppingBag } from "lucide-react";
 
@@ -39,7 +40,7 @@ const Hero = () => {
 
               <div className="flex gap-3 mb-6 mt-3">
                 <Link
-                aria-label="Shop Now"
+                  aria-label="Shop Now"
                   to="/shop"
                   className="flex justify-center items-center py-2 px-3 rounded-full text-xs font-bold border border-gray-100 text-white"
                 >
@@ -62,11 +63,23 @@ const Hero = () => {
             </div>
 
             <div>
-              <img
+              {/* <img
                 src={homeImage}
                 alt="Athletic Performance"
                 fetchPriority="high"
+                decoding="sync"
                 className="absolute -bottom-19.5 right-3  w-67.5  drop-shadow-2xl -rotate-12"
+              /> */}
+
+              <img
+                src={homeImageMobile}
+                alt="Athletic Performance"
+                fetchPriority="high"
+                decoding="sync"
+                // Explicit Width and Height Attributes added
+                width="270"
+                height="270"
+                className="absolute -bottom-19.5 right-9 w-55 drop-shadow-2xl -rotate-12"
               />
             </div>
           </div>
@@ -91,7 +104,7 @@ const Hero = () => {
               </p>
               <div className="flex gap-5 mb-15">
                 <Link
-                aria-label="Shop Now"
+                  aria-label="Shop Now"
                   to="/shop"
                   className="group inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-linear-to-br from-[#FF7203] to-[#FF9A03] text-white shadow-[0_10px_30px_rgba(255,165,0,0.3)] hover:-translate-y-0.75 hover:shadow-[0_15px_40px_rgba(255,165,0,0.4)]"
                 >
@@ -111,7 +124,7 @@ const Hero = () => {
                   </svg>
                 </Link>
                 <Link
-                aria-label="Learn More"
+                  aria-label="Learn More"
                   to="/about"
                   className="inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-transparent text-white border-2 border-[rgba(240,248,255,0.3)] hover:bg-[rgba(240,248,255,0.1)] hover:border-white hover:-translate-y-0.75"
                 >
@@ -120,27 +133,27 @@ const Hero = () => {
               </div>
               <div className="flex items-center justify-start gap-10">
                 <div className="text-start">
-                  <h3 className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
+                  <p className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
                     500+
-                  </h3>
+                  </p>
                   <p className="m-0 text-[14px] text-[rgba(240,248,255,0.7)] tracking-[1px]">
                     Premium Products
                   </p>
                 </div>
                 <div className="w-px h-12.5 bg-[rgba(240,248,255,0.2)] max-md:hidden"></div>
                 <div className="text-start">
-                  <h3 className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
+                  <p className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
                     50K+
-                  </h3>
+                  </p>
                   <p className="m-0 text-[14px] text-[rgba(240,248,255,0.7)] tracking-[1px]">
                     Happy Customers
                   </p>
                 </div>
                 <div className="w-px h-12.5 bg-[rgba(240,248,255,0.2)] max-md:hidden"></div>
                 <div className="text-start">
-                  <h3 className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
+                  <p className="m-0 text-[30px] font-extrabold bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent mb-1">
                     4.8★
-                  </h3>
+                  </p>
                   <p className="m-0 text-[14px] text-[rgba(240,248,255,0.7)] tracking-[1px]">
                     Average Rating
                   </p>
@@ -155,7 +168,8 @@ const Hero = () => {
                 src={homeImage}
                 alt="Athletic Performance"
                 fetchPriority="high"
-                decoding="async"
+                loading="eager"
+                decoding="sync"
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-8 scale-110 w-[75%] h-auto max-h-[90%] object-contain z-2 drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-rotate-5 hover:scale-[1.15]"
               />
 

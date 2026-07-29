@@ -60,7 +60,7 @@ const SaleBanner = () => {
       aria-label="close"
         onClick={closeBanner}
         aria-label="Close banner"
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-500"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-600"
       >
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -76,7 +76,7 @@ const SaleBanner = () => {
             <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white">
               Mega Winter Sale
             </span>
-            <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-orange-500 mt-1">
+            <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-orange-600 mt-1">
               Up to 50% Off
             </span>
           </h2>
@@ -104,13 +104,13 @@ const SaleBanner = () => {
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-1 text-[13px] text-gray-300 font-medium">
             <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
               Free Shipping
             </span>
             <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
               </svg>
               Easy Returns

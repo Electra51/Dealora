@@ -68,15 +68,13 @@ const MobileCategories = memo(() => {
             >
               <Link aria-label={category.image} to={category.link} className="block group">
                 {/* Category Card */}
-                {/* <div className="w-full h-36 rounded-2xl bg-[#5d5d5d] border border-white/5 overflow-hidden relative transition-all duration-300 hover:border-orange-500/30 active:scale-95"> */}
-                  {/* Gradient Background */}
-                  {/* <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} /> */}
-                  
-                  {/* Image Container */}
+             
                   <div className="relative h-20 bg-linear-to-br from-white/5 to-white/10 flex items-center justify-center">
                     <motion.img
                       src={category.image}
                       alt={category.title}
+                      width="80"
+                      height="80"
                       className="w-full h-full object-contain"
                       whileHover={{ scale: 1.1, rotate: 3 }}
                       transition={{ duration: 0.3 }}
@@ -92,14 +90,7 @@ const MobileCategories = memo(() => {
                     </h3>
                   </div>
 
-                  {/* Bottom Accent Line */}
-                  {/* <motion.div
-                    className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${category.color}`}
-                    initial={{ scaleX: 0 }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                  /> */}
-                {/* </div> */}
+                  
               </Link>
             </motion.div>
           ))}
