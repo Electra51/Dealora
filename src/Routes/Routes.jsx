@@ -7,6 +7,7 @@ const ShopPage = lazy(() => import("../pages/ShopPage"));
 const DealsPage = lazy(() => import("../pages/DealsPage"));
 const CartPage = lazy(() => import("../pages/CartPage"));
 const About = lazy(() => import("../components/Features/About/About"));
+const ProductDetailsPage = lazy(() => import("../pages/ProductDetailsPage"));
 
 // A loading fallback component for Suspense
 const LoadingFallback = () => (
@@ -54,6 +55,14 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<LoadingFallback />}>
             <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/product/:id",
+        element: (
+          <Suspense fallback={<LoadingFallback />}>
+            <ProductDetailsPage />
           </Suspense>
         ),
       },

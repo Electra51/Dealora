@@ -121,7 +121,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-5 md:py-13 mt-20 md:mt-0 relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] text-white md:pt-30 md:pb-15 overflow-hidden">
+      <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24]  text-white md:pt-30 md:pb-15 overflow-hidden py-5 md:py-13 mt-20 md:mt-0 rounded-4xl md:rounded-none mx-4 md:mx-0">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -131,13 +131,20 @@ const About = () => {
         ></div>
 
         <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-start">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+          <h1 className="hidden md:block text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
             About{" "}
             <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
               SneakerHub
             </span>
           </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mb-10  mr-auto">
+           <h1 className="md:hidden text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            About{" "}
+            <br/>
+            <span className="bg-linear-to-tr from-[#FF7203] to-[#FF9A03] bg-clip-text text-transparent">
+              SneakerHub
+            </span>
+          </h1>
+          <p className="hidden md:block text-lg text-gray-300 max-w-3xl mb-10  mr-auto">
             We're more than just a sneaker store. We're a community of
             enthusiasts dedicated to bringing you the finest footwear from
             around the globe.

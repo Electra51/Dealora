@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 // Import your category images from header
-import clothing from "../../../assets/images/categories/clothing.webp";
-import accessesories from "../../../assets/images/categories/accessesories.webp";
-import footwaer from "../../../assets/images/categories/footwaer.webp";
-import grooming from "../../../assets/images/categories/grooming.webp";
+import clothing from "../../../../public/assets/images/categories/clothing.webp";
+import accessesories from "../../../../public/assets/images/categories/accessesories.webp";
+import footwaer from "../../../../public/assets/images/categories/footwaer.webp";
+import grooming from "../../../../public/assets/images/categories/grooming.webp";
 
 // Same data structure from header.jsx
 const MOBILE_CATEGORIES = [

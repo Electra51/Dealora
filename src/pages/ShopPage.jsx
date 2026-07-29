@@ -56,7 +56,7 @@ const ShopPage = () => {
           
           <div className="flex-1 pb-9 md:pb-0">
             {loading ? (
-              <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
+              <div className={`grid gap-6 ${viewMode === 'grid' ? 'grid-cols-2 sm:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1'}`}>
                 {[...Array(6)].map((_, i) => <SkeletonCard key={i} viewMode={viewMode} />)}
               </div>
             ) : filteredProducts.length === 0 ? (

@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback, memo } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../assets/images/Logo.webp";
-import logoMobile from "../assets/images/logo-mobile.webp";
-import heroShoe1 from "../assets/shoe.webp";
-import heroShoe2 from "../assets/shoe.webp";
-import clothing from "../assets/images/categories/clothing.webp";
-import accessesories from "../assets/images/categories/accessesories.webp";
-import footwaer from "../assets/images/categories/footwaer.webp";
-import grooming from "../assets/images/categories/grooming.webp";
+import logo from "../../public/assets/images/Logo.webp";
+import logoMobile from "../../public/assets/images/logo-mobile.webp";
+import heroShoe1 from "../../public/assets/shoe.webp";
+import heroShoe2 from "../../public/assets/shoe.webp";
+import clothing from "../../public/assets/images/categories/clothing.webp";
+import accessesories from "../../public/assets/images/categories/accessesories.webp";
+import footwaer from "../../public/assets/images/categories/footwaer.webp";
+import grooming from "../../public/assets/images/categories/grooming.webp";
 import { cn } from "../utils/cn";
 import { useCartStore } from "../stores/cart.store";
 import dbData from "../data/db.json";
-import { ArrowRight, ChevronDown, X, Search, ShoppingBag,ArrowLeft,Bell,  } from "lucide-react";
+import { ArrowRight, ChevronDown, X, Search, ShoppingBag, ArrowLeft, Bell, } from "lucide-react";
 
 const getCategoryCount = (subCategory) => {
   return dbData.products.filter((p) => p.subCategory === subCategory).length;
@@ -143,50 +143,6 @@ const NAV_LINKS = [
   { name: "About", path: "/about" },
 ];
 
-const SEARCH_SUGGESTIONS = [
-  {
-    id: 1,
-    name: "Nike Air Max Pro",
-    category: "Footwear",
-    price: 129.99,
-    image: heroShoe1,
-  },
-  {
-    id: 2,
-    name: "Adidas Ultraboost",
-    category: "Footwear",
-    price: 149.99,
-    image: heroShoe2,
-  },
-  {
-    id: 3,
-    name: "Classic Cotton T-Shirt",
-    category: "Clothing",
-    price: 24.99,
-    image: clothing,
-  },
-  {
-    id: 4,
-    name: "Smart Watch Series 7",
-    category: "Accessories",
-    price: 299.0,
-    image: accessesories,
-  },
-  {
-    id: 5,
-    name: "Premium Grooming Kit",
-    category: "Grooming",
-    price: 45.5,
-    image: grooming,
-  },
-  {
-    id: 6,
-    name: "Running Shoes",
-    category: "Footwear",
-    price: 89.99,
-    image: footwaer,
-  },
-];
 
 // Enhanced Category Card Component
 const CategoryCard = memo(({ category, index, onClose }) => {
@@ -200,7 +156,7 @@ const CategoryCard = memo(({ category, index, onClose }) => {
       className="group relative"
     >
       <Link
-       aria-label="category"
+        aria-label="category"
         to={`/shop?category=${category.title.toLowerCase()}`}
         onClick={onClose}
         className="block"
@@ -250,7 +206,7 @@ const CategoryCard = memo(({ category, index, onClose }) => {
                 className="flex items-center justify-start group/item"
               >
                 <Link
-                aria-label="category"
+                  aria-label="category"
                   to={`/shop?category=${category.title.toLowerCase()}&item=${item.name.toLowerCase().replace(/\s+/g, "-")}`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -315,10 +271,10 @@ const Header = () => {
 
   // Check if current page is homepage
   const isHomePage = location.pathname === "/";
-  
+
   // Get page title based on route
   const getPageTitle = () => {
-    switch(location.pathname) {
+    switch (location.pathname) {
       case "/shop": return "Shop";
       case "/cart": return "Cart";
       case "/deals": return "Deals";
@@ -368,9 +324,9 @@ const Header = () => {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link aria-label="Dealora Home" to="/" className="shrink-0">
-              <motion.img 
-                src={logo} 
-                alt="Dealora" 
+              <motion.img
+                src={logo}
+                alt="Dealora"
                 width="120"
                 height="48"
                 className="h-10 md:h-12 w-auto"
@@ -379,15 +335,16 @@ const Header = () => {
             </Link>
 
             <div className="flex items-center justify-center flex-1 gap-10">
-              {NAV_LINKS.map((link) =>
-                link.hasMegaMenu ? (
+              {NAV_LINKS.map((link) => {
+                const isActive = location.pathname.startsWith(link.path);
+                return link.hasMegaMenu ? (
                   <div key={link.path} className="relative">
                     <motion.button
                       aria-label={link.name}
                       onClick={toggleMegaMenu}
                       className={cn(
-                        "flex items-center gap-2 text-[#f0f8ff] text-base font-medium py-2 transition-colors",
-                        isMegaMenuOpen ? "text-orange-600" : "hover:text-orange-600",
+                        "flex items-center gap-2 text-base font-medium py-2 transition-colors",
+                        isMegaMenuOpen || isActive ? "text-orange-600" : "text-[#f0f8ff] hover:text-orange-600",
                       )}
                       whileHover={{ y: -2 }}
                     >
@@ -402,37 +359,42 @@ const Header = () => {
                     <motion.div
                       className={cn(
                         "absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500 origin-left",
-                        isMegaMenuOpen ? "scale-x-100" : "scale-x-0",
+                        isMegaMenuOpen || isActive ? "scale-x-100" : "scale-x-0",
                       )}
                       initial={false}
                       animate={{
-                        scaleX: isMegaMenuOpen ? 1 : 0,
+                        scaleX: isMegaMenuOpen || isActive ? 1 : 0,
                       }}
                     />
                   </div>
                 ) : (
                   <Link
-                  aria-label={link.name}
+                    aria-label={link.name}
                     key={link.path}
                     to={link.path}
-                    className="relative text-[#f0f8ff] text-base font-medium py-2 hover:text-orange-600 transition-colors"
+                    className={cn(
+                      "relative text-base font-medium py-2 transition-colors",
+                      isActive ? "text-orange-600" : "text-[#f0f8ff] hover:text-orange-600"
+                    )}
                   >
                     {link.name}
                     <motion.div
                       className={cn(
                         "absolute bottom-0 left-0 right-0 h-0.5 bg-orange-500 origin-left",
-                        "scale-x-0"
+                        isActive ? "scale-x-100" : "scale-x-0"
                       )}
+                      initial={false}
+                      animate={{ scaleX: isActive ? 1 : 0 }}
                       whileHover={{ scaleX: 1 }}
                     />
                   </Link>
-                ),
-              )}
+                );
+              })}
             </div>
 
             <div className="flex items-center gap-4">
               <motion.button
-              aria-label="Search products"
+                aria-label="Search products"
                 onClick={() => setIsSearchOpen(true)}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -441,7 +403,7 @@ const Header = () => {
                 <Search className="w-5 h-5" />
               </motion.button>
 
-              <Link  aria-label="cart" to="/cart">
+              <Link aria-label="cart" to="/cart">
                 <motion.button
                   aria-label="Cart"
                   whileHover={{ scale: 1.1 }}
@@ -487,10 +449,10 @@ const Header = () => {
             <div className="flex items-center gap-3">
               {isHomePage ? (
                 // Homepage: Show Logo
-                <Link  aria-label="Dealora Home" to="/" className="shrink-0">
-                  <motion.img 
-                    src={logoMobile} 
-                    alt="Dealora" 
+                <Link aria-label="Dealora Home" to="/" className="shrink-0">
+                  <motion.img
+                    src={logoMobile}
+                    alt="Dealora"
                     width="100"
                     height="40"
                     className="h-8 md:h-10 w-auto"
@@ -500,17 +462,17 @@ const Header = () => {
               ) : (
                 // Other Pages: Show Back Button
                 <motion.button
-                aria-label="back-button"
+                  aria-label="back-button"
                   onClick={handleBack}
                   whileTap={{ scale: 0.9 }}
                   // className=""
                   className={cn(
-          "p-2 -ml-2  hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
-          isScrolled
-            ? "text-black"
-            : "text-black"
-        )}
-                
+                    "p-2 -ml-2  hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
+                    isScrolled
+                      ? "text-black"
+                      : "text-black"
+                  )}
+
                 >
                   <ArrowLeft className="w-6 h-6" />
                 </motion.button>
@@ -520,13 +482,13 @@ const Header = () => {
             {/* CENTER SECTION - Page Title (Only on non-home pages) */}
             {!isHomePage && (
               <div className="flex-1 text-center">
-                <h1 
-                    className={cn(
-          "text-xl md:text-xl font-bold",
-          isScrolled
-            ? "text-black"
-            : "text-black"
-        )}>
+                <h1
+                  className={cn(
+                    "text-xl md:text-xl font-bold",
+                    isScrolled
+                      ? "text-black"
+                      : "text-black"
+                  )}>
                   {getPageTitle()}
                 </h1>
               </div>
@@ -536,18 +498,18 @@ const Header = () => {
             <div className="flex items-center gap-2 md:gap-4 ml-auto">
               {/* Search Icon - Always Visible */}
               {isHomePage && (
-              <>
-              <motion.button
-                aria-label="search products"
-                onClick={() => setIsSearchOpen(true)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-2 md:block hidden text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
-              >
-                <Search className="w-5 h-5 md:w-6 md:h-6" />
-              </motion.button>
+                <>
+                  <motion.button
+                    aria-label="search products"
+                    onClick={() => setIsSearchOpen(true)}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-2 md:block hidden text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
+                  >
+                    <Search className="w-5 h-5 md:w-6 md:h-6" />
+                  </motion.button>
 
- <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" /></>
+                  <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" /></>
               )}
               {/* Cart Icon with Badge */}
               <Link to="/cart" className="relative" aria-label="add to cart">
@@ -557,12 +519,12 @@ const Header = () => {
                   whileTap={{ scale: 0.95 }}
                   className=""
                   className={cn(
-          "p-2 hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
-          isScrolled
-            ? "text-black"
-            : "text-black"
-        )}
-                
+                    "p-2 hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
+                    isScrolled
+                      ? "text-black"
+                      : "text-black"
+                  )}
+
                 >
                   <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
                 </motion.button>
@@ -603,14 +565,14 @@ const Header = () => {
     <>
       {/* Desktop Header */}
       <DesktopHeader />
-      
+
       {/* Mobile Header */}
       <MobileHeader />
 
       {/* Search Modal/Overlay */}
       <SearchBar isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
-  
+
     </>
   );
 };
@@ -670,7 +632,7 @@ const MegaMenu = memo(({ isOpen, onClose }) => {
                     </p>
                   </div>
                   <Link
-                   aria-label="Shop Now"
+                    aria-label="Shop Now"
                     to="/shop?filter=new"
                     onClick={onClose}
                     className="px-6 py-3 bg-orange-500 text-white font-semibold rounded-full hover:bg-orange-600 transition-colors flex items-center gap-2"
@@ -737,7 +699,7 @@ const SearchBar = memo(({ isOpen, onClose }) => {
             <form onSubmit={handleSubmit} className="flex items-center gap-4">
               <Search className="w-6 h-6 text-orange-600" />
               <input
-              aria-label="Search products"
+                aria-label="Search products"
                 ref={inputRef}
                 type="text"
                 value={query}
@@ -746,7 +708,7 @@ const SearchBar = memo(({ isOpen, onClose }) => {
                 className="flex-1 bg-transparent text-white text-lg placeholder:text-gray-500 focus:outline-none"
               />
               <button
-              aria-label="close"
+                aria-label="close"
                 type="button"
                 onClick={onClose}
                 className="p-2 text-gray-600 hover:text-white"
@@ -754,6 +716,36 @@ const SearchBar = memo(({ isOpen, onClose }) => {
                 <X className="w-6 h-6" />
               </button>
             </form>
+
+            {/* Suggestions Section */}
+            <div className="mt-6 border-t border-white/10 pt-4">
+              <h3 className="text-gray-500 text-sm font-medium mb-3">Popular Suggestions</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[40vh] overflow-y-auto pr-2 custom-scrollbar">
+                {dbData.products.filter(item => item.name.toLowerCase().includes(query.toLowerCase()) || (item.brand && item.brand.toLowerCase().includes(query.toLowerCase()))).slice(0, 6).map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => {
+                      setQuery(item.name);
+                      navigate(`/shop?search=${encodeURIComponent(item.name)}`);
+                      onClose();
+                    }}
+                    className="flex items-center gap-3 p-2 rounded-xl hover:bg-white/5 transition-colors text-left"
+                  >
+                    <img src={item.thumbnail} alt={item.name} className="w-12 h-12 rounded-lg object-cover bg-white/10" />
+                    <div>
+                      <p className="text-sm font-medium text-white line-clamp-1">{item.name}</p>
+                      <p className="text-xs text-gray-500">{item.category}</p>
+                    </div>
+                  </button>
+                ))}
+                {dbData.products.filter(item => item.name.toLowerCase().includes(query.toLowerCase()) || (item.brand && item.brand.toLowerCase().includes(query.toLowerCase()))).length === 0 && (
+                  <div className="col-span-1 sm:col-span-2 text-center py-4 text-gray-500 text-sm">
+                    No products found for "{query}"
+                  </div>
+                )}
+              </div>
+            </div>
           </motion.div>
         </>
       )}

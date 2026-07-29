@@ -1,6 +1,6 @@
 import React from "react";
-import homeImage from "../../../assets/shoe.webp";
-import homeImageMobile from "../../../assets/shoe-mobile.webp";
+import homeImage from "../../../../public/assets/shoe.webp";
+import homeImageMobile from "../../../../public/assets/shoe-mobile.webp";
 import { Link } from "react-router-dom";
 import { Search, ShoppingBag } from "lucide-react";
 

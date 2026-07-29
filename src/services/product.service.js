@@ -10,6 +10,10 @@ export const productService = {
   getBestSellerProducts: async () => { await delay(400); return productsData.filter(p => p.flags?.bestSeller); },
   getNewArrivalProducts: async () => { await delay(400); return productsData.filter(p => p.flags?.newArrival); },
   getDeals: async () => { await delay(500); return productsData.filter(p => p.comparePrice > p.price); },
+  getProductById: async (id) => {
+    await delay(300);
+    return productsData.find(p => String(p.id) === String(id));
+  },
   
   filterProducts: async (filters) => {
     await delay(300);

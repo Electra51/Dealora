@@ -1,9 +1,10 @@
 import React, { memo, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { formatPrice } from '../../utils/helpers';
 import { useCartStore } from '../../stores/cart.store';
-import { useWishlistStore } from '../../stores/wishlist.store';
 import { Eye, Plus, ShoppingBag } from 'lucide-react';
+import QuickViewModal from './QuickViewModal';
 
 const ProductCard = memo(({ 
   product, 
@@ -13,13 +14,17 @@ const ProductCard = memo(({
   handleAddToCart: customAddToCart
 }) => {
   const [isAdding, setIsAdding] = useState(false);
+  const [showQuickView, setShowQuickView] = useState(false);
   const addItem = useCartStore(s => s.addItem);
-  const toggleWishlist = useWishlistStore(s => s.toggleItem);
-  const wishlistItems = useWishlistStore(s => s.items);
+  const navigate = useNavigate();
+
+  const handleCardClick = () => {
+    if (window.innerWidth < 768) {
+      navigate(`/product/${product.id}`);
+    }
+  };
   
   if (!product) return null;
-  
-  const isInWishlist = wishlistItems?.some(item => item.id === product.id) || false;
 
   // Safety values
   const rating = product.rating || 0;
@@ -43,13 +48,9 @@ const ProductCard = memo(({
     setTimeout(() => setIsAdding(false), 600);
   };
 
-  const handleWishlistToggle = (e) => {
-    e.stopPropagation();
-    toggleWishlist(product);
-  };
-
   const handleQuickView = (e) => {
     e.stopPropagation();
+    setShowQuickView(true);
     if (onQuickView) {
       onQuickView(product);
     }
@@ -132,12 +133,14 @@ const ProductCard = memo(({
   const badges = renderBadges();
 
   return (
+    <>
     <motion.div 
       layout
       initial={{ opacity: 0, y: 20 }} 
       animate={{ opacity: 1, y: 0 }} 
       whileHover={{ y: -4 }}
-      className={`group rounded-xl md:rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.05)] md:shadow-none hover:shadow-xl ${styles.card} ${
+      onClick={handleCardClick}
+      className={`group rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:shadow-none hover:shadow-xl active:scale-[0.98] md:active:scale-100 cursor-pointer md:cursor-default ${styles.card} ${
         viewMode === 'list' ? 'flex' : 'flex flex-col h-full'
       }`}
     >
@@ -169,26 +172,6 @@ const ProductCard = memo(({
           ))}
         </div>
 
-        {/* Wishlist Button */}
-        <button 
-          aria-label="wishlist add"
-          onClick={handleWishlistToggle}
-          className={`absolute top-2 right-2 md:top-3 md:right-3 w-7 h-7 md:w-9 md:h-9 rounded-full flex items-center justify-center shadow-sm md:shadow-md transition-all duration-300 z-10 ${
-            isInWishlist 
-              ? 'bg-red-500 text-white scale-110' 
-              : 'bg-white/90 backdrop-blur-sm text-gray-600 hover:bg-red-50 hover:text-red-500 hover:scale-110'
-          }`}
-        >
-          <svg 
-            className="w-3.5 h-3.5 md:w-4 md:h-4 transition-transform" 
-            fill={isInWishlist ? "currentColor" : "none"} 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-        </button>
-
         {/* Stock Indicator */}
         {stock < 10 && stock > 0 && (
           <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3">
@@ -212,36 +195,38 @@ const ProductCard = memo(({
         )}
 
         {/* Quick View Button (Desktop only) */}
-        {variant === 'trending' && onQuickView && (
-          <div className="hidden md:flex absolute inset-0 bg-linear-to-t from-black/70 to-transparent items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button
-              aria-label="quick view"
-              onClick={handleQuickView}
-              className="flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full text-sm font-bold translate-y-5 group-hover:translate-y-0 transition-all duration-300 hover:bg-orange-500 hover:text-white"
-            >
-              <Eye className="w-5 h-5" />
-              Quick View
-            </button>
-          </div>
-        )}
+        <div className="hidden md:flex absolute inset-0 bg-linear-to-t from-black/70 to-transparent items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            aria-label="quick view"
+            onClick={handleQuickView}
+            className="flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-full text-sm font-bold translate-y-5 group-hover:translate-y-0 transition-all duration-300 hover:bg-orange-500 hover:text-white"
+          >
+            <Eye className="w-5 h-5" />
+            Quick View
+          </button>
+        </div>
       </div>
       
       {/* Content */}
-      <div className="p-3 md:p-4 flex-1 flex flex-col bg-white">
+      <div className="p-2.5 md:p-4 flex-1 flex flex-col bg-white">
         {/* Brand & Category */}
         <div className="flex items-center justify-between mb-1">
-          <p className={`text-xs md:text-xs ${styles.accent} uppercase tracking-wider font-bold truncate pr-2`}>
+          <p className={`text-[10px] md:text-xs ${styles.accent} uppercase tracking-wider font-bold truncate pr-2`}>
             {product.brand || 'Unknown'}
           </p>
-          <p className={`text-xs md:text-[10px] ${styles.textSecondary} uppercase tracking-wide truncate max-w-[40%]`}>
+          <p className={`text-[9px] md:text-[10px] ${styles.textSecondary} uppercase tracking-wide truncate max-w-[40%]`}>
             {product.subCategory || product.category || ''}
           </p>
         </div>
 
         {/* Product Name */}
         <h3 
-          className={`font-semibold text-xs md:text-sm ${styles.textPrimary} line-clamp-2 mb-1.5 md:mb-2 min-h-8 md:min-h-10 group-hover:${styles.accent} transition-colors leading-snug`}
-          onClick={handleQuickView}
+          className={`font-semibold text-sm md:text-sm ${styles.textPrimary} line-clamp-2 mb-1.5 md:mb-2 min-h-10 md:min-h-10 group-hover:${styles.accent} transition-colors leading-snug`}
+          onClick={(e) => {
+            if (window.innerWidth >= 768) {
+              handleQuickView(e);
+            }
+          }}
         >
           {product.name || 'Unnamed Product'}
         </h3>
@@ -258,10 +243,10 @@ const ProductCard = memo(({
               </span>
             ))}
           </div>
-          <span className={`text-xs md:text-xs ${styles.textSecondary} font-medium`}>
+          <span className={`text-[10px] md:text-xs ${styles.textSecondary} font-medium`}>
             {rating.toFixed(1)}
           </span>
-          <span className={`text-xs md:text-xs ${styles.textSecondary} hidden sm:inline`}>
+          <span className={`text-[10px] md:text-xs ${styles.textSecondary}`}>
             ({reviewCount})
           </span>
         </div>
@@ -270,7 +255,7 @@ const ProductCard = memo(({
         <div className="mt-auto flex items-end justify-between pt-2 md:pt-3 border-t border-gray-50 md:border-gray-100/10">
           <div className="flex flex-col">
             <div className="flex items-baseline gap-1.5 md:gap-2 flex-wrap">
-              <span className={`text-base md:text-lg font-bold ${styles.textPrimary} leading-none`}>
+              <span className={`text-base md:text-lg font-bold ${styles.textPrimary} leading-none tracking-tight`}>
                 {formatPrice(price)}
               </span>
               {comparePrice > price && (
@@ -290,24 +275,24 @@ const ProductCard = memo(({
             aria-label="add cart"
             onClick={handleAddToCart}
             disabled={stock === 0}
-            className={`shrink-0 flex items-center justify-center transition-all duration-300 ${
+            className={`shrink-0 flex items-center justify-center transition-all duration-300 shadow-xs md:shadow-none ${
               stock === 0
-                ? 'w-8 h-8 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed'
+                ? 'w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed'
                 : isAdding
-                ? 'w-8 h-8 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-green-500 text-white scale-95'
-                : `w-8 h-8 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg ${styles.button} hover:shadow-lg active:scale-90 md:hover:scale-105`
+                ? 'w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg bg-green-500 text-white scale-95'
+                : `w-7 h-7 md:w-auto md:px-4 md:py-2 rounded-full md:rounded-lg ${styles.button} hover:shadow-lg active:scale-90 md:hover:scale-105`
             }`}
           >
             {stock === 0 ? (
-              <span className="text-[10px] md:text-xs font-semibold hidden md:block">Sold Out</span>
+              <span className="text-[9px] md:text-xs font-semibold hidden md:block">Sold Out</span>
             ) : isAdding ? (
               <>
-                <svg className="w-4 h-4 md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                <svg className="w-3.5 h-3.5 md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                 <span className="hidden md:block text-xs font-semibold">✓ Added</span>
               </>
             ) : (
               <>
-                <Plus className="w-5 h-5 md:hidden" strokeWidth={2.5} />
+                <Plus className="w-4 h-4 md:hidden" strokeWidth={2.5} />
                 <span className="hidden md:block text-xs font-semibold">Add</span>
               </>
             )}
@@ -315,6 +300,14 @@ const ProductCard = memo(({
         </div>
       </div>
     </motion.div>
+      {showQuickView && (
+        <QuickViewModal
+          product={product}
+          onClose={() => setShowQuickView(false)}
+          onAddToCart={customAddToCart ? customAddToCart : (p) => addItem(p)}
+        />
+      )}
+    </>
   );
 });
 

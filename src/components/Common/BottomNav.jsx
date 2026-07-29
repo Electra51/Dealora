@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Home, ShoppingBag, Search, Tag, Store } from "lucide-react";
+import { Home, ShoppingBag, Search, Tag, Store, User } from "lucide-react";
 import { useCartStore } from "../../stores/cart.store";
 
 const BottomNav = () => {
@@ -11,7 +11,7 @@ const BottomNav = () => {
     { name: "Home", path: "/", icon: Home },
     { name: "Shop", path: "/shop", icon: Store  },
     { name: "Deals", path: "/deals", icon: Tag },
-    { name: "Cart", path: "/cart", icon: ShoppingBag, badge: totalCartItems },
+    { name: "About", path: "/about", icon: User },
   ];
 
   const isActive = (path) => {
