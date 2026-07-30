@@ -123,10 +123,10 @@ const SaleBanner = () => {
           <p className="text-xs font-bold uppercase tracking-wider text-gray-300">
             Hurry! Sale Ends In
           </p>
-          <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto">
+          <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto justify-between items-center">
             {units.map((unit, i) => (
               <div key={unit.label} className="flex items-center gap-2.5 sm:gap-3">
-                <div className="flex flex-col items-center justify-center w-16 h-18 sm:w-20 sm:h-22 rounded-2xl bg-white border border-gray-100 shadow-sm py-3">
+                <div className="flex flex-col items-center justify-center w-18 h-18 sm:w-20 sm:h-22 rounded-2xl bg-white border border-gray-100 shadow-sm py-3">
                   <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums">
                     {String(unit.value).padStart(2, "0")}
                   </span>

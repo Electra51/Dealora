@@ -31,6 +31,7 @@
     "@vitejs/plugin-react": "^6.0.3",
     "rollup-plugin-visualizer": "^7.0.1",
     "sharp": "^0.35.3",
+    "svgo": "^4.0.2",
     "tailwindcss": "^4.3.2",
     "vite": "^8.1.4",
     "vite-plugin-image-optimizer": "^2.0.3"
