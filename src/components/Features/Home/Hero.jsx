@@ -6,7 +6,7 @@ import { Search, ShoppingBag } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] flex items-center justify-center md:overflow-hidden py-4.5 md:py-13 mt-20 md:mt-20 rounded-4xl md:rounded-none mx-4 md:mx-0">
+    <section className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] md:overflow-hidden py-4.5 md:py-13 mt-20 md:mt-20 rounded-4xl md:rounded-none mx-4 md:mx-0">
       {/* Background Effects */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -16,7 +16,7 @@ const Hero = () => {
         }}
       ></div>
 
-      <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-0 md:py-0">
+      <div className="relative max-w-7xl mx-auto sm:px-6 lg:px-6 md:py-0">
         {/* ========== MOBILE VIEW (App-like) ========== */}
         <div className="md:hidden">
           <div className="grid grid-cols-2 gap-3 md:pb-8">

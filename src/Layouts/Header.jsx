@@ -267,7 +267,7 @@ const Header = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const cartItems = useCartStore((s) => s.items);
-  const totalCartItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+const totalCartItems = cartItems.length;
 
   // Check if current page is homepage
   const isHomePage = location.pathname === "/";
@@ -437,7 +437,7 @@ const Header = () => {
     <div className="md:hidden">
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-1000 transition-all duration-500 md:border-b",
+          "fixed top-0 left-0 right-0 z-59 transition-all duration-500 md:border-b",
           isScrolled
             ? "bg-white backdrop-blur-md shadow-lg"
             : "bg-transparent md:bg-[#1a1a24]"
