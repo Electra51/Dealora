@@ -4,7 +4,7 @@ const SEO = ({
   title,
   description,
   keywords,
-  image = "/assets/images/og-image.webp",
+  image = "og-image.webp",
   url = "https://dealora-alpha.vercel.app/",
   type = "website",
 }) => {
