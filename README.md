@@ -1,6 +1,6 @@
-# Best Dealz (Dealora)
+# Dealora
 
-Best Dealz (also known as Dealora) is a modern, highly optimized e-commerce web application built with React. Originally a legacy project, it has been completely revitalized and migrated to **Vite** to ensure blazing fast development and production builds. 
+Dealora is a modern, highly optimized e-commerce web application built with React. Originally a legacy project, it has been completely revitalized and migrated to **Vite** to ensure blazing fast development and production builds. 
 
 Significant effort has been put into performance tuning, SEO optimization, and creating a seamless user experience. The application features a mobile-first, app-like UI, fluid animations, and a solid state management architecture.
 
