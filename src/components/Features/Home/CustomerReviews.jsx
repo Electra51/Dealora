@@ -1,15 +1,11 @@
-
 import React, { useState, useEffect, useCallback, useMemo, memo } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 
-// Memoized Review Card Component for better performance
 const ReviewCard = memo(({ review, renderStars }) => (
   <div className="group bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-md sm:shadow-md hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 sm:hover:-translate-y-2 border border-gray-100 relative overflow-hidden h-full flex flex-col">
-    {/* Hover gradient effect */}
     <div className="absolute inset-0 bg-linear-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
     <div className="relative z-10 flex flex-col h-full grow">
-      {/* Header */}
       <div className="flex items-start justify-between mb-3 sm:mb-4">
         <div className="flex items-center gap-3">
           <img
@@ -17,13 +13,14 @@ const ReviewCard = memo(({ review, renderStars }) => (
             alt={review.name}
             loading="lazy"
             className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-orange-500/20 group-hover:ring-orange-500/50 transition-all duration-300"
-          
           />
           <div>
             <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-orange-600 transition-colors duration-300">
               {review.name}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-500">{review.location}</p>
+            <p className="text-xs sm:text-sm text-gray-500">
+              {review.location}
+            </p>
           </div>
         </div>
         {review.verified && (
@@ -44,25 +41,26 @@ const ReviewCard = memo(({ review, renderStars }) => (
         )}
       </div>
 
-      {/* Rating & Date */}
       <div className="flex items-center justify-between mb-2 sm:mb-3">
         {renderStars(review.rating)}
-        <span className="text-[10px] sm:text-xs text-gray-500">{review.date}</span>
+        <span className="text-[10px] sm:text-xs text-gray-500">
+          {review.date}
+        </span>
       </div>
 
-      {/* Product */}
       <p className="text-xs sm:text-sm text-gray-600 mb-2 sm:mb-3 font-medium">
         Purchased: <span className="text-orange-600">{review.product}</span>
       </p>
 
-      {/* Review Text */}
       <p className="text-xs sm:text-sm text-gray-700 leading-relaxed mb-4 line-clamp-4 grow">
         {review.review}
       </p>
 
-      {/* Footer */}
       <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
-        <button aria-label="help icon" className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 group/btn">
+        <button
+          aria-label="help icon"
+          className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-600 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 group/btn"
+        >
           <svg
             className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:scale-110 transition-transform duration-300"
             fill="none"
@@ -170,7 +168,7 @@ const CustomerReviews = () => {
         helpful: 56,
       },
     ],
-    []
+    [],
   );
 
   const reviewsPerView = 3;
@@ -227,22 +225,18 @@ const CustomerReviews = () => {
 
   return (
     <section className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-12 lg:pt-12 w-full lg:pb-20 overflow-hidden">
-    
-
-   
-
       <SectionHeader
-  title=" What Our Customers Say"
-  description="Don't just take our word for it - hear from our satisfied customers"
-  showAction
-  actionText=""
-  actionLink=""
-/>
+        title=" What Our Customers Say"
+        description="Don't just take our word for it - hear from our satisfied customers"
+        showAction
+        actionText=""
+        actionLink=""
+      />
       {/* Carousel */}
       <div className="relative">
         {/* Previous Button */}
         <button
-        aria-label="previous button"
+          aria-label="previous button"
           onClick={prevSlide}
           aria-label="Previous reviews"
           className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
@@ -276,7 +270,7 @@ const CustomerReviews = () => {
                 {reviews
                   .slice(
                     slideIndex * reviewsPerView,
-                    (slideIndex + 1) * reviewsPerView
+                    (slideIndex + 1) * reviewsPerView,
                   )
                   .map((review) => (
                     <ReviewCard
@@ -291,22 +285,32 @@ const CustomerReviews = () => {
         </div>
 
         {/* Mobile App-like Horizontal Scroll */}
-        <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 pt-2 -mx-6 px-6 hide-scrollbar" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+        <div
+          className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 pt-2 -mx-6 px-6 hide-scrollbar"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
           {reviews.map((review) => (
-            <div key={review.id} className="w-[85vw] sm:w-[60vw] shrink-0 snap-center h-auto">
+            <div
+              key={review.id}
+              className="w-[85vw] sm:w-[60vw] shrink-0 snap-center h-auto"
+            >
               <ReviewCard review={review} renderStars={renderStars} />
             </div>
           ))}
         </div>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .hide-scrollbar::-webkit-scrollbar {
             display: none;
           }
-        `}} />
+        `,
+          }}
+        />
 
         {/* Next Button */}
         <button
-        aria-label="next button"
+          aria-label="next button"
           onClick={nextSlide}
           aria-label="Next reviews"
           className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-6 z-20 w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-orange-500 hover:text-white transition-all duration-300 group"
@@ -331,7 +335,7 @@ const CustomerReviews = () => {
       <div className="hidden md:flex justify-center gap-2 mt-10">
         {Array.from({ length: totalSlides }).map((_, index) => (
           <button
-          aria-label="dots"
+            aria-label="dots"
             key={index}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
@@ -349,7 +353,10 @@ const CustomerReviews = () => {
         <p className="text-lg text-gray-700 mb-4">
           Have you purchased from us?
         </p>
-        <button aria-label="review write" className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+        <button
+          aria-label="review write"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-linear-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+        >
           <svg
             className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
             fill="none"

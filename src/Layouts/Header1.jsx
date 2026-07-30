@@ -324,13 +324,13 @@ const totalCartItems = cartItems.length;
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <Link aria-label="Dealora Home" to="/" className="shrink-0">
-              <motion.img
+              <img
                 src={logo}
                 alt="Dealora"
                 width="120"
                 height="48"
-                className="h-10 md:h-12 w-auto"
-                whileHover={{ scale: 1.05 }}
+                className="h-10 md:h-12 w-auto transition-transform duration-300 hover:scale-105"
+                
               />
             </Link>
 
@@ -393,22 +393,20 @@ const totalCartItems = cartItems.length;
             </div>
 
             <div className="flex items-center gap-4">
-              <motion.button
+              <button
                 aria-label="Search products"
                 onClick={() => setIsSearchOpen(true)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
+                
+                className="duration-200 hover:scale-110 active:scale-95 p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
               >
                 <Search className="w-5 h-5" />
-              </motion.button>
+              </button>
 
               <Link aria-label="cart" to="/cart">
-                <motion.button
+                <button
                   aria-label="Cart"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
+                  
+                  className="duration-200 hover:scale-110 active:scale-95 relative p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
                 >
                   <ShoppingBag className="w-6 h-6" />
                   {totalCartItems > 0 && (
@@ -421,7 +419,7 @@ const totalCartItems = cartItems.length;
                       {totalCartItems > 99 ? "99+" : totalCartItems}
                     </motion.span>
                   )}
-                </motion.button>
+                </button>
               </Link>
             </div>
           </div>
@@ -450,13 +448,13 @@ const totalCartItems = cartItems.length;
               {isHomePage ? (
                 // Homepage: Show Logo
                 <Link aria-label="Dealora Home" to="/" className="shrink-0">
-                  <motion.img
+                  <img
                     src={logoMobile}
                     alt="Dealora"
                     width="100"
                     height="40"
-                    className="h-8 md:h-10 w-auto"
-                    whileHover={{ scale: 1.05 }}
+                    className="h-8 md:h-10 w-auto transition-transform duration-300 hover:scale-105"
+                   
                   />
                 </Link>
               ) : (
@@ -499,27 +497,25 @@ const totalCartItems = cartItems.length;
               {/* Search Icon - Always Visible */}
               {isHomePage && (
                 <>
-                  <motion.button
+                  <button
                     aria-label="search products"
                     onClick={() => setIsSearchOpen(true)}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="p-2 md:block hidden text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
+                   
+                    className="duration-200 hover:scale-110 active:scale-95 p-2 md:block hidden text-white hover:text-orange-600 transition-colors rounded-full hover:bg-white/10"
                   >
                     <Search className="w-5 h-5 md:w-6 md:h-6" />
-                  </motion.button>
+                  </button>
 
                   <Search onClick={() => setIsSearchOpen(true)} className="w-5 h-5 text-gray-600" /></>
               )}
               {/* Cart Icon with Badge */}
               <Link to="/cart" className="relative" aria-label="add to cart">
-                <motion.button
+                <button
                   aria-label="add to cart"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
+                 
                   className=""
                   className={cn(
-                    "p-2 hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
+                    "duration-200 hover:scale-110 active:scale-95 p-2 hover:text-orange-600 transition-colors rounded-full hover:bg-white/10",
                     isScrolled
                       ? "text-black"
                       : "text-black"
@@ -527,7 +523,7 @@ const totalCartItems = cartItems.length;
 
                 >
                   <ShoppingBag className="w-5 h-5 md:w-6 md:h-6" />
-                </motion.button>
+                </button>
                 {totalCartItems > 0 && (
                   <motion.span
                     key={totalCartItems}
@@ -577,8 +573,8 @@ const totalCartItems = cartItems.length;
   );
 };
 
-// Mega Menu Component (Keep your existing one)
-// Enhanced Mega Menu Component
+
+// Mega Menu Component
 const MegaMenu = memo(({ isOpen, onClose }) => {
   return (
     <AnimatePresence>
@@ -649,7 +645,7 @@ const MegaMenu = memo(({ isOpen, onClose }) => {
   );
 });
 
-// Search Bar Component (Keep your existing one)
+// Search Bar Component 
 const SearchBar = memo(({ isOpen, onClose }) => {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);

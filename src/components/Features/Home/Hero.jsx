@@ -63,20 +63,13 @@ const Hero = () => {
             </div>
 
             <div>
-              {/* <img
-                src={homeImage}
-                alt="Athletic Performance"
-                fetchPriority="high"
-                decoding="sync"
-                className="absolute -bottom-19.5 right-3  w-67.5  drop-shadow-2xl -rotate-12"
-              /> */}
+           
 
               <img
                 src={homeImageMobile}
                 alt="Athletic Performance"
                 fetchPriority="high"
                 decoding="sync"
-                // Explicit Width and Height Attributes added
                 width="270"
                 height="270"
                 className="absolute -bottom-19.5 right-9 w-55 drop-shadow-2xl -rotate-12"

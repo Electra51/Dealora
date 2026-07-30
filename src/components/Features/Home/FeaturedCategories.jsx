@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import { useNavigate } from "react-router-dom";
 
-// 1. Image Imports (Small, Medium, Large)
+
 import weekend320 from "/assets/weekend-320.webp";
 import weekend640 from "/assets/weekend-640.webp";
 import weekend800 from "/assets/weekend-800.webp";
@@ -31,11 +31,9 @@ const FeaturedCategories = () => {
       id: 1,
       name: "Weekend Casual",
       count: "150+ Products",
-      // Responsive Image Object
       image: {
         fallback: weekend640,
         srcSet: `${weekend320} 320w, ${weekend640} 640w, ${weekend800} 800w`,
-        // এই কার্ডটি বড় (col-span-2) তাই বড় সাইজ ক্যাচ করবে
         sizes: "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 500px",
       },
       category: "Weekend Casual",
@@ -106,7 +104,7 @@ const FeaturedCategories = () => {
     if (shopSection) {
       shopSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    console.log("Selected category:", category);
+   
   };
 
   return (

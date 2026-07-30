@@ -2,8 +2,8 @@ import React, { lazy } from "react";
 import Hero from "../components/Features/Home/Hero";
 import LazySection from "../components/Common/LazySection";
 import SEO from "../components/Common/SEO";
-import MobileCategories from "../components/Features/Home/MobileCategories";
 
+const MobileCategories = lazy(() => import("../components/Features/Home/MobileCategories"));
 const FeaturedCategories = lazy(() => import("../components/Features/Home/FeaturedCategories"));
 const Trending = lazy(() => import("../components/Features/Home/Trending"));
 const FeaturedBanner = lazy(() => import("../components/Features/Home/FeaturedBanner"));
@@ -24,7 +24,9 @@ const HomePage = () => {
       />
       
       <Hero />
-       <MobileCategories />
+       <LazySection>
+      <MobileCategories />
+      </LazySection>
       <LazySection>
         <FeaturedCategories />
       </LazySection>

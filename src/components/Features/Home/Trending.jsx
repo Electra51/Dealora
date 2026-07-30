@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
 import { productService } from "../../../services/product.service";
+
+
 const Trending = ({ handleAddToCart }) => {
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [loading, setLoading] = useState(true);

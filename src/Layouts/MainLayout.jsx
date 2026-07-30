@@ -16,9 +16,10 @@
 // export default MainLayout;
 
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
+
 import BottomNav from "../components/Common/BottomNav";
 import Footer from "./Footer";
+import Header from "./Header/Header";
 
 const MainLayout = () => {
   return (

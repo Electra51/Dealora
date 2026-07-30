@@ -51,7 +51,7 @@ const SaleBanner = () => {
 
   return (
     <div className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100">
-      {/* Close */}
+  
       <div 
         className="absolute inset-0 pointer-events-none" 
         style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}

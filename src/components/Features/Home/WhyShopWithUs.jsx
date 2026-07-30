@@ -27,7 +27,8 @@ const WhyShopWithUs = () => {
         </svg>
       ),
       title: "Free Shipping",
-      description: "Free shipping on all orders over $50. Fast and reliable delivery to your doorstep.",
+      description:
+        "Free shipping on all orders over $50. Fast and reliable delivery to your doorstep.",
       color: "from-green-400 to-emerald-500",
       bgColor: "bg-green-50",
       iconColor: "text-green-600",
@@ -50,7 +51,8 @@ const WhyShopWithUs = () => {
         </svg>
       ),
       title: "Secure Payment",
-      description: "Your payment information is safe with us. We use industry-leading encryption.",
+      description:
+        "Your payment information is safe with us. We use industry-leading encryption.",
       color: "from-blue-400 to-indigo-500",
       bgColor: "bg-blue-50",
       iconColor: "text-blue-600",
@@ -73,7 +75,8 @@ const WhyShopWithUs = () => {
         </svg>
       ),
       title: "Easy Return",
-      description: "30-day hassle-free return policy. No questions asked, full refund guaranteed.",
+      description:
+        "30-day hassle-free return policy. No questions asked, full refund guaranteed.",
       color: "from-purple-400 to-pink-500",
       bgColor: "bg-purple-50",
       iconColor: "text-purple-600",
@@ -96,7 +99,8 @@ const WhyShopWithUs = () => {
         </svg>
       ),
       title: "24/7 Support",
-      description: "Our dedicated support team is available round the clock to assist you.",
+      description:
+        "Our dedicated support team is available round the clock to assist you.",
       color: "from-orange-400 to-red-500",
       bgColor: "bg-orange-50",
       iconColor: "text-orange-600",
@@ -105,14 +109,13 @@ const WhyShopWithUs = () => {
 
   return (
     <section className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8  lg:pt-12 lg:pb-20 w-full">
-   
-     <SectionHeader
-  title=" Why Shop With Us"
-  description="We provide the best shopping experience with premium quality products and exceptional service"
-  showAction
-  actionText="Start Shopping"
-  actionLink="/shop"
-/>
+      <SectionHeader
+        title=" Why Shop With Us"
+        description="We provide the best shopping experience with premium quality products and exceptional service"
+        showAction
+        actionText="Start Shopping"
+        actionLink="/shop"
+      />
       {/* Features Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
         {features.map((feature) => (
@@ -129,7 +132,9 @@ const WhyShopWithUs = () => {
             <div
               className={`relative w-12 h-12 sm:w-20 sm:h-20 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-500`}
             >
-              <div className={`${feature.iconColor} group-hover:scale-110 transition-transform duration-500`}>
+              <div
+                className={`${feature.iconColor} group-hover:scale-110 transition-transform duration-500`}
+              >
                 {feature.icon}
               </div>
             </div>
@@ -142,13 +147,10 @@ const WhyShopWithUs = () => {
               {feature.description}
             </p>
 
-            {/* Decorative element */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-linear-to-r from-transparent via-orange-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
           </div>
         ))}
       </div>
-
-     
     </section>
   );
 };

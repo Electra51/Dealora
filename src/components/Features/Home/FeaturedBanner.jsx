@@ -1,5 +1,3 @@
-
-
 const FeaturedBanner = () => {
   return (
   <div className="mx-6 md:mx-0">

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
 import { productService } from "../../../services/product.service";
+
 const NewArrivals = ({ handleAddToCart }) => {
   const [newArrivals, setNewArrivals] = useState([]);
   const [loading, setLoading] = useState(true);

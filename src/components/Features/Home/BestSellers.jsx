@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import SectionHeader from "../../Common/SectionHeader";
 import ProductCard from "../../Common/ProductCard";
 import { productService } from "../../../services/product.service";
+
+
 const BestSellers = ({ handleAddToCart }) => {
   const [bestSellers, setBestSellers] = useState([]);
   const [loading, setLoading] = useState(true);

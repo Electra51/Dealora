@@ -46,14 +46,14 @@ const ShopByBrand = () => {
 
   return (
     <section className="relative py-10 lg:py-20 overflow-hidden">
-      {/* Decorative background elements */}
+    
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        {/* Header */}
+
 
         <SectionHeader
           title="Shop by Brand"
@@ -80,7 +80,7 @@ const ShopByBrand = () => {
                   className="shrink-0 mx-2 md:mx-6"
                 >
                   <div className="group/card relative flex flex-col items-center justify-center w-28 h-28 md:w-48 md:h-48 bg-white rounded-xl md:rounded-2xl shadow-sm md:shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer border border-gray-100 hover:border-orange-200 md:hover:-translate-y-2">
-                    {/* Logo container */}
+                
                     <div className="flex items-center justify-center w-14 h-14 md:w-28 md:h-28 mb-1.5 md:mb-3 grayscale group-hover/card:grayscale-0 transition-all duration-500">
                       <img
                         src={brand.logo}
