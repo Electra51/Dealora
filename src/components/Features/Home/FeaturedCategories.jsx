@@ -3,25 +3,25 @@ import SectionHeader from "../../Common/SectionHeader";
 import { useNavigate } from "react-router-dom";
 
 // 1. Image Imports (Small, Medium, Large)
-import weekend320 from "../../../../public/assets/weekend-320.webp";
-import weekend640 from "../../../../public/assets/weekend-640.webp";
-import weekend800 from "../../../../public/assets/weekend-800.webp";
+import weekend320 from "/assets/weekend-320.webp";
+import weekend640 from "/assets/weekend-640.webp";
+import weekend800 from "/assets/weekend-800.webp";
 
-import office320 from "../../../../public/assets/office-320.webp";
-import office640 from "../../../../public/assets/office-640.webp";
-import office800 from "../../../../public/assets/office-800.webp";
+import office320 from "/assets/office-320.webp";
+import office640 from "/assets/office-640.webp";
+import office800 from "/assets/office-800.webp";
 
-import black320 from "../../../../public/assets/black-320.webp";
-import black640 from "../../../../public/assets/black-640.webp";
-import black800 from "../../../../public/assets/black-800.webp";
+import black320 from "/assets/black-320.webp";
+import black640 from "/assets/black-640.webp";
+import black800 from "/assets/black-800.webp";
 
-import grooming320 from "../../../../public/assets/groomingpick-320.webp";
-import grooming640 from "../../../../public/assets/groomingpick-640.webp";
-import grooming800 from "../../../../public/assets/groomingpick-800.webp";
+import grooming320 from "/assets/groomingpick-320.webp";
+import grooming640 from "/assets/groomingpick-640.webp";
+import grooming800 from "/assets/groomingpick-800.webp";
 
-import active320 from "../../../../public/assets/active-320.webp";
-import active640 from "../../../../public/assets/active-640.webp";
-import active800 from "../../../../public/assets/active-800.webp";
+import active320 from "/assets/active-320.webp";
+import active640 from "/assets/active-640.webp";
+import active800 from "/assets/active-800.webp";
 
 const FeaturedCategories = () => {
   const navigate = useNavigate();

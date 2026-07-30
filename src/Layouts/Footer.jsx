@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../public/assets/images/Logo.webp";
+import logo from "/assets/images/Logo.webp";
 import { Clock, Mail, Map, Phone } from "lucide-react";
 
 const FacebookIcon = ({ className }) => (
