@@ -67,7 +67,7 @@ const MobileHeader = ({ onSearchOpen, isScrolled }) => {
                 <button
                   aria-label="back-button"
                   onClick={handleBack}
-                  className="p-2 -ml-2 text-black hover:text-orange-600 transition-colors rounded-full hover:bg-white/10 active:scale-95 transition-transform"
+                  className="p-2 -ml-2 text-black hover:text-orange-600 transition-colors rounded-full hover:bg-white/10 active:scale-95"
                 >
                   <ArrowLeft className="w-6 h-6" />
                 </button>

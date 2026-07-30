@@ -17,7 +17,7 @@ const CategoryCard = memo(({ category, onClose }) => {
         className="block"
       >
         {/* Card Container */}
-        <div className="relative overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-white/20">
+        <div className="relative backdrop-blur-sm transition-all duration-500 hover:border-white/20">
           {/* Gradient Overlay on Hover */}
           <div
             className={`absolute inset-0 pointer-events-none transition-opacity duration-300 ${
@@ -73,7 +73,7 @@ const CategoryCard = memo(({ category, onClose }) => {
                       isHovered ? "translate-x-1" : "translate-x-0"
                     }`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 opacity-60 group-hover/item:opacity-100 transition-opacity" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-linear-to-r from-orange-500 to-pink-500 opacity-60 group-hover/item:opacity-100 transition-opacity" />
                     <span className="group-hover/item:translate-x-1 transition-transform duration-300">
                       {item.name}
                     </span>
@@ -88,7 +88,7 @@ const CategoryCard = memo(({ category, onClose }) => {
 
           {/* Image Preview */}
           {category.image && (
-            <div className="relative h-40 rounded-xl overflow-hidden bg-gradient-to-br from-white/5 to-white/10">
+            <div className="relative h-40 rounded-xl overflow-hidden bg-linear-to-br from-white/5 to-white/10">
               <img
                 src={category.image}
                 alt={`${category.title} preview`}
@@ -98,7 +98,7 @@ const CategoryCard = memo(({ category, onClose }) => {
                 loading="lazy"
               />
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${category.color} mix-blend-overlay transition-opacity duration-300 ${
+                className={`absolute inset-0 bg-linear-to-br ${category.color} mix-blend-overlay transition-opacity duration-300 ${
                   isHovered ? "opacity-30" : "opacity-0"
                 }`}
               />
