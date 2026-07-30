@@ -217,7 +217,7 @@ const SaleBanner = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="relative bg-gradient-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100/20">
+    <div className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100/20">
       {/* Background Glow */}
       <div
         className="absolute inset-0 pointer-events-none"
