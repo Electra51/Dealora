@@ -1,31 +1,12 @@
 import React from "react";
 import SectionHeader from "../../Common/SectionHeader";
+import { Truck, ShieldCheck, RefreshCw, Headset } from "lucide-react";
 
 const WhyShopWithUs = () => {
   const features = [
     {
       id: 1,
-      icon: (
-        <svg
-          className="w-7 h-7 sm:w-12 sm:h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"
-          />
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
-          />
-        </svg>
-      ),
+      icon: Truck,
       title: "Free Shipping",
       description:
         "Free shipping on all orders over $50. Fast and reliable delivery to your doorstep.",
@@ -35,21 +16,7 @@ const WhyShopWithUs = () => {
     },
     {
       id: 2,
-      icon: (
-        <svg
-          className="w-7 h-7 sm:w-12 sm:h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-          />
-        </svg>
-      ),
+      icon: ShieldCheck,
       title: "Secure Payment",
       description:
         "Your payment information is safe with us. We use industry-leading encryption.",
@@ -59,21 +26,7 @@ const WhyShopWithUs = () => {
     },
     {
       id: 3,
-      icon: (
-        <svg
-          className="w-7 h-7 sm:w-12 sm:h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
-          />
-        </svg>
-      ),
+      icon: RefreshCw,
       title: "Easy Return",
       description:
         "30-day hassle-free return policy. No questions asked, full refund guaranteed.",
@@ -83,21 +36,7 @@ const WhyShopWithUs = () => {
     },
     {
       id: 4,
-      icon: (
-        <svg
-          className="w-7 h-7 sm:w-12 sm:h-12"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-          />
-        </svg>
-      ),
+      icon: Headset,
       title: "24/7 Support",
       description:
         "Our dedicated support team is available round the clock to assist you.",
@@ -108,48 +47,48 @@ const WhyShopWithUs = () => {
   ];
 
   return (
-    <section className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8  lg:pt-12 lg:pb-20 w-full">
+    <section className="relative max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:pt-12 lg:pb-20 w-full">
       <SectionHeader
-        title=" Why Shop With Us"
+        title="Why Shop With Us"
         description="We provide the best shopping experience with premium quality products and exceptional service"
         showAction
         actionText="Start Shopping"
         actionLink="/shop"
       />
-      {/* Features Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
-        {features.map((feature) => (
-          <div
-            key={feature.id}
-            className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-sm sm:shadow-md hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 hover:-translate-y-1.5 sm:hover:-translate-y-3 overflow-hidden flex flex-col items-center sm:items-start text-center sm:text-left"
-          >
-            {/* Background gradient on hover */}
-            <div
-              className={`absolute inset-0 bg-linear-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
-            ></div>
 
-            {/* Icon */}
+      {/* Features Grid - Added pt-2 to contain top translate hovers cleanly without CLS */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8 pt-2">
+        {features.map((feature) => {
+          const IconComponent = feature.icon;
+          return (
             <div
-              className={`relative w-12 h-12 sm:w-20 sm:h-20 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 group-hover:scale-110 transition-transform duration-500`}
+              key={feature.id}
+              className="group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-8 shadow-sm sm:shadow-md hover:shadow-xl sm:hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 sm:hover:-translate-y-2 overflow-hidden flex flex-col items-center sm:items-start text-center sm:text-left transform-gpu"
             >
+              {/* Background gradient on hover */}
               <div
-                className={`${feature.iconColor} group-hover:scale-110 transition-transform duration-500`}
+                className={`absolute inset-0 bg-linear-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`}
+              />
+
+              {/* Icon Container */}
+              <div
+                className={`relative w-12 h-12 sm:w-16 sm:h-16 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-6 transition-transform duration-300 group-hover:scale-105`}
               >
-                {feature.icon}
+                <IconComponent
+                  className={`w-6 h-6 sm:w-8 sm:h-8 ${feature.iconColor} transition-transform duration-300 group-hover:scale-110`}
+                />
               </div>
+
+              {/* Content */}
+              <h3 className="relative text-sm sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-3 group-hover:text-orange-600 transition-colors duration-300">
+                {feature.title}
+              </h3>
+              <p className="relative text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none">
+                {feature.description}
+              </p>
             </div>
-
-            {/* Content */}
-            <h3 className="relative text-sm sm:text-xl font-bold text-gray-900 mb-1.5 sm:mb-3 group-hover:text-orange-600 transition-colors duration-300">
-              {feature.title}
-            </h3>
-            <p className="relative text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none">
-              {feature.description}
-            </p>
-
-            
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

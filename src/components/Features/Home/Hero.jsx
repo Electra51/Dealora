@@ -65,15 +65,16 @@ const Hero = () => {
             <div>
            
 
-              <img
-                src={homeImageMobile}
-                alt="Athletic Performance"
-                fetchPriority="high"
-                decoding="sync"
-                width="270"
-                height="270"
-                className="absolute -bottom-19.5 right-9 w-55 drop-shadow-2xl -rotate-12"
-              />
+         <img
+  src={homeImage}
+  alt="Athletic Performance"
+  width={800} 
+  height={600} 
+  fetchPriority="high"
+  loading="eager"
+  decoding="async" 
+  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-8 scale-110 w-[75%] h-auto max-h-[90%] object-contain z-2 drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:-rotate-5 hover:scale-[1.15]"
+/>
             </div>
           </div>
         </div>

@@ -35,24 +35,43 @@ const SEO = ({
 
       <link rel="canonical" href={url} />
 
-
       <meta property="og:type" content="website" />
-<meta property="og:site_name" content="Dealora" />
-<meta property="og:title" content="Dealora - Premium E-commerce Platform" />
-<meta property="og:description" content="Shop premium sneakers with exclusive deals, fast delivery, secure payments, and guaranteed quality." />
-<meta property="og:url" content="https://dealora-alpha.vercel.app/" />
+      <meta property="og:site_name" content="Dealora" />
+      <meta
+        property="og:title"
+        content="Dealora - Premium E-commerce Platform"
+      />
+      <meta
+        property="og:description"
+        content="Shop premium sneakers with exclusive deals, fast delivery, secure payments, and guaranteed quality."
+      />
+      <meta property="og:url" content="https://dealora-alpha.vercel.app/" />
 
-<meta property="og:image" content="https://dealora-alpha.vercel.app/og-image.webp" />
-<meta property="og:image:secure_url" content="https://dealora-alpha.vercel.app/og-image.webp" />
-<meta property="og:image:type" content="image/webp" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
+      <meta
+        property="og:image"
+        content="https://dealora-alpha.vercel.app/og-image.webp"
+      />
+      <meta
+        property="og:image:secure_url"
+        content="https://dealora-alpha.vercel.app/og-image.webp"
+      />
+      <meta property="og:image:type" content="image/webp" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Dealora - Premium E-commerce Platform" />
-<meta name="twitter:description" content="Shop premium sneakers with exclusive deals, fast delivery, secure payments, and guaranteed quality." />
-<meta name="twitter:image" content="https://dealora-alpha.vercel.app/og-image.webp" />
-
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="Dealora - Premium E-commerce Platform"
+      />
+      <meta
+        name="twitter:description"
+        content="Shop premium sneakers with exclusive deals, fast delivery, secure payments, and guaranteed quality."
+      />
+      <meta
+        name="twitter:image"
+        content="https://dealora-alpha.vercel.app/og-image.webp"
+      />
 
       {/* Open Graph */}
       <meta property="og:type" content={type} />

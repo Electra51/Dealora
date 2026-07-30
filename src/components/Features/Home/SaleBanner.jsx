@@ -1,46 +1,185 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import React, { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 
-const SaleBanner = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
-  const [isVisible, setIsVisible] = useState(true);
+// const SaleBanner = () => {
+//   const [timeLeft, setTimeLeft] = useState({
+//     days: 0,
+//     hours: 0,
+//     minutes: 0,
+//     seconds: 0,
+//   });
+//   const [isVisible, setIsVisible] = useState(true);
+
+//   useEffect(() => {
+//     const countdownDate = new Date();
+//     countdownDate.setDate(countdownDate.getDate() + 7);
+//     countdownDate.setHours(23, 59, 59, 999);
+
+//     const timer = setInterval(() => {
+//       const now = new Date().getTime();
+//       const distance = countdownDate.getTime() - now;
+
+//       if (distance < 0) {
+//         clearInterval(timer);
+//         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+//         return;
+//       }
+
+//       setTimeLeft({
+//         days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+//         hours: Math.floor(
+//           (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+//         ),
+//         minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+//         seconds: Math.floor((distance % (1000 * 60)) / 1000),
+//       });
+//     }, 1000);
+
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   const closeBanner = () => setIsVisible(false);
+
+//   if (!isVisible) return null;
+
+//   const units = [
+//     { label: "Days", value: timeLeft.days },
+//     { label: "Hrs", value: timeLeft.hours },
+//     { label: "Min", value: timeLeft.minutes },
+//     { label: "Sec", value: timeLeft.seconds },
+//   ];
+
+//   return (
+//     <div className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100">
+  
+//       <div 
+//         className="absolute inset-0 pointer-events-none" 
+//         style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}
+//       ></div>
+//       <button
+//       aria-label="close"
+//         onClick={closeBanner}
+//         aria-label="Close banner"
+//         className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-600"
+//       >
+//         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+//         </svg>
+//       </button>
+
+//       <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
+//         {/* Left: copy */}
+//         <div className="flex flex-col items-start gap-5 text-left">
+         
+
+//           <h2 className="leading-tight">
+//             <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white">
+//               Mega Winter Sale
+//             </span>
+//             <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-orange-600 mt-1">
+//               Up to 50% Off
+//             </span>
+//           </h2>
+
+//           <p className="text-gray-300 text-base sm:text-lg max-w-md">
+//             Premium shoes, bags, and accessories at unbeatable prices. Don't
+//             miss out on the season's biggest deals.
+//           </p>
+
+//           <Link
+//           aria-label="Shop Now"
+//             to="/shop"
+//             className="group inline-flex items-center gap-2 mt-1 px-7 py-3 bg-orange-500 text-white text-sm font-bold rounded-full transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-300"
+//           >
+//             Shop Now
+//             <svg
+//               className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
+//               fill="none"
+//               stroke="currentColor"
+//               viewBox="0 0 24 24"
+//             >
+//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+//             </svg>
+//           </Link>
+
+//           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-1 text-[13px] text-gray-300 font-medium">
+//             <span className="flex items-center gap-1.5">
+//               <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+//               </svg>
+//               Free Shipping
+//             </span>
+//             <span className="flex items-center gap-1.5">
+//               <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+//               </svg>
+//               Easy Returns
+//             </span>
+//           </div>
+//         </div>
+
+//         {/* Right: countdown */}
+//         <div className="flex flex-col items-start lg:items-end gap-4 w-full">
+//           <p className="text-xs font-bold uppercase tracking-wider text-gray-300">
+//             Hurry! Sale Ends In
+//           </p>
+//           <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto justify-between items-center">
+//             {units.map((unit, i) => (
+//               <div key={unit.label} className="flex items-center gap-2.5 sm:gap-3">
+//                 <div className="flex flex-col items-center justify-center w-18 h-18 sm:w-20 sm:h-22 rounded-2xl bg-white border border-gray-100 shadow-sm py-3">
+//                   <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums">
+//                     {String(unit.value).padStart(2, "0")}
+//                   </span>
+//                   <span className="text-[10px] uppercase tracking-widest text-gray-600 font-semibold mt-0.5">
+//                     {unit.label}
+//                   </span>
+//                 </div>
+//                 {i < units.length - 1 && (
+//                   <span className="text-orange-600 text-xl font-bold">:</span>
+//                 )}
+//               </div>
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SaleBanner;
+
+
+import React, { useState, useEffect, memo } from "react";
+import { Link } from "react-router-dom";
+import { X, Check, ArrowRight } from "lucide-react";
+
+// Fixed Target Date (or dynamic baseline calculated once outside render)
+const TARGET_DATE = new Date();
+TARGET_DATE.setDate(TARGET_DATE.getDate() + 7);
+TARGET_DATE.setHours(23, 59, 59, 999);
+
+const getTimeRemaining = (target) => {
+  const total = Math.max(0, target.getTime() - Date.now());
+  return {
+    days: Math.floor(total / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((total / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((total / (1000 * 60)) % 60),
+    seconds: Math.floor((total / 1000) % 60),
+  };
+};
+
+// Isolated Timer Component - Prevents the parent SaleBanner from re-rendering every second
+const CountdownTimer = memo(() => {
+  // Initialize with exact calculation immediately to prevent 00:00:00 Layout Shift
+  const [timeLeft, setTimeLeft] = useState(() => getTimeRemaining(TARGET_DATE));
 
   useEffect(() => {
-    const countdownDate = new Date();
-    countdownDate.setDate(countdownDate.getDate() + 7);
-    countdownDate.setHours(23, 59, 59, 999);
-
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countdownDate.getTime() - now;
-
-      if (distance < 0) {
-        clearInterval(timer);
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        ),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      });
+      setTimeLeft(getTimeRemaining(TARGET_DATE));
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
-
-  const closeBanner = () => setIsVisible(false);
-
-  if (!isVisible) return null;
 
   const units = [
     { label: "Days", value: timeLeft.days },
@@ -50,33 +189,62 @@ const SaleBanner = () => {
   ];
 
   return (
-    <div className="relative bg-linear-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100">
-  
-      <div 
-        className="absolute inset-0 pointer-events-none" 
-        style={{ background: "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)" }}
-      ></div>
+    <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto justify-between items-center">
+      {units.map((unit, i) => (
+        <div key={unit.label} className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white border border-gray-100 shadow-sm py-2">
+            <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums">
+              {String(unit.value).padStart(2, "0")}
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-gray-600 font-semibold mt-0.5">
+              {unit.label}
+            </span>
+          </div>
+          {i < units.length - 1 && (
+            <span className="text-orange-500 text-xl font-bold">:</span>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+});
+
+CountdownTimer.displayName = "CountdownTimer";
+
+const SaleBanner = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="relative bg-gradient-to-br from-[#1a1a24] via-[#2d1b3d] to-[#1a1a24] overflow-hidden border-y border-orange-100/20">
+      {/* Background Glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at 20% 50%, rgba(255, 165, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.1) 0%, transparent 50%)",
+        }}
+        aria-hidden="true"
+      />
+
+      {/* Close Button */}
       <button
-      aria-label="close"
-        onClick={closeBanner}
+        onClick={() => setIsVisible(false)}
         aria-label="Close banner"
-        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center shadow-sm transition-colors duration-200 hover:border-orange-400 hover:text-orange-600"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-8 h-8 rounded-full bg-white/10 hover:bg-white text-white hover:text-gray-900 border border-white/20 transition-all duration-200 flex items-center justify-center shadow-sm"
       >
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
+        <X className="w-4 h-4" />
       </button>
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 py-12 sm:py-14 lg:py-20 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-10 sm:py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 lg:gap-16 items-center">
         {/* Left: copy */}
-        <div className="flex flex-col items-start gap-5 text-left">
-         
-
+        <div className="flex flex-col items-start gap-4 text-left">
           <h2 className="leading-tight">
             <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-white">
               Mega Winter Sale
             </span>
-            <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-orange-600 mt-1">
+            <span className="block text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-orange-500 mt-1">
               Up to 50% Off
             </span>
           </h2>
@@ -87,59 +255,31 @@ const SaleBanner = () => {
           </p>
 
           <Link
-          aria-label="Shop Now"
             to="/shop"
-            className="group inline-flex items-center gap-2 mt-1 px-7 py-3 bg-orange-500 text-white text-sm font-bold rounded-full transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-300"
+            className="group inline-flex items-center gap-2 mt-1 px-7 py-3 bg-orange-500 text-white text-sm font-bold rounded-full transition-all duration-200 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/30 transform-gpu"
           >
             Shop Now
-            <svg
-              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-1 text-[13px] text-gray-300 font-medium">
             <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Check className="w-4 h-4 text-orange-500" />
               Free Shipping
             </span>
             <span className="flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-              </svg>
+              <Check className="w-4 h-4 text-orange-500" />
               Easy Returns
             </span>
           </div>
         </div>
 
         {/* Right: countdown */}
-        <div className="flex flex-col items-start lg:items-end gap-4 w-full">
+        <div className="flex flex-col items-start lg:items-end gap-3 w-full">
           <p className="text-xs font-bold uppercase tracking-wider text-gray-300">
             Hurry! Sale Ends In
           </p>
-          <div className="flex gap-2.5 sm:gap-3 w-full lg:w-auto justify-between items-center">
-            {units.map((unit, i) => (
-              <div key={unit.label} className="flex items-center gap-2.5 sm:gap-3">
-                <div className="flex flex-col items-center justify-center w-18 h-18 sm:w-20 sm:h-22 rounded-2xl bg-white border border-gray-100 shadow-sm py-3">
-                  <span className="text-2xl sm:text-3xl font-extrabold text-gray-900 tabular-nums">
-                    {String(unit.value).padStart(2, "0")}
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest text-gray-600 font-semibold mt-0.5">
-                    {unit.label}
-                  </span>
-                </div>
-                {i < units.length - 1 && (
-                  <span className="text-orange-600 text-xl font-bold">:</span>
-                )}
-              </div>
-            ))}
-          </div>
+          <CountdownTimer />
         </div>
       </div>
     </div>
