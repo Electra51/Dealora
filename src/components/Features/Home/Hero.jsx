@@ -117,7 +117,7 @@ const Hero = () => {
                   </svg>
                 </Link>
                 <Link
-                  aria-label="Learn More"
+                  aria-label="Learn more about Dealora and our products"
                   to="/about"
                   className="inline-flex items-center justify-center gap-2.5 py-3 px-6 rounded-full text-[16px] font-semibold no-underline transition-all duration-300 cursor-pointer max-md:w-full bg-transparent text-white border-2 border-[rgba(240,248,255,0.3)] hover:bg-[rgba(240,248,255,0.1)] hover:border-white hover:-translate-y-0.75"
                 >

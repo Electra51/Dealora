@@ -1,6 +1,11 @@
-import React, { useState, useEffect, useRef, Suspense } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 
-const LazySection = ({ children, fallback = null, rootMargin = "200px 0px" }) => {
+const LazySection = ({
+  children,
+  fallback,
+  minHeight = "300px",
+  rootMargin = "300px 0px",
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -9,24 +14,33 @@ const LazySection = ({ children, fallback = null, rootMargin = "200px 0px" }) =>
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
+          observer.unobserve(entry.target);
         }
       },
       { rootMargin }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const element = sectionRef.current;
+
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
+      if (element) observer.unobserve(element);
       observer.disconnect();
     };
   }, [rootMargin]);
 
   return (
     <div ref={sectionRef}>
-      {isVisible ? <Suspense fallback={fallback}>{children}</Suspense> : <div style={{ minHeight: "200px" }} />}
+      {isVisible ? (
+        <Suspense fallback={fallback}>
+          {children}
+        </Suspense>
+      ) : (
+        fallback ?? <div style={{ minHeight }} />
+      )}
     </div>
   );
 };

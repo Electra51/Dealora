@@ -70,9 +70,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link  aria-label="Dealora Home" to="/" className="inline-block mb-6">
-              <img src={logo} alt="Dealora Logo" width="120" height="48" className="h-12 w-auto" loading="lazy"/>
+            <Link  aria-label="Dealora Home" to="/" className="inline-block w-30 h-12 mb-6">
+              <img src={logo}   alt="Dealora Logo"
+        width={120}
+        height={48}
+        className="w-full h-full object-contain" />
             </Link>
+
+
             <p className="text-gray-600 mb-6 leading-relaxed">
               Your trusted online shopping destination for quality products at amazing prices. Shop with confidence and style.
             </p>

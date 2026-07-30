@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronUp, Star, Filter, X, Check } from 'lucide-react';
 
-const FilterAccordion = ({ title, defaultOpen = true, children }) => {
+const FilterAccordion =React.memo(({ title, defaultOpen = true, children }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
@@ -36,7 +36,7 @@ const FilterAccordion = ({ title, defaultOpen = true, children }) => {
       </AnimatePresence>
     </div>
   );
-};
+});
 
 const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen, setMobileOpen }) => {
   // Extract unique values from products.json
@@ -239,7 +239,7 @@ const ShopFilters = ({ filters, updateFilter, clearFilters, products, mobileOpen
               initial={{ x: '-100%' }} 
               animate={{ x: 0 }} 
               exit={{ x: '-100%' }} 
-              transition={{ type: 'spring', damping: 25, stiffness: 200 }} 
+              transition={{  duration: 0.25, ease: "easeOut", }} 
               className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-white z-60 overflow-y-auto lg:hidden shadow-2xl flex flex-col"
             >
               <div className="md:sticky top-0 bg-white/80 backdrop-blur-md z-90 p-6 pb-4 flex justify-between items-center border-b border-gray-100">

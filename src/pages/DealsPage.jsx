@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { productService } from '../services/product.service';
 import DealsHero from '../components/Features/Deals/DealsHero';
 import DealsCoupon from '../components/Features/Deals/DealsCoupon';
 import DealsSection from '../components/Features/Deals/DealsSection';
 import ProductCard from '../components/Common/ProductCard';
+import SEO from '../components/Common/SEO';
 
 const DealsPage = () => {
   const [deals, setDeals] = useState([]);
@@ -22,11 +22,10 @@ const DealsPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Exclusive Deals & Flash Sales | Dealora</title>
-        <meta name="description" content="Grab the best deals on premium sneakers and gear. Limited time offers." />
-      </Helmet>
-
+<SEO
+        title="Dealora | Exclusive Deals & Flash Sales"
+        description="Shop premium sneakers, men's fashion, women's fashion, accessories, and lifestyle products at Dealora. Fast shipping, secure checkout, and exclusive deals."
+      />
       <DealsHero />
       <DealsCoupon />
 

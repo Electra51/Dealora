@@ -97,7 +97,7 @@ const MegaMenu = memo(({ isOpen, onClose }) => {
             ))}
           </div>
 
-          {/* Promotional Banners */}
+          {/* Banners */}
           <div
             className="mt-12 pt-8 border-t border-white/10 opacity-0 animate-slideUp"
             style={{ animationDelay: "400ms", animationFillMode: "forwards" }}

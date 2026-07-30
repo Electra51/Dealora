@@ -1,10 +1,12 @@
 import React, { lazy } from "react";
 import Hero from "../components/Features/Home/Hero";
 import LazySection from "../components/Common/LazySection";
+import MobileCategories from "../components/Features/Home/MobileCategories";
+import FeaturedCategories from "../components/Features/Home/FeaturedCategories";
 import SEO from "../components/Common/SEO";
 
-const MobileCategories = lazy(() => import("../components/Features/Home/MobileCategories"));
-const FeaturedCategories = lazy(() => import("../components/Features/Home/FeaturedCategories"));
+// const MobileCategories = lazy(() => import("../components/Features/Home/MobileCategories"));
+// const FeaturedCategories = lazy(() => import("../components/Features/Home/FeaturedCategories"));
 const Trending = lazy(() => import("../components/Features/Home/Trending"));
 const FeaturedBanner = lazy(() => import("../components/Features/Home/FeaturedBanner"));
 const NewArrivals = lazy(() => import("../components/Features/Home/NewArrivals"));
@@ -19,17 +21,13 @@ const HomePage = () => {
   return (
     <div>
       <SEO 
-        title="Home" 
-        description="Shop the best premium sneakers and apparel at Dealora. Exclusive deals, fast delivery, and guaranteed quality."
+        title="Dealora | Premium Sneakers, Fashion & Lifestyle Shopping"
+        description="Shop premium sneakers, men's fashion, women's fashion, accessories, and lifestyle products at Dealora. Fast shipping, secure checkout, and exclusive deals."
       />
       
       <Hero />
-       <LazySection>
       <MobileCategories />
-      </LazySection>
-      <LazySection>
-        <FeaturedCategories />
-      </LazySection>
+      <FeaturedCategories />
       <LazySection>
         <Trending />
       </LazySection>

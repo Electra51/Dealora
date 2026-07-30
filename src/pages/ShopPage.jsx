@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
 import { productService } from '../services/product.service';
 import { useShopFilters } from '../hooks/useShopFilters';
 import ShopHero from '../components/Features/Shop/ShopHero';
@@ -7,6 +6,7 @@ import ShopToolbar from '../components/Features/Shop/ShopToolbar';
 import ShopFilters from '../components/Features/Shop/ShopFilters';
 import SkeletonCard from '../components/Common/SkeletonCard';
 import ProductCard from '../components/Common/ProductCard';
+import SEO from '../components/Common/SEO';
 
 const ShopPage = () => {
   const [products, setProducts] = useState([]);
@@ -25,10 +25,11 @@ const ShopPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Shop Premium Men's Lifestyle | Dealora</title>
-        <meta name="description" content="Browse our premium collection of clothing, footwear, accessories, and grooming products." />
-      </Helmet>
+      
+       <SEO
+        title="Dealora | Shop Premium Men's Lifestyle"
+        description="Shop premium sneakers, men's fashion, women's fashion, accessories, and lifestyle products at Dealora. Fast shipping, secure checkout, and exclusive deals."
+      />
       
       <ShopHero />
       

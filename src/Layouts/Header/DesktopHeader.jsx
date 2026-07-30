@@ -94,7 +94,7 @@ const DesktopHeader = ({ onSearchOpen, onMegaMenuToggle, isMegaMenuOpen }) => {
               <button
                 aria-label="Search products"
                 onClick={onSearchOpen}
-                className="transition-all duration-200 hover:scale-110 active:scale-95 p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
+                className="transition-all duration-200 hover:scale-110 active:scale-95 p-2 text-[#f0f8ff] hover:text-orange-600"
               >
                 <Search className="w-5 h-5" />
               </button>
@@ -102,7 +102,7 @@ const DesktopHeader = ({ onSearchOpen, onMegaMenuToggle, isMegaMenuOpen }) => {
               <Link aria-label="cart" to="/cart">
                 <button
                   aria-label="Cart"
-                  className="transition-all duration-200 hover:scale-110 active:scale-95 relative p-2 text-[#f0f8ff] hover:text-orange-600 transition-colors"
+                  className="transition-all duration-200 hover:scale-110 active:scale-95 relative p-2 text-[#f0f8ff] hover:text-orange-600"
                 >
                   <ShoppingBag className="w-6 h-6" />
                   {totalCartItems > 0 && (

@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react';
-import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice } from '../../utils/helpers';
 import { useCartStore } from '../../stores/cart.store';
@@ -134,13 +133,11 @@ const ProductCard = memo(({
 
   return (
     <>
-    <motion.div 
-      layout
-      initial={{ opacity: 0, y: 20 }} 
-      animate={{ opacity: 1, y: 0 }} 
-      whileHover={{ y: -4 }}
+    <div 
+     
+      
       onClick={handleCardClick}
-      className={`group rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:shadow-none hover:shadow-xl active:scale-[0.98] md:active:scale-100 cursor-pointer md:cursor-default ${styles.card} ${
+      className={`hover:-translate-y-1 group rounded-2xl overflow-hidden transition-all duration-300 shadow-[0_2px_10px_rgba(0,0,0,0.06)] md:shadow-none hover:shadow-xl active:scale-[0.98] md:active:scale-100 cursor-pointer md:cursor-default ${styles.card} ${
         viewMode === 'list' ? 'flex' : 'flex flex-col h-full'
       }`}
     >
@@ -299,7 +296,7 @@ const ProductCard = memo(({
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
       {showQuickView && (
         <QuickViewModal
           product={product}

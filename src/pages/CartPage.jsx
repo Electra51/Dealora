@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useCartStore } from '../stores/cart.store';
 import { formatPrice } from '../utils/helpers';
 import { ArrowRight, Minus, Plus, ShoppingBag, Trash } from 'lucide-react';
+import SEO from '../components/Common/SEO';
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -40,6 +41,10 @@ const CartPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-12">
+      <SEO
+        title="Dealora | Cart Page"
+        description="Shop premium sneakers, men's fashion, women's fashion, accessories, and lifestyle products at Dealora. Fast shipping, secure checkout, and exclusive deals."
+      />
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-8 md:mt-10">
@@ -66,7 +71,7 @@ const CartPage = () => {
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, y: 20 }}
+             
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, x: -100 }}
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 flex gap-4"

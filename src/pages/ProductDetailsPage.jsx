@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { productService } from '../services/product.service';
+import SEO from '../components/Common/SEO';
 
 const ProductDetailsPage = () => {
   const { id } = useParams();
@@ -96,7 +97,10 @@ console.log("product",product)
   return (
     <div className="min-h-screen bg-gray-50 pb-24 md:pb-8 mt-15">
     
-
+  <SEO
+        title="Dealora | Product Details Page"
+        description="Shop premium sneakers, men's fashion, women's fashion, accessories, and lifestyle products at Dealora. Fast shipping, secure checkout, and exclusive deals."
+      />
       {/* Desktop Back Button */}
       <div className="hidden md:block max-w-7xl mx-auto px-8 pt-8">
         <button 
